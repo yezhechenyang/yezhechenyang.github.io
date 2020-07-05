@@ -5,9 +5,9 @@
   <subtitle>叶遮沉阳</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://yezhechenyang.github.io/"/>
+  <link href="https://yezhechenyang.gitee.io/"/>
   <updated>2020-07-05T03:02:18.914Z</updated>
-  <id>https://yezhechenyang.github.io/</id>
+  <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
     <name>叶遮沉阳</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>【Hexo】博客搭建</title>
-    <link href="https://yezhechenyang.github.io/2020/07/05/hexo-bo-ke-da-jian/"/>
-    <id>https://yezhechenyang.github.io/2020/07/05/hexo-bo-ke-da-jian/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/05/hexo-bo-ke-da-jian/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/05/hexo-bo-ke-da-jian/</id>
     <published>2020-07-05T03:00:00.000Z</published>
     <updated>2020-07-05T03:02:18.914Z</updated>
     
@@ -35,21 +35,21 @@
     
     </summary>
     
-      <category term="博客搭建与配置" scheme="https://yezhechenyang.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="博客搭建与配置" scheme="https://yezhechenyang.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
-      <category term="Hexo" scheme="https://yezhechenyang.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="https://yezhechenyang.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://yezhechenyang.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="Gitee" scheme="https://yezhechenyang.github.io/tags/Gitee/"/>
+      <category term="Gitee" scheme="https://yezhechenyang.gitee.io/tags/Gitee/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://yezhechenyang.github.io/2020/07/04/hello-world/"/>
-    <id>https://yezhechenyang.github.io/2020/07/04/hello-world/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/04/hello-world/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</id>
     <published>2020-07-04T01:45:03.000Z</published>
     <updated>2020-07-04T01:54:18.733Z</updated>
     
@@ -69,14 +69,14 @@
     
     </summary>
     
-      <category term="博客搭建与配置" scheme="https://yezhechenyang.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="博客搭建与配置" scheme="https://yezhechenyang.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
-      <category term="Hexo" scheme="https://yezhechenyang.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
     
-      <category term="Github" scheme="https://yezhechenyang.github.io/tags/Github/"/>
+      <category term="Github" scheme="https://yezhechenyang.gitee.io/tags/Github/"/>
     
-      <category term="博客" scheme="https://yezhechenyang.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://yezhechenyang.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
