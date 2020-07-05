@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>【Hexo】博客搭建</title>
+      <link href="/2020/07/05/hexo-bo-ke-da-jian/"/>
+      <url>/2020/07/05/hexo-bo-ke-da-jian/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h3><p>安装 Git、NodeJs、Hexo 。</p><ul><li>博客框架：Hexo</li><li>博客主题：Matery</li><li>托管：Gitee</li></ul><h3 id="2-下载模板"><a href="#2-下载模板" class="headerlink" title="2. 下载模板"></a>2. 下载模板</h3><p>推荐使用 <a href="https://github.com/shw2018/hexo-blog-fly.git" target="_blank" rel="noopener">hexo-blog-fly</a></p><pre><code>git clone https://github.com/shw2018/hexo-blog-fly.git</code></pre><h3 id="3-本地运行"><a href="#3-本地运行" class="headerlink" title="3. 本地运行"></a>3. 本地运行</h3><h4 id="3-1-修改个人信息"><a href="#3-1-修改个人信息" class="headerlink" title="3.1 修改个人信息"></a>3.1 修改个人信息</h4><pre><code>Hexo博客框架的配置：_config.ymlMatery主题的配置：themes\matery\_config.yml</code></pre><h4 id="3-2-运行"><a href="#3-2-运行" class="headerlink" title="3.2 运行"></a>3.2 运行</h4><pre><code>npm i   # 先安装依赖hexo s  # 再运行</code></pre><h3 id="3-3-访问查看效果"><a href="#3-3-访问查看效果" class="headerlink" title="3.3 访问查看效果"></a>3.3 访问查看效果</h3><pre><code>localhost:4000</code></pre><h3 id="4-部署"><a href="#4-部署" class="headerlink" title="4. 部署"></a>4. 部署</h3><h4 id="4-1-在Gitee上创建一个仓库"><a href="#4-1-在Gitee上创建一个仓库" class="headerlink" title="4.1 在Gitee上创建一个仓库"></a>4.1 在Gitee上创建一个仓库</h4><pre><code>仓库名称：myblog （名字随便自己取）是否开源：公开勾选：使用Readme文件初始化这个仓库</code></pre><h4 id="4-2-本地推送"><a href="#4-2-本地推送" class="headerlink" title="4.2 本地推送"></a>4.2 本地推送</h4><p>修改 _config.yml 中配置的网址配置</p><pre><code>url: https://gitee.com/yezhechenyang/myblogroot: /myblog/</code></pre><p>修改 _config.yml 中配置的部署仓库地址</p><pre><code>deploy:- type: git  repo:    gitee: https://gitee.com/yezhechenyang/myblog.git  branch: master</code></pre><p>去掉 baidu_url_submitter ，这个以后再琢磨</p><pre><code># - type: baidu_url_submitter</code></pre><p>运行部署命令</p><pre><code>hexo d</code></pre><h4 id="4-3-在Gitee上启动Gitee-Pages服务"><a href="#4-3-在Gitee上启动Gitee-Pages服务" class="headerlink" title="4.3 在Gitee上启动Gitee Pages服务"></a>4.3 在Gitee上启动Gitee Pages服务</h4><pre><code>打开 myblog 仓库；选择 服务 -- Gitee Pages；勾选 强制 HTTPS ；点击启动。</code></pre><h4 id="4-4-访问看看效果"><a href="#4-4-访问看看效果" class="headerlink" title="4.4 访问看看效果"></a>4.4 访问看看效果</h4><pre><code>https://yezhechenyang.gitee.io/myblog</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建与配置 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gitee </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2020/07/04/hello-world/"/>
       <url>/2020/07/04/hello-world/</url>
@@ -22,9 +51,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> Github </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> Github </tag>
             
         </tags>
       
