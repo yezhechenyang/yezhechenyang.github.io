@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-05T03:02:18.914Z</updated>
+  <updated>2020-07-07T08:57:56.786Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Chrome扩展开发】去贴吧广告</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/07/chrome-kuo-zhan-kai-fa-qu-tie-ba-guang-gao/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/07/chrome-kuo-zhan-kai-fa-qu-tie-ba-guang-gao/</id>
+    <published>2020-07-07T08:54:00.000Z</published>
+    <updated>2020-07-07T08:57:56.786Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-本地创建插件目录和文件&quot;&gt;&lt;a href=&quot;#1-本地创建插件目录和文件&quot; class=&quot;headerlink&quot; title=&quot;1. 本地创建插件目录和文件&quot;&gt;&lt;/a&gt;1. 本地创建插件目录和文件&lt;/h3&gt;&lt;h3 id=&quot;1-1-创建目录&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Chrome扩展开发" scheme="https://yezhechenyang.gitee.io/categories/Chrome%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Chrome扩展" scheme="https://yezhechenyang.gitee.io/tags/Chrome%E6%89%A9%E5%B1%95/"/>
+    
+      <category term="贴吧去广告" scheme="https://yezhechenyang.gitee.io/tags/%E8%B4%B4%E5%90%A7%E5%8E%BB%E5%B9%BF%E5%91%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>【Hexo】博客搭建</title>

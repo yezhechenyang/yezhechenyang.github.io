@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>【Chrome扩展开发】去贴吧广告</title>
+      <link href="/2020/07/07/chrome-kuo-zhan-kai-fa-qu-tie-ba-guang-gao/"/>
+      <url>/2020/07/07/chrome-kuo-zhan-kai-fa-qu-tie-ba-guang-gao/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-本地创建插件目录和文件"><a href="#1-本地创建插件目录和文件" class="headerlink" title="1. 本地创建插件目录和文件"></a>1. 本地创建插件目录和文件</h3><h3 id="1-1-创建目录"><a href="#1-1-创建目录" class="headerlink" title="1.1 创建目录"></a>1.1 创建目录</h3><pre><code>D:\CodeTest\BrowserExtension\RemoveAd</code></pre><h3 id="1-2-创建文件"><a href="#1-2-创建文件" class="headerlink" title="1.2 创建文件"></a>1.2 创建文件</h3><blockquote><p>“D:\CodeTest\BrowserExtension\RemoveAd\manifest.json”</p></blockquote><pre><code>{    "manifest_version": 2,    "name": "自定义去广告",    "description": "学习Chrome扩展开发，去广告实践！",    "version": "0.0.1",    // 需要直接注入页面的JS    "content_scripts":     [        {            "matches": ["https://tieba.baidu.com/*"],            // 多个JS按顺序注入            "js": ["tieba-remove-ad.js"],            // 代码注入的时间，可选值： "document_start", "document_end", or "document_idle"，最后一个表示页面空闲时，默认document_idle            "run_at": "document_idle"        }    ]}</code></pre><blockquote><p>“D:\CodeTest\BrowserExtension\RemoveAd\tieba-remove-ad.js”</p></blockquote><pre><code>//判断对象是否存在指定css样式的classfunction hasClass(obj, cls) {    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));}//给对象添加css样式，或者获取对象的css样式function css(obj, attr, value) {    switch (arguments.length) {        case 2:            //读取属性值            return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, null)[attr];            break;        case 3:            //设置属性            obj.style[attr] = value;            break;        default:            return "";    }}//帖子容器ulvar ulItem = document.getElementById('thread_list');//帖子列表livar liArr = ulItem.children;//是否为置顶帖子和普通帖子var flag = false;for(var i = 0; i &lt; liArr.length; i++){    flag = hasClass(liArr[i], 'thread_top_list_folder'); //置顶帖子    flag = flag || hasClass(liArr[i], 'j_thread_list'); //普通帖子    if(flag){        continue;    }else{  // 其他视为广告，隐藏之        css(liArr[i], 'display', 'none');    }}</code></pre><h3 id="2-将插件载入Chrome"><a href="#2-将插件载入Chrome" class="headerlink" title="2. 将插件载入Chrome"></a>2. 将插件载入Chrome</h3><p>打开Chrome，地址栏输入</p><pre><code>chrome://extensions/</code></pre><p>右上角点开开发者模式，会弹出“加载已解压的扩展程序”、“打包扩展程序”等按钮。</p><p>点击“加载已解压的扩展程序”按钮，选择“RemoveAd”文件夹。</p><p>下方会出现一个自己开发的插件卡片。</p><p>卡片包含插件的名称、描述信息。<br>还生成一个唯一的ID。<br>最下面一排是详细信息文字按钮、删除文字按钮、刷新图标按钮以及开启与关闭图标按钮。</p><p>修改了js，可以点击刷新按钮生效。</p><p>开启与关闭图标按钮，对比使用插件前后的效果。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Chrome扩展开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chrome扩展 </tag>
+            
+            <tag> 贴吧去广告 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Hexo】博客搭建</title>
       <link href="/2020/07/05/hexo-bo-ke-da-jian/"/>
       <url>/2020/07/05/hexo-bo-ke-da-jian/</url>
