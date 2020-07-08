@@ -578,7 +578,7 @@ header .go-back i {
 }
 
 .index-card {
-    margin-top: -50px;
+    /* margin-top: -50px; */ /*叶遮沉阳 modify 2020/07/08 轮播图底部不显示白色卡片背景*/
     padding-top: 20px;
 }
 
