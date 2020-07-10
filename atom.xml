@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-07T08:57:56.786Z</updated>
+  <updated>2020-07-10T03:17:17.206Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring】概述</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/10/spring-gai-shu/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/10/spring-gai-shu/</id>
+    <published>2020-07-10T01:15:00.000Z</published>
+    <updated>2020-07-10T03:17:17.206Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-Spring介绍&quot;&gt;&lt;a href=&quot;#1-Spring介绍&quot; class=&quot;headerlink&quot; title=&quot;1. Spring介绍&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
+    
+    
+      <category term="Spring" scheme="https://yezhechenyang.gitee.io/tags/Spring/"/>
+    
+      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Spring Cloud" scheme="https://yezhechenyang.gitee.io/tags/Spring-Cloud/"/>
+    
+  </entry>
   
   <entry>
     <title>【Chrome扩展开发】去贴吧广告</title>
