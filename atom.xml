@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-10T04:30:31.355Z</updated>
+  <updated>2020-07-10T23:54:45.896Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yezhechenyang.gitee.io/2020/07/10/spring-gai-shu/"/>
     <id>https://yezhechenyang.gitee.io/2020/07/10/spring-gai-shu/</id>
     <published>2020-07-10T01:15:00.000Z</published>
-    <updated>2020-07-10T04:30:31.355Z</updated>
+    <updated>2020-07-10T23:54:45.896Z</updated>
     
     <summary type="html">
     
@@ -100,7 +100,41 @@
     
       <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
     
+      <category term="博客" scheme="https://yezhechenyang.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
       <category term="Gitee" scheme="https://yezhechenyang.gitee.io/tags/Gitee/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/04/hello-world/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</id>
+    <published>2020-07-04T01:45:03.000Z</published>
+    <updated>2020-07-10T04:40:26.122Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Hello World!&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src)
+        
+      
+    
+    </summary>
+    
+      <category term="博客搭建与配置" scheme="https://yezhechenyang.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
+    
+      <category term="Github" scheme="https://yezhechenyang.gitee.io/tags/Github/"/>
     
       <category term="博客" scheme="https://yezhechenyang.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
