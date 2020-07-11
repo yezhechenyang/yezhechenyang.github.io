@@ -738,6 +738,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 </style>
 
+<script>
+    function showImg(url) {
+        let frameid = 'frameimg'+Math.random();
+        window.img = '<img id="img" src=\'' + url + '?' + Math.random() + '\' /><script>window.onload = function() { parent.document.getElementById(\'' + frameid + '\').height = document.getElementById(\'img\').height+\'px\'; }<' + '/script>';
+        document.write('<iframe id="' + frameid + '" src="javascript:parent.img;" frameBorder="0" scrolling="no" width="100%"></iframe>');
+    }
+</script>
+
 <main class="content">
     <div class="container friends-container">
         <article id="friends-link">
@@ -750,7 +758,13 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="card frind-card1">
                         <div class="frind-ship">
                             <div class="title">
-                                <img src="https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io@master/medias/avatar.jpg" alt="img">
+                                <!--<img src="https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io@master/medias/avatar.jpg" alt="img">-->
+
+                                <script>
+                                        window.img0 = '<style>html,body{margin:0;padding:0;}</style><img style="border-radius: 50%;border-style: none;" width="100px" height="100px" src=\'' + "https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io@master/medias/avatar.jpg" + '?' + Math.random() + '\' />';
+                                        document.write('<iframe src="javascript:parent.img0;" frameBorder="0" scrolling="no" width="100px" height="100px"></iframe>');
+                                </script>
+
                                 <div>
                                     <h1 class="friend-name">Small-Rose</h1>
                                     <!-- 洪卫 shw2018 modify 2019.08.30 -->
@@ -773,7 +787,13 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="card frind-card2">
                         <div class="frind-ship">
                             <div class="title">
-                                <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/avatar.jpg" alt="img">
+                                <!--<img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/avatar.jpg" alt="img">-->
+
+                                <script>
+                                        window.img1 = '<style>html,body{margin:0;padding:0;}</style><img style="border-radius: 50%;border-style: none;" width="100px" height="100px" src=\'' + "https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/avatar.jpg" + '?' + Math.random() + '\' />';
+                                        document.write('<iframe src="javascript:parent.img1;" frameBorder="0" scrolling="no" width="100px" height="100px"></iframe>');
+                                </script>
+
                                 <div>
                                     <h1 class="friend-name">Sky03’s Blog</h1>
                                     <!-- 洪卫 shw2018 modify 2019.08.30 -->
@@ -783,6 +803,35 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                             </div>
                             <div class="friend-button">
                                 <a href="https://blog.sky03.cn/" target="_blank"
+                                    class="button button-glow button-rounded button-caution">
+                                    前去学习
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                    <div class="card frind-card3">
+                        <div class="frind-ship">
+                            <div class="title">
+                                <!--<img src="https://avatar.csdnimg.cn/F/4/7/2_u014248473.jpg" alt="img">-->
+
+                                <script>
+                                        window.img2 = '<style>html,body{margin:0;padding:0;}</style><img style="border-radius: 50%;border-style: none;" width="100px" height="100px" src=\'' + "https://avatar.csdnimg.cn/F/4/7/2_u014248473.jpg" + '?' + Math.random() + '\' />';
+                                        document.write('<iframe src="javascript:parent.img2;" frameBorder="0" scrolling="no" width="100px" height="100px"></iframe>');
+                                </script>
+
+                                <div>
+                                    <h1 class="friend-name">叶遮沉阳</h1>
+                                    <!-- 洪卫 shw2018 modify 2019.08.30 -->
+                                    <p class="friend-introduction">以Java为切入口，进入IT大世界！</p>
+                                    <!-- <p>以Java为切入口，进入IT大世界！</p> -->
+                                </div>
+                            </div>
+                            <div class="friend-button">
+                                <a href="https://blog.csdn.net/u014248473" target="_blank"
                                     class="button button-glow button-rounded button-caution">
                                     前去学习
                                 </a>
