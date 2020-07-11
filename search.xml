@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Hexo】头像防盗链破解</title>
+      <link href="/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/"/>
+      <url>/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-情景描述"><a href="#1-情景描述" class="headerlink" title="1. 情景描述"></a>1. 情景描述</h3><pre><code>在友情链接页面添加友链时，发现头像显示不出来！！！按F12一查看，却发现：返回HTTP状态码403，x-tengine-error: denied by Referer ACL 。头像来源是CSDN，很明显，CSDN是添加了防盗链的。那么，该如何解决呢？</code></pre><h3 id="2-解决过程"><a href="#2-解决过程" class="headerlink" title="2. 解决过程"></a>2. 解决过程</h3><p>防盗链是通过 referrer 来控制的。</p><p>如果在浏览器新标签页直接访问头像是可以显示的，因为请求头的referrer为空。</p><p>而在你自己的网站直接通过img标签引入，请求时便会带上，比如</p><pre><code>referer: https://zhangxiaocai.cn/friends/</code></pre><p>csdn发现请求来源不是自己的网站，便会禁止访问。</p><p><strong>在网上找了两种方法，都不起作用</strong>，分别是：</p><ul><li>添加 meta 标签<pre><code>&lt;meta name="referrer" content="no-referrer"&gt;</code></pre></li><li>直接在img标签设置 referrer<pre><code>&lt;img referrer="no-referrer|origin|unsafe-url" src="{{item.src}}"/&gt;</code></pre></li></ul><p>最后找到一种解决方案，虽然麻烦一点，但效果不错。</p><h3 id="3-解决方案"><a href="#3-解决方案" class="headerlink" title="3. 解决方案"></a>3. 解决方案</h3><p>通过 Window 对象与 iframe 的配合，加载防盗链图片。</p><pre><code>&lt;!--&lt;img src="&lt;%- friend.avatar %&gt;" alt="img"&gt;--&gt;&lt;script&gt;        window.img&lt;%- i %&gt; = '&lt;style&gt;html,body{margin:0;padding:0;}&lt;/style&gt;&lt;img style="border-radius: 50%;border-style: none;" width="100px" height="100px" src=\'' + "&lt;%- friend.avatar %&gt;" + '?' + Math.random() + '\' /&gt;';        document.write('&lt;iframe src="javascript:parent.img&lt;%- i %&gt;;" frameBorder="0" scrolling="no" width="100px" height="100px"&gt;&lt;/iframe&gt;');&lt;/script&gt;</code></pre><p>a. 将 img 挂在到Window对象中；</p><pre><code>Window.自定义变量 = img 头像内容</code></pre><p>b. 然后创建 iframe，由iframe去获取</p><pre><code>&lt;iframe src="javascript:parent.自定义变量"&gt;&lt;/iframe&gt;</code></pre><p>其中 parent 指的就是 Window 对象。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Spring】概述</title>
       <link href="/2020/07/10/spring-gai-shu/"/>
       <url>/2020/07/10/spring-gai-shu/</url>
@@ -71,7 +96,7 @@
       
       <categories>
           
-          <category> 博客搭建与配置 </category>
+          <category> Hexo </category>
           
       </categories>
       
@@ -79,10 +104,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-            <tag> Gitee </tag>
-            
-            <tag> 博客 </tag>
             
         </tags>
       
@@ -100,7 +121,7 @@
       
       <categories>
           
-          <category> 博客搭建与配置 </category>
+          <category> Hexo </category>
           
       </categories>
       
@@ -109,9 +130,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> 博客 </tag>
-            
             <tag> Github </tag>
+            
+            <tag> 博客 </tag>
             
         </tags>
       
