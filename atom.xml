@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-11T11:13:30.276Z</updated>
+  <updated>2020-07-13T00:54:42.938Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Framework】什么是IoC？</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/13/spring-framework-shi-me-shi-ioc/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/13/spring-framework-shi-me-shi-ioc/</id>
+    <published>2020-07-13T00:42:26.000Z</published>
+    <updated>2020-07-13T00:54:42.938Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;英文全称：Inversion of Control&lt;br&gt;中文翻译：控制反转  &lt;/p&gt;
+&lt;h3 id=&quot;1-定义&quot;&gt;&lt;a href=&quot;#1-定义&quot; class=&quot;headerlink&quot; title=&quot;1. 定义&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
+    
+    
+      <category term="IoC" scheme="https://yezhechenyang.gitee.io/tags/IoC/"/>
+    
+      <category term="DI" scheme="https://yezhechenyang.gitee.io/tags/DI/"/>
+    
+      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
+    
+  </entry>
   
   <entry>
     <title>【Hexo】头像防盗链破解</title>
@@ -64,9 +95,9 @@
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
     
     
-      <category term="Spring" scheme="https://yezhechenyang.gitee.io/tags/Spring/"/>
-    
       <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
+    
+      <category term="Spring" scheme="https://yezhechenyang.gitee.io/tags/Spring/"/>
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
@@ -133,7 +164,7 @@
     <link href="https://yezhechenyang.gitee.io/2020/07/04/hello-world/"/>
     <id>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</id>
     <published>2020-07-04T01:45:03.000Z</published>
-    <updated>2020-07-11T11:11:18.599Z</updated>
+    <updated>2020-07-12T00:44:55.352Z</updated>
     
     <summary type="html">
     

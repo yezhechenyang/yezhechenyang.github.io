@@ -6,14 +6,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Framework】什么是IoC？, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="Hello World!
-
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.">
+    <meta name="description" content="英文全称：Inversion of Control中文翻译：控制反转  
+1. 定义IoC是面向对象的一种思想，意在控制对象获取依赖对象的方式，由原来在对象中通过硬编码获取依赖对象，转变成通过第三方（IoC容器）向对象推送依赖对象。
+2. ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | 叶遮沉阳</title>
+    <title>【Spring Framework】什么是IoC？ | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -536,13 +534,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        【Spring Framework】什么是IoC？
                     </div>
                 </div>
             </div>
@@ -654,16 +652,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/" target="_blank">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/IoC/" target="_blank">
+                                <span class="chip bg-color">IoC</span>
                             </a>
                         
-                            <a href="/tags/Github/" target="_blank">
-                                <span class="chip bg-color">Github</span>
+                            <a href="/tags/DI/" target="_blank">
+                                <span class="chip bg-color">DI</span>
                             </a>
                         
-                            <a href="/tags/博客/" target="_blank">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/Spring-Framework/" target="_blank">
+                                <span class="chip bg-color">Spring Framework</span>
                             </a>
                         
                     </div>
@@ -674,8 +672,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                Hexo
+                            <a href="/categories/Spring/" class="post-category" target="_blank">
+                                Spring
                             </a>
                         
                     </div>
@@ -686,7 +684,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-04
+                    2020-07-13
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -700,14 +698,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        54
+                        643
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -724,7 +722,33 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Hello World!</p>
+                <p>英文全称：Inversion of Control<br>中文翻译：控制反转  </p>
+<h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h3><p>IoC是面向对象的一种思想，意在<strong>控制对象获取依赖对象的方式</strong>，由原来在对象中通过硬编码获取依赖对象，转变成通过第三方（IoC容器）向对象推送依赖对象。</p>
+<h3 id="2-对象与依赖对象的关系"><a href="#2-对象与依赖对象的关系" class="headerlink" title="2. 对象与依赖对象的关系"></a>2. 对象与依赖对象的关系</h3><p>在面向对象的世界中，需要多个对象共同协作完成业务功能实现。</p>
+<p>而多个对象的共同协作便产生了对象与依赖对象的关系。</p>
+<p>比如A对象需要用到B对象完成某一功能，那么需要在A对象中创建一个B对象。如此一来，A对象对B对象产生了依赖，对于A对象来说，B对象便是它的依赖对象。</p>
+<h3 id="3-IoC的实现方式"><a href="#3-IoC的实现方式" class="headerlink" title="3. IoC的实现方式"></a>3. IoC的实现方式</h3><h4 id="3-1-依赖注入（DI）"><a href="#3-1-依赖注入（DI）" class="headerlink" title="3.1 依赖注入（DI）"></a>3.1 依赖注入（DI）</h4><p>DI（Dependency Injection）是IoC的一种具体实现方式，Spring IoC容器便是通过这种方式实现控制反转。</p>
+<p><strong>DI的实现主要通过对象先在容器中注册（简单来说就是向容器打个招呼，需要哪些依赖对象），然后容器在程序运行期间将依赖对象注入给它。</strong></p>
+<p>Spring主要通过构造注入和设值注入两种方式实现。</p>
+<p>下面是两种注入方式的示例代码：</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.dao.HelloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- 设值注入 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iHello2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.service.HelloService2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- 构造注入 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iHello3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.service.HelloService3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>constructor-arg</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-依赖查找（DL）"><a href="#3-2-依赖查找（DL）" class="headerlink" title="3.2 依赖查找（DL）"></a>3.2 依赖查找（DL）</h4><p>DL（Dependency Lookup）是传统的IoC实现方式，EJB用的就是这种方式。</p>
+<p><strong>DL的实现方式是对象调用容器提供的API，主动查找自己需要的依赖对象。</strong></p>
+<h4 id="3-3-DI与DL的区别"><a href="#3-3-DI与DL的区别" class="headerlink" title="3.3 DI与DL的区别"></a>3.3 DI与DL的区别</h4><h5 id="3-3-1-被动与主动"><a href="#3-3-1-被动与主动" class="headerlink" title="3.3.1 被动与主动"></a>3.3.1 被动与主动</h5><p>DI是被动注入依赖对象，DL是主动查找依赖对象。</p>
+<h5 id="3-3-2-非侵入式与侵入式"><a href="#3-3-2-非侵入式与侵入式" class="headerlink" title="3.3.2 非侵入式与侵入式"></a>3.3.2 非侵入式与侵入式</h5><p>DI是非侵入式的，也就是说容器可以随便更改，而不需要更改对象中的代码；</p>
+<p>DL则是侵入式的，因为有调用容器提供的API，若更改容器，则需要修改对象中的代码；</p>
+<hr>
+<p><strong>IoC的本质：是将依赖对象的控制权交给了容器。</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -769,7 +793,7 @@
                     </span>
                     <a href="https://yezhechenyang.gitee.io" class="b-link-green">叶遮沉阳</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/07/04/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2020/07/13/spring-framework-shi-me-shi-ioc/" class="b-link-green">【Spring Framework】什么是IoC？</a>
                 </p>
             </div>
 
@@ -1089,46 +1113,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/05/hexo-bo-ke-da-jian/">
+                <a href="/2020/07/13/spring-framework-shi-me-shi-ioc/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Hexo】博客搭建">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【Spring Framework】什么是IoC？">
                         
-                        <span class="card-title">【Hexo】博客搭建</span>
+                        <span class="card-title">【Spring Framework】什么是IoC？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用 hexo-blog-fly 模板快速搭建一个博客，并托管至 Gitee 。
+                            理解IoC的概念，为了更好的学习Spring IoC容器！
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/Spring/" class="post-category" target="_blank">
+                                    Spring
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/IoC/" target="_blank">
+                        <span class="chip bg-color">IoC</span>
+                    </a>
+                    
+                    <a href="/tags/DI/" target="_blank">
+                        <span class="chip bg-color">DI</span>
+                    </a>
+                    
+                    <a href="/tags/Spring-Framework/" target="_blank">
+                        <span class="chip bg-color">Spring Framework</span>
                     </a>
                     
                 </div>
@@ -1139,27 +1173,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/04/hello-world/">
+                <a href="/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【Hexo】头像防盗链破解">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">【Hexo】头像防盗链破解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            开战第一个博客，Hello World!
+                            破解防盗链，加载CSDN头像链接！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-11
                             </span>
                         <span class="publish-author">
                             
@@ -1173,20 +1207,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Hexo/" target="_blank">
                         <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Github/" target="_blank">
-                        <span class="chip bg-color">Github</span>
-                    </a>
-                    
-                    <a href="/tags/博客/" target="_blank">
-                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
