@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>【Hexo】PicGo+Gitee搭建个人图床</title>
+      <link href="/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/"/>
+      <url>/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-摘要"><a href="#1-摘要" class="headerlink" title="1. 摘要"></a>1. 摘要</h3><ul><li>使用PicGo+Gitee搭建个人图床；</li><li>支持本地上传图片后，可直接复制Markdown格式链接；</li></ul><h3 id="2-下载PicGo"><a href="#2-下载PicGo" class="headerlink" title="2. 下载PicGo"></a>2. 下载PicGo</h3><p>给个蓝奏云的链接：<a href="https://www.lanzous.com/ia49ojg" target="_blank" rel="noopener">PicGo-Setup-2.2.2.exe</a></p><h3 id="3-下载Gitee插件"><a href="#3-下载Gitee插件" class="headerlink" title="3. 下载Gitee插件"></a>3. 下载Gitee插件</h3><ul><li>打开PicGo，左侧菜单栏选择插件设置；</li><li>搜索框输入“gitee”，选择一个点击安装即可。<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/PicGo%E5%AE%89%E8%A3%85Gitee%E6%8F%92%E4%BB%B6.png" alt=""></li></ul><h3 id="4-Gitee新建个人图床仓库"><a href="#4-Gitee新建个人图床仓库" class="headerlink" title="4. Gitee新建个人图床仓库"></a>4. Gitee新建个人图床仓库</h3><ul><li>新建仓库时，是否开源选择公开；</li><li>在服务里打开Gitee Page服务；</li></ul><h3 id="5-Gitee创建私人令牌"><a href="#5-Gitee创建私人令牌" class="headerlink" title="5. Gitee创建私人令牌"></a>5. Gitee创建私人令牌</h3><ul><li>在设置里选择私人令牌，再点击生成新令牌；</li><li>选择权限时，点击全选取消全选，吼吼选择projects即可；</li><li>输入密码后，会得到一个token，将它复制下来；</li></ul><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/Gitee%E7%94%9F%E6%88%90%E7%A7%81%E4%BA%BA%E4%BB%A4%E7%89%8C%E9%80%89%E6%8B%A9%E6%9D%83%E9%99%90.png" alt=""></p><h3 id="6-PicGo中配置Gitee图床"><a href="#6-PicGo中配置Gitee图床" class="headerlink" title="6. PicGo中配置Gitee图床"></a>6. PicGo中配置Gitee图床</h3><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/PicGo%E4%B8%ADGitee%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE.png" alt=""></p><h3 id="7-PicGo的使用"><a href="#7-PicGo的使用" class="headerlink" title="7. PicGo的使用"></a>7. PicGo的使用</h3><ul><li>打开PicGo，选择上传区；</li><li>将图片直接拖拽至窗口，上传成功后链接直接在粘贴板中；</li><li>然后在博客中粘贴图片链接；</li><li>也可在相册中复制历史上传图片；</li></ul><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/PicGo%E5%9C%A8%E7%9B%B8%E5%86%8C%E4%B8%AD%E5%A4%8D%E5%88%B6%E9%93%BE%E6%8E%A5.png" alt=""></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> PicGo </tag>
+            
+            <tag> Gitee </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Spring Framework】什么是IoC？</title>
       <link href="/2020/07/13/spring-framework-shi-me-shi-ioc/"/>
       <url>/2020/07/13/spring-framework-shi-me-shi-ioc/</url>

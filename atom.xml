@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-13T00:54:42.938Z</updated>
+  <updated>2020-07-14T09:52:17.366Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Hexo】PicGo+Gitee搭建个人图床</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/</id>
+    <published>2020-07-14T09:51:16.000Z</published>
+    <updated>2020-07-14T09:52:17.366Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-摘要&quot;&gt;&lt;a href=&quot;#1-摘要&quot; class=&quot;headerlink&quot; title=&quot;1. 摘要&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
+    
+      <category term="PicGo" scheme="https://yezhechenyang.gitee.io/tags/PicGo/"/>
+    
+      <category term="Gitee" scheme="https://yezhechenyang.gitee.io/tags/Gitee/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Framework】什么是IoC？</title>
