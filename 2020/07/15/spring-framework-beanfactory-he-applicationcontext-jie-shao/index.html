@@ -6,11 +6,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Chrome扩展开发】去贴吧广告, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Framework】BeanFactory和ApplicationContext介绍, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 本地创建插件目录和文件1.1 创建目录D:\CodeTest\BrowserExtension\RemoveAd1.2 创建文件
-“D:\CodeTest\BrowserExtension\RemoveAd\manifest.json">
+    <meta name="description" content="1. BeanFactory的定义BeanFactory是Spring核心底层接口，为IoC容器管理Bean提供基础支持。
+2. ApplicationContext的定义ApplicationContext是BeanFactory的子类，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Chrome扩展开发】去贴吧广告 | 叶遮沉阳</title>
+    <title>【Spring Framework】BeanFactory和ApplicationContext介绍 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -533,13 +533,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Chrome扩展开发】去贴吧广告
+                        【Spring Framework】BeanFactory和ApplicationContext介绍
                     </div>
                 </div>
             </div>
@@ -651,12 +651,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Chrome扩展/" target="_blank">
-                                <span class="chip bg-color">Chrome扩展</span>
+                            <a href="/tags/Spring-Framework/" target="_blank">
+                                <span class="chip bg-color">Spring Framework</span>
                             </a>
                         
-                            <a href="/tags/贴吧去广告/" target="_blank">
-                                <span class="chip bg-color">贴吧去广告</span>
+                            <a href="/tags/BeanFactory/" target="_blank">
+                                <span class="chip bg-color">BeanFactory</span>
+                            </a>
+                        
+                            <a href="/tags/ApplicationContext/" target="_blank">
+                                <span class="chip bg-color">ApplicationContext</span>
                             </a>
                         
                     </div>
@@ -667,8 +671,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Chrome扩展开发/" class="post-category" target="_blank">
-                                Chrome扩展开发
+                            <a href="/categories/Spring/" class="post-category" target="_blank">
+                                Spring
                             </a>
                         
                     </div>
@@ -679,7 +683,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-07
+                    2020-07-15
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -693,7 +697,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        519
+                        504
                     </div>
                     
 
@@ -717,75 +721,44 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-本地创建插件目录和文件"><a href="#1-本地创建插件目录和文件" class="headerlink" title="1. 本地创建插件目录和文件"></a>1. 本地创建插件目录和文件</h3><h3 id="1-1-创建目录"><a href="#1-1-创建目录" class="headerlink" title="1.1 创建目录"></a>1.1 创建目录</h3><pre><code>D:\CodeTest\BrowserExtension\RemoveAd</code></pre><h3 id="1-2-创建文件"><a href="#1-2-创建文件" class="headerlink" title="1.2 创建文件"></a>1.2 创建文件</h3><blockquote>
-<p>“D:\CodeTest\BrowserExtension\RemoveAd\manifest.json”</p>
-</blockquote>
-<pre><code>{
-    "manifest_version": 2,
-    "name": "自定义去广告",
-    "description": "学习Chrome扩展开发，去广告实践！",
-    "version": "0.0.1",
-
-    // 需要直接注入页面的JS
-    "content_scripts": 
-    [
-        {
-            "matches": ["https://tieba.baidu.com/*"],
-            // 多个JS按顺序注入
-            "js": ["tieba-remove-ad.js"],
-            // 代码注入的时间，可选值： "document_start", "document_end", or "document_idle"，最后一个表示页面空闲时，默认document_idle
-            "run_at": "document_idle"
-        }
-    ]
-}</code></pre><blockquote>
-<p>“D:\CodeTest\BrowserExtension\RemoveAd\tieba-remove-ad.js”</p>
-</blockquote>
-<pre><code>//判断对象是否存在指定css样式的class
-function hasClass(obj, cls) {
-    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-}
-
-//给对象添加css样式，或者获取对象的css样式
-function css(obj, attr, value) {
-    switch (arguments.length) {
-        case 2:
-            //读取属性值
-            return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, null)[attr];
-            break;
-        case 3:
-            //设置属性
-            obj.style[attr] = value;
-            break;
-        default:
-            return "";
-    }
-}
-
-//帖子容器ul
-var ulItem = document.getElementById('thread_list');
-
-//帖子列表li
-var liArr = ulItem.children;
-
-//是否为置顶帖子和普通帖子
-var flag = false;
-
-for(var i = 0; i &lt; liArr.length; i++){
-    flag = hasClass(liArr[i], 'thread_top_list_folder'); //置顶帖子
-    flag = flag || hasClass(liArr[i], 'j_thread_list'); //普通帖子
-
-    if(flag){
-        continue;
-    }else{  // 其他视为广告，隐藏之
-        css(liArr[i], 'display', 'none');
-    }
-}</code></pre><h3 id="2-将插件载入Chrome"><a href="#2-将插件载入Chrome" class="headerlink" title="2. 将插件载入Chrome"></a>2. 将插件载入Chrome</h3><p>打开Chrome，地址栏输入</p>
-<pre><code>chrome://extensions/</code></pre><p>右上角点开开发者模式，会弹出“加载已解压的扩展程序”、“打包扩展程序”等按钮。</p>
-<p>点击“加载已解压的扩展程序”按钮，选择“RemoveAd”文件夹。</p>
-<p>下方会出现一个自己开发的插件卡片。</p>
-<p>卡片包含插件的名称、描述信息。<br>还生成一个唯一的ID。<br>最下面一排是详细信息文字按钮、删除文字按钮、刷新图标按钮以及开启与关闭图标按钮。</p>
-<p>修改了js，可以点击刷新按钮生效。</p>
-<p>开启与关闭图标按钮，对比使用插件前后的效果。</p>
+                <h3 id="1-BeanFactory的定义"><a href="#1-BeanFactory的定义" class="headerlink" title="1. BeanFactory的定义"></a>1. BeanFactory的定义</h3><p>BeanFactory是Spring核心底层接口，为IoC容器管理Bean提供基础支持。</p>
+<h3 id="2-ApplicationContext的定义"><a href="#2-ApplicationContext的定义" class="headerlink" title="2. ApplicationContext的定义"></a>2. ApplicationContext的定义</h3><p>ApplicationContext是BeanFactory的子类，不仅拥有BeanFactory中管理Bean的能力，还拥有一些高级特性（比如国际化、资源读取以及事件发布等待）。</p>
+<h3 id="3-BeanFactory和ApplicationContext的区别"><a href="#3-BeanFactory和ApplicationContext的区别" class="headerlink" title="3. BeanFactory和ApplicationContext的区别"></a>3. BeanFactory和ApplicationContext的区别</h3><ul>
+<li>实例化Bean的时间不同<ul>
+<li>BeanFactory在getBean()时，才会实例化；</li>
+<li>ApplicationContext则是在容器启动时就已经全部实例化；</li>
+</ul>
+</li>
+<li>使用场景不同<ul>
+<li>BeanFactory适合对资源要求比较高的场景，比如嵌入式开发；</li>
+<li>ApplicationContext则应用广泛，毕竟设备资源日渐丰富。在Web开发中尤其适合，将耗时的实例化全部放到系统启动期间，不仅提高系统运行期间的响应时间，更能在启动时检查是否存在实例化问题。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-BeanFactory的使用"><a href="#4-BeanFactory的使用" class="headerlink" title="4. BeanFactory的使用"></a>4. BeanFactory的使用</h3><pre class="line-numbers language-java"><code class="language-java">Resource resource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathResource</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+BeanFactory context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XmlBeanFactory</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="5-ApplicationContext的使用"><a href="#5-ApplicationContext的使用" class="headerlink" title="5. ApplicationContext的使用"></a>5. ApplicationContext的使用</h3><pre class="line-numbers language-java"><code class="language-java">ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"services.xml"</span><span class="token punctuation">,</span> <span class="token string">"daos.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+PetStoreService service <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"petStore"</span><span class="token punctuation">,</span> PetStoreService<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>String<span class="token operator">></span> userList <span class="token operator">=</span> service<span class="token punctuation">.</span><span class="token function">getUsernameList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-ApplicationContext的实现类"><a href="#6-ApplicationContext的实现类" class="headerlink" title="6. ApplicationContext的实现类"></a>6. ApplicationContext的实现类</h3><h4 id="6-1-ClassPathXmlApplicationContext"><a href="#6-1-ClassPathXmlApplicationContext" class="headerlink" title="6.1 ClassPathXmlApplicationContext"></a>6.1 ClassPathXmlApplicationContext</h4><ol>
+<li>classpath:前缀是不需要的,默认就是指项目的classpath路径下面;</li>
+<li>如果要使用绝对路径,需要加上file:前缀表示这是绝对路径;<pre class="line-numbers language-java"><code class="language-java">ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"classpath:applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"file:D:\\idea_workspace\\spring-test\\src\\applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"file:D:/idea_workspace/spring-test/src/applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-2-FileSystemXmlApplicationContext"><a href="#6-2-FileSystemXmlApplicationContext" class="headerlink" title="6.2 FileSystemXmlApplicationContext"></a>6.2 FileSystemXmlApplicationContext</h4></li>
+<li>没有盘符的是项目工作路径,即项目的根目录;</li>
+<li>有盘符表示的是文件绝对路径.</li>
+<li>如果要使用classpath路径,需要前缀classpath:<pre class="line-numbers language-java"><code class="language-java">ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"src/applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"webRoot/WEB-INF/applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"classpath:applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"file:D:/idea_workspace/spring-test/src/applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"D:/idea_workspace/spring-test/src/applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-3-GenericApplicationContext"><a href="#6-3-GenericApplicationContext" class="headerlink" title="6.3 GenericApplicationContext"></a>6.3 GenericApplicationContext</h4></li>
+</ol>
+<pre class="line-numbers language-java"><code class="language-java">GenericApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericApplicationContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">XmlBeanDefinitionReader</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">loadBeanDefinitions</span><span class="token punctuation">(</span><span class="token string">"services.xml"</span><span class="token punctuation">,</span> <span class="token string">"daos.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+context<span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -830,7 +803,7 @@ for(var i = 0; i &lt; liArr.length; i++){
                     </span>
                     <a href="https://yezhechenyang.gitee.io" class="b-link-green">叶遮沉阳</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/07/07/chrome-kuo-zhan-kai-fa-qu-tie-ba-guang-gao/" class="b-link-green">【Chrome扩展开发】去贴吧广告</a>
+                    <a href="/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/" class="b-link-green">【Spring Framework】BeanFactory和ApplicationContext介绍</a>
                 </p>
             </div>
 
@@ -1150,29 +1123,30 @@ for(var i = 0; i &lt; liArr.length; i++){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/10/spring-gai-shu/">
+                <a href="/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【Spring】概述">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="【Spring Framework】BeanFactory和ApplicationContext介绍">
                         
-                        <span class="card-title">【Spring】概述</span>
+                        <span class="card-title">【Spring Framework】BeanFactory和ApplicationContext介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对于Spring的了解，进行简单的描述！
+                            比较BeanFactory和ApplicationContext的区别
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1185,6 +1159,7 @@ for(var i = 0; i &lt; liArr.length; i++){
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1192,16 +1167,12 @@ for(var i = 0; i &lt; liArr.length; i++){
                         <span class="chip bg-color">Spring Framework</span>
                     </a>
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/BeanFactory/" target="_blank">
+                        <span class="chip bg-color">BeanFactory</span>
                     </a>
                     
-                    <a href="/tags/Spring-Boot/" target="_blank">
-                        <span class="chip bg-color">Spring Boot</span>
-                    </a>
-                    
-                    <a href="/tags/Spring-Cloud/" target="_blank">
-                        <span class="chip bg-color">Spring Cloud</span>
+                    <a href="/tags/ApplicationContext/" target="_blank">
+                        <span class="chip bg-color">ApplicationContext</span>
                     </a>
                     
                 </div>
@@ -1215,24 +1186,24 @@ for(var i = 0; i &lt; liArr.length; i++){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/05/hexo-bo-ke-da-jian/">
+                <a href="/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Hexo】博客搭建">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="【Hexo】PicGo+Gitee搭建个人图床">
                         
-                        <span class="card-title">【Hexo】博客搭建</span>
+                        <span class="card-title">【Hexo】PicGo+Gitee搭建个人图床</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用 hexo-blog-fly 模板快速搭建一个博客，并托管至 Gitee 。
+                            PicGo+Gitee搭建个人图床
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-14
                             </span>
                         <span class="publish-author">
                             
@@ -1251,6 +1222,14 @@ for(var i = 0; i &lt; liArr.length; i++){
                     
                     <a href="/tags/Hexo/" target="_blank">
                         <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/PicGo/" target="_blank">
+                        <span class="chip bg-color">PicGo</span>
+                    </a>
+                    
+                    <a href="/tags/Gitee/" target="_blank">
+                        <span class="chip bg-color">Gitee</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-14T09:52:17.366Z</updated>
+  <updated>2020-07-15T01:31:47.355Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Framework】BeanFactory和ApplicationContext介绍</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/</id>
+    <published>2020-07-15T01:27:54.000Z</published>
+    <updated>2020-07-15T01:31:47.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-BeanFactory的定义&quot;&gt;&lt;a href=&quot;#1-BeanFactory的定义&quot; class=&quot;headerlink&quot; title=&quot;1. BeanFactory的定义&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
+    
+    
+      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
+    
+      <category term="BeanFactory" scheme="https://yezhechenyang.gitee.io/tags/BeanFactory/"/>
+    
+      <category term="ApplicationContext" scheme="https://yezhechenyang.gitee.io/tags/ApplicationContext/"/>
+    
+  </entry>
   
   <entry>
     <title>【Hexo】PicGo+Gitee搭建个人图床</title>
@@ -69,11 +99,11 @@
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
     
     
+      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
+    
       <category term="IoC" scheme="https://yezhechenyang.gitee.io/tags/IoC/"/>
     
       <category term="DI" scheme="https://yezhechenyang.gitee.io/tags/DI/"/>
-    
-      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
     
   </entry>
   
