@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-15T01:31:47.355Z</updated>
+  <updated>2020-07-16T13:22:11.002Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,164 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【bat脚本】【问题修复】此时不应有xxx</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/</id>
+    <published>2020-07-16T13:20:36.000Z</published>
+    <updated>2020-07-16T13:22:11.002Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-问题描述&quot;&gt;&lt;a href=&quot;#1-问题描述&quot; class=&quot;headerlink&quot; title=&quot;1. 问题描述&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【bat脚本】变量未正常输出问题分析</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/</id>
+    <published>2020-07-16T13:18:37.000Z</published>
+    <updated>2020-07-16T13:21:45.872Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-问题描述&quot;&gt;&lt;a href=&quot;#1-问题描述&quot; class=&quot;headerlink&quot; title=&quot;1. 问题描述&quot;&gt;&lt;/a&gt;1. 问题描述&lt;/h3&gt;&lt;p&gt;有这么一段简单的代码：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【bat脚本】向脚本传递参数</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/</id>
+    <published>2020-07-16T13:16:08.000Z</published>
+    <updated>2020-07-16T13:19:44.737Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-参数传入&quot;&gt;&lt;a href=&quot;#1-参数传入&quot; class=&quot;headerlink&quot; title=&quot;1. 参数传入&quot;&gt;&lt;/a&gt;1. 参数传入&lt;/h3&gt;&lt;p&gt;在运行脚本时，可以向脚本传递一些参数。比如：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【bat脚本】单行注释与多行注释</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/</id>
+    <published>2020-07-16T13:14:41.000Z</published>
+    <updated>2020-07-16T13:17:15.289Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-单行注释&quot;&gt;&lt;a href=&quot;#1-单行注释&quot; class=&quot;headerlink&quot; title=&quot;1. 单行注释&quot;&gt;&lt;/a&gt;1. 单行注释&lt;/h3&gt;&lt;h4 id=&quot;1-1-rem&quot;&gt;&lt;a href=&quot;#1-1-rem&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【bat脚本】中文乱码</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-zhong-wen-luan-ma/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-zhong-wen-luan-ma/</id>
+    <published>2020-07-16T13:12:33.000Z</published>
+    <updated>2020-07-16T13:15:13.666Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-原因描述&quot;&gt;&lt;a href=&quot;#1-原因描述&quot; class=&quot;headerlink&quot; title=&quot;1. 原因描述&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【bat脚本】窗口标题命名</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/</id>
+    <published>2020-07-16T13:10:13.000Z</published>
+    <updated>2020-07-16T13:13:32.526Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;title 窗口标题名称&lt;span aria-hidden=&quot;true&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Framework】BeanFactory和ApplicationContext介绍</title>
@@ -99,11 +257,11 @@
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
     
     
-      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
-    
       <category term="IoC" scheme="https://yezhechenyang.gitee.io/tags/IoC/"/>
     
       <category term="DI" scheme="https://yezhechenyang.gitee.io/tags/DI/"/>
+    
+      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
     
   </entry>
   

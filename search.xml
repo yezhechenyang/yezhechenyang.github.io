@@ -4,6 +4,156 @@
   
     
     <entry>
+      <title>【bat脚本】【问题修复】此时不应有xxx</title>
+      <link href="/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/"/>
+      <url>/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>有这么一段代码，遍历当前目录下的所有图片文件并打印。</p><p>然后，测试将每个文件路径赋值给新变量输出。</p><p>代码如下：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">for</span> /r %%i <span class="token keyword">in</span> <span class="token punctuation">(</span>*.jpg, *.png<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>    <span class="token keyword">echo</span> %%i    <span class="token keyword">set</span> str<span class="token operator">=</span>%%i    <span class="token keyword">echo</span> %str%<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>但是，却未能正常输出，输出结果如下：</p><pre class="line-numbers language-bash"><code class="language-bash">此时不应有 .jpg。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>分析问题，是.jpg文件含有圆括号，那么需要双引号将变量括起来。</p><h3 id="2-解决问题"><a href="#2-解决问题" class="headerlink" title="2. 解决问题"></a>2. 解决问题</h3><p>修改代码如下：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">for</span> /r %%i <span class="token keyword">in</span> <span class="token punctuation">(</span>*.jpg, *.png<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>    <span class="token keyword">echo</span> %%i    <span class="token keyword">set</span> str<span class="token operator">=</span>%%i    <span class="token keyword">echo</span> <span class="token string">"%str%"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>输出结果如下：</p><pre class="line-numbers language-bash"><code class="language-bash">D:\CodeTest\BatTest\imagebed\blog\PicGo安装Gitee插件.png<span class="token string">"D:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (5).jpg"</span>D:\CodeTest\BatTest\imagebed\blog\spring-overview.png<span class="token string">"D:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (5).jpg"</span>D:\CodeTest\BatTest\imagebed\wallpaper\wallpaper <span class="token punctuation">(</span>3<span class="token punctuation">)</span>.jpg<span class="token string">"D:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (5).jpg"</span>D:\CodeTest\BatTest\imagebed\wallpaper\wallpaper <span class="token punctuation">(</span>5<span class="token punctuation">)</span>.jpg<span class="token string">"D:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (5).jpg"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果是出来了，但是多了双引号，而且每次循环结果都一样。</p><p>再次修改代码如下：</p><pre class="line-numbers language-bash"><code class="language-bash">setlocal enabledelayedexpansion<span class="token keyword">for</span> /r %%i <span class="token keyword">in</span> <span class="token punctuation">(</span>*.jpg, *.png<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>    <span class="token keyword">echo</span> %%i    <span class="token keyword">set</span> str<span class="token operator">=</span>%%i    <span class="token keyword">echo</span> <span class="token operator">!</span>str<span class="token operator">!</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这样，输出结果就正常了。</p><pre><code>D:\CodeTest\BatTest\imagebed\blog\PicGo安装Gitee插件.pngD:\CodeTest\BatTest\imagebed\blog\PicGo安装Gitee插件.pngD:\CodeTest\BatTest\imagebed\blog\spring-overview.pngD:\CodeTest\BatTest\imagebed\blog\spring-overview.pngD:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (3).jpgD:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (3).jpgD:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (5).jpgD:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (5).jpg</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> bat脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bat脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【bat脚本】变量未正常输出问题分析</title>
+      <link href="/2020/07/16/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/"/>
+      <url>/2020/07/16/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>有这么一段简单的代码：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> basePath <span class="token operator">=</span> %CD%\<span class="token keyword">echo</span> %basePath%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>结果却输出：</p><pre class="line-numbers language-bash"><code class="language-bash">ECHO 处于关闭状态。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>纠结了好长一段时间，原来是“=”左右的空格问题。</p><h3 id="2-解决问题"><a href="#2-解决问题" class="headerlink" title="2. 解决问题"></a>2. 解决问题</h3><p><strong>去掉“=”左右的空格</strong>，代码如下：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> basePath<span class="token operator">=</span>%CD%\<span class="token keyword">echo</span> %basePath%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>运行后，便正常输出了。</p><pre class="line-numbers language-bash"><code class="language-bash">D:\CodeTest\BatTest\imagebed\<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> bat脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bat脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【bat脚本】向脚本传递参数</title>
+      <link href="/2020/07/16/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/"/>
+      <url>/2020/07/16/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-参数传入"><a href="#1-参数传入" class="headerlink" title="1. 参数传入"></a>1. 参数传入</h3><p>在运行脚本时，可以向脚本传递一些参数。比如：</p><pre class="line-numbers language-shell"><code class="language-shell">D:\CodeTest\BatTest\imagebed>auto.bat 111 aaa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>“win+r”打开cmd，进入D:\CodeTest\BatTest\imagebed目录。</p><pre class="line-numbers language-shell"><code class="language-shell">cd /d D:\CodeTest\BatTest\imagebed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>因为该目录下，我只放了一个脚本，所以输入“a”，再按tab键，“auto.bat”就自动出来了。</p><p>后面再跟两个参数，用空格分隔。</p><p>“.bat”后缀不是必须的，比如：</p><pre class="line-numbers language-shell"><code class="language-shell">D:\CodeTest\BatTest\imagebed>auto 111 aaa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="2-参数接收"><a href="#2-参数接收" class="headerlink" title="2. 参数接收"></a>2. 参数接收</h3><p>下面看看如何在bat脚本中接受参数。</p><pre class="line-numbers language-shell"><code class="language-shell">@echo offecho param0=%0echo param0=%1echo param0=%2pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>%0 是脚本的名称，也就是上面执行命令的第一个单词，如果是“auto.bat”，那么%0就是“auto.bat”。如果是“auto”，那么%0就是“auto”。</p><p>允许使用 %1 ~ %9 ，接受第1至第9个参数。</p><p>也就是说，“%”后面只能跟一个数字，后面的数字只会当成字符串。</p><p>比如，“%10” ，结果只会是“%1”的参数值，后面再加个0 。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> bat脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bat脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【bat脚本】单行注释与多行注释</title>
+      <link href="/2020/07/16/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/"/>
+      <url>/2020/07/16/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-单行注释"><a href="#1-单行注释" class="headerlink" title="1. 单行注释"></a>1. 单行注释</h3><h4 id="1-1-rem"><a href="#1-1-rem" class="headerlink" title="1.1 rem"></a>1.1 rem</h4><pre class="line-numbers language-shell"><code class="language-shell">rem 注释内容<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="1-2"><a href="#1-2" class="headerlink" title="1.2 ::"></a>1.2 ::</h4><pre class="line-numbers language-shell"><code class="language-shell">:: 注释内容<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="2-多行注释"><a href="#2-多行注释" class="headerlink" title="2.多行注释"></a>2.多行注释</h3><pre class="line-numbers language-shell"><code class="language-shell">goto :标记注释内容1注释内容2注释内容3:标记<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="3-示例"><a href="#3-示例" class="headerlink" title="3. 示例"></a>3. 示例</h3><pre class="line-numbers language-shell"><code class="language-shell">rem 单行注释:: 1. 加载index_template.html和dir_template.html:: 2. 遍历目录，每个目录根据dir_template.html生成dir.html:: 3. 根据index_template.html和每个目录dir.html路径生成index.html:: 多行注释goto :commentfor /r %%i in (*.jpg, *.png) do (     echo %%~nxi    echo %%~dpi):comment:: 单行注释rem echo Hello World!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> bat脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bat脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【bat脚本】中文乱码</title>
+      <link href="/2020/07/16/bat-jiao-ben-zhong-wen-luan-ma/"/>
+      <url>/2020/07/16/bat-jiao-ben-zhong-wen-luan-ma/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-原因描述"><a href="#1-原因描述" class="headerlink" title="1. 原因描述"></a>1. 原因描述</h3><p>使用EditPlus描写脚本后，最后保存的文件编码格式为UTF-8。<br>然后双击运行bat脚本，中文直接显示乱码。</p><h3 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2. 解决办法"></a>2. 解决办法</h3><p>改变文件编码，将UTF-8转成ANSI。</p><h4 id="2-1-EditPlus"><a href="#2-1-EditPlus" class="headerlink" title="2.1 EditPlus"></a>2.1 EditPlus</h4><pre><code>Document -- File Encoding -- Convert Encoding... -- 选择编码 -- 确定</code></pre><h4 id="2-2-Notepad（记事本）"><a href="#2-2-Notepad（记事本）" class="headerlink" title="2.2 Notepad（记事本）"></a>2.2 Notepad（记事本）</h4><pre><code>文件 -- 另存为 -- 选择编码 -- 确定</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> bat脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bat脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【bat脚本】窗口标题命名</title>
+      <link href="/2020/07/16/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/"/>
+      <url>/2020/07/16/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-shell"><code class="language-shell">title 窗口标题名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class="line-numbers language-shell"><code class="language-shell">@echo offtitle 我是一个窗口标题pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> bat脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bat脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Spring Framework】BeanFactory和ApplicationContext介绍</title>
       <link href="/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/"/>
       <url>/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/</url>
@@ -78,11 +228,11 @@
       
         <tags>
             
-            <tag> Spring Framework </tag>
-            
             <tag> IoC </tag>
             
             <tag> DI </tag>
+            
+            <tag> Spring Framework </tag>
             
         </tags>
       
