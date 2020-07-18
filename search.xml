@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【bat脚本】字符串替换</title>
+      <link href="/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/"/>
+      <url>/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h3><pre class="line-numbers language-bash"><code class="language-bash">str:oldChar<span class="token operator">=</span>newChar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解释：将str中的oldChar替换成newChar。</p><h3 id="2-用法示例"><a href="#2-用法示例" class="headerlink" title="2. 用法示例"></a>2. 用法示例</h3><pre class="line-numbers language-bash"><code class="language-bash">@echo off<span class="token operator">&amp;</span>setlocal enabledelayedexpansionrem 将strA中的345a替换成000，并赋值给strB<span class="token keyword">set</span> strA<span class="token operator">=</span>12345abc<span class="token keyword">set</span> strB<span class="token operator">=</span><span class="token operator">!</span>strA:45a<span class="token operator">=</span>000<span class="token operator">!</span><span class="token keyword">echo</span> <span class="token operator">!</span>strB<span class="token operator">!</span>pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>result: 123000bc</p><h4 id="替换为空"><a href="#替换为空" class="headerlink" title="替换为空"></a>替换为空</h4><p>等号后面省略newChar就能替换为空。</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> strB<span class="token operator">=</span><span class="token operator">!</span>strA:45a<span class="token operator">=</span><span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>result: 123bc</p><h3 id="3-循环案例"><a href="#3-循环案例" class="headerlink" title="3. 循环案例"></a>3. 循环案例</h3><p>将所有文件路径中根目录路径替换为空，比如，<br>根目录：D:\CodeTest\BatTest\imagebed\<br>文件路径：D:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (3).jpg<br>替换后：wallpaper\wallpaper (3).jpg</p><p>代码如下：</p><pre class="line-numbers language-bash"><code class="language-bash">@echo off<span class="token operator">&amp;</span>setlocal enabledelayedexpansionrem %CD%获取当前路径，后面不自动带\，所以手动加个\<span class="token keyword">set</span> basePath<span class="token operator">=</span>%CD%\<span class="token keyword">echo</span> <span class="token operator">!</span>basePath<span class="token operator">!</span>rem /r表示递归的意思，子目录的文件也能遍历出来<span class="token keyword">for</span> /r  %%i <span class="token keyword">in</span> <span class="token punctuation">(</span>*.jpg, *.png<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>    <span class="token keyword">echo</span> %%i    <span class="token keyword">set</span> str<span class="token operator">=</span>%%i    rem 取basePath变量值时，千万别用双感叹号去取值，外层有了就别去嵌套，不然没好果子吃    <span class="token keyword">set</span> str<span class="token operator">=</span><span class="token operator">!</span>str:%basePath%<span class="token operator">=</span><span class="token operator">!</span>    rem 干脆把反斜杠也替换成斜杠得了    <span class="token keyword">set</span> str<span class="token operator">=</span><span class="token operator">!</span>str:\<span class="token operator">=</span>/<span class="token operator">!</span>    <span class="token keyword">echo</span> <span class="token operator">!</span>str<span class="token operator">!</span><span class="token punctuation">)</span>pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>result：</p><pre><code>D:\CodeTest\BatTest\imagebed\D:\CodeTest\BatTest\imagebed\blog\PicGo安装Gitee插件.pngblog/PicGo安装Gitee插件.pngD:\CodeTest\BatTest\imagebed\blog\spring-overview.pngblog/spring-overview.pngD:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (3).jpgwallpaper/wallpaper (3).jpgD:\CodeTest\BatTest\imagebed\wallpaper\wallpaper (5).jpgwallpaper/wallpaper (5).jpg请按任意键继续. . .</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> bat脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bat脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Spring Framework】Bean生命周期实验</title>
       <link href="/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/"/>
       <url>/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/</url>
