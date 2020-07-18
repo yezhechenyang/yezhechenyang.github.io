@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-16T13:22:11.002Z</updated>
+  <updated>2020-07-18T05:00:13.359Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Framework】Bean生命周期实验</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/</id>
+    <published>2020-07-18T04:55:55.000Z</published>
+    <updated>2020-07-18T05:00:13.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;参考：&lt;a href=&quot;http://c.biancheng.net/view/4261.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring
+        
+      
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
+    
+    
+      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
+    
+      <category term="Bean生命周期" scheme="https://yezhechenyang.gitee.io/tags/Bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>【bat脚本】【问题修复】此时不应有xxx</title>
@@ -257,11 +286,11 @@
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
     
     
+      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
+    
       <category term="IoC" scheme="https://yezhechenyang.gitee.io/tags/IoC/"/>
     
       <category term="DI" scheme="https://yezhechenyang.gitee.io/tags/DI/"/>
-    
-      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
     
   </entry>
   
@@ -382,7 +411,7 @@
     <link href="https://yezhechenyang.gitee.io/2020/07/04/hello-world/"/>
     <id>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</id>
     <published>2020-07-04T01:45:03.000Z</published>
-    <updated>2020-07-12T00:44:55.352Z</updated>
+    <updated>2020-07-18T04:55:42.552Z</updated>
     
     <summary type="html">
     

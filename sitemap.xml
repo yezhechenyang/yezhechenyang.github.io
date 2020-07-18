@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/</loc>
+    
+    <lastmod>2020-07-18T05:00:13.359Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</loc>
+    
+    <lastmod>2020-07-18T04:55:42.552Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/</loc>
     
     <lastmod>2020-07-16T13:22:11.002Z</lastmod>
@@ -65,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</loc>
-    
-    <lastmod>2020-07-12T00:44:55.352Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/</loc>
     
     <lastmod>2020-07-11T11:13:30.276Z</lastmod>
@@ -121,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://yezhechenyang.gitee.io/archives/index.html</loc>
+    <loc>https://yezhechenyang.gitee.io/AV/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
     
@@ -129,6 +136,13 @@
   
   <url>
     <loc>https://yezhechenyang.gitee.io/categories/index.html</loc>
+    
+    <lastmod>2020-07-01T23:18:40.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yezhechenyang.gitee.io/archives/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
     
@@ -150,13 +164,6 @@
   
   <url>
     <loc>https://yezhechenyang.gitee.io/tags/index.html</loc>
-    
-    <lastmod>2020-07-01T23:18:40.322Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yezhechenyang.gitee.io/AV/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
     
