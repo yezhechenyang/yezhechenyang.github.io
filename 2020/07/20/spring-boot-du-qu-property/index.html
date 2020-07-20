@@ -6,12 +6,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Spring Framework】什么是IoC？, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】读取property, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="英文全称：Inversion of Control中文翻译：控制反转  
-1. 定义IoC是面向对象的一种思想，意在控制对象获取依赖对象的方式，由原来在对象中通过硬编码获取依赖对象，转变成通过第三方（IoC容器）向对象推送依赖对象。
-2. ">
+    <meta name="description" content="假如要从application.yml中读取自定义属性，在Spring Boot中该如何实现呢？
+application:
+  name: 我的应用名称
+  version: 我的应用版本
+1. @Value通过@Value可以轻松实现自定">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Spring Framework】什么是IoC？ | 叶遮沉阳</title>
+    <title>【Spring Boot】读取property | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -534,13 +536,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Spring Framework】什么是IoC？
+                        【Spring Boot】读取property
                     </div>
                 </div>
             </div>
@@ -652,16 +654,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring-Framework/" target="_blank">
-                                <span class="chip bg-color">Spring Framework</span>
-                            </a>
-                        
-                            <a href="/tags/IoC/" target="_blank">
-                                <span class="chip bg-color">IoC</span>
-                            </a>
-                        
-                            <a href="/tags/DI/" target="_blank">
-                                <span class="chip bg-color">DI</span>
+                            <a href="/tags/Spring-Boot/" target="_blank">
+                                <span class="chip bg-color">Spring Boot</span>
                             </a>
                         
                     </div>
@@ -672,8 +666,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring/" class="post-category" target="_blank">
-                                Spring
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                Spring Boot
                             </a>
                         
                     </div>
@@ -684,7 +678,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-20
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -698,14 +692,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        643
+                        291
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -722,33 +716,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>英文全称：Inversion of Control<br>中文翻译：控制反转  </p>
-<h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h3><p>IoC是面向对象的一种思想，意在<strong>控制对象获取依赖对象的方式</strong>，由原来在对象中通过硬编码获取依赖对象，转变成通过第三方（IoC容器）向对象推送依赖对象。</p>
-<h3 id="2-对象与依赖对象的关系"><a href="#2-对象与依赖对象的关系" class="headerlink" title="2. 对象与依赖对象的关系"></a>2. 对象与依赖对象的关系</h3><p>在面向对象的世界中，需要多个对象共同协作完成业务功能实现。</p>
-<p>而多个对象的共同协作便产生了对象与依赖对象的关系。</p>
-<p>比如A对象需要用到B对象完成某一功能，那么需要在A对象中创建一个B对象。如此一来，A对象对B对象产生了依赖，对于A对象来说，B对象便是它的依赖对象。</p>
-<h3 id="3-IoC的实现方式"><a href="#3-IoC的实现方式" class="headerlink" title="3. IoC的实现方式"></a>3. IoC的实现方式</h3><h4 id="3-1-依赖注入（DI）"><a href="#3-1-依赖注入（DI）" class="headerlink" title="3.1 依赖注入（DI）"></a>3.1 依赖注入（DI）</h4><p>DI（Dependency Injection）是IoC的一种具体实现方式，Spring IoC容器便是通过这种方式实现控制反转。</p>
-<p><strong>DI的实现主要通过对象先在容器中注册（简单来说就是向容器打个招呼，需要哪些依赖对象），然后容器在程序运行期间将依赖对象注入给它。</strong></p>
-<p>Spring主要通过构造注入和设值注入两种方式实现。</p>
-<p>下面是两种注入方式的示例代码：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.dao.HelloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
-
-<span class="token comment" spellcheck="true">&lt;!-- 设值注入 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iHello2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.service.HelloService2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
-
-<span class="token comment" spellcheck="true">&lt;!-- 构造注入 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iHello3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.service.HelloService3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>constructor-arg</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-2-依赖查找（DL）"><a href="#3-2-依赖查找（DL）" class="headerlink" title="3.2 依赖查找（DL）"></a>3.2 依赖查找（DL）</h4><p>DL（Dependency Lookup）是传统的IoC实现方式，EJB用的就是这种方式。</p>
-<p><strong>DL的实现方式是对象调用容器提供的API，主动查找自己需要的依赖对象。</strong></p>
-<h4 id="3-3-DI与DL的区别"><a href="#3-3-DI与DL的区别" class="headerlink" title="3.3 DI与DL的区别"></a>3.3 DI与DL的区别</h4><h5 id="3-3-1-被动与主动"><a href="#3-3-1-被动与主动" class="headerlink" title="3.3.1 被动与主动"></a>3.3.1 被动与主动</h5><p>DI是被动注入依赖对象，DL是主动查找依赖对象。</p>
-<h5 id="3-3-2-非侵入式与侵入式"><a href="#3-3-2-非侵入式与侵入式" class="headerlink" title="3.3.2 非侵入式与侵入式"></a>3.3.2 非侵入式与侵入式</h5><p>DI是非侵入式的，也就是说容器可以随便更改，而不需要更改对象中的代码；</p>
-<p>DL则是侵入式的，因为有调用容器提供的API，若更改容器，则需要修改对象中的代码；</p>
-<hr>
-<p><strong>IoC的本质：是将依赖对象的控制权交给了容器。</strong></p>
+                <p>假如要从<code>application.yml</code>中读取自定义属性，在<code>Spring Boot</code>中该如何实现呢？</p>
+<pre class="line-numbers language-xml"><code class="language-xml">application:
+  name: 我的应用名称
+  version: 我的应用版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-Value"><a href="#1-Value" class="headerlink" title="1. @Value"></a>1. @Value</h3><p>通过<code>@Value</code>可以轻松实现自定义属性的获取。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApplicationProperty</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${application.name}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${application.version}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String version<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-ConfigurationProperties"><a href="#2-ConfigurationProperties" class="headerlink" title="2. @ConfigurationProperties"></a>2. @ConfigurationProperties</h3><p>使用<code>@ConfigurationProperties</code>就不用每个属性配置<code>@Value</code>了。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"application"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApplicationProperty</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String version<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-spring-boot-configuration-processor"><a href="#3-spring-boot-configuration-processor" class="headerlink" title="3. spring-boot-configuration-processor"></a>3. spring-boot-configuration-processor</h3><p>在<code>IDEA</code>中可能提示<code>Spring Boot configuration annotation processor not found in classpath</code>错误。</p>
+<p>那么，需要添加<code>spring-boot-configuration-processor</code>依赖。</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-configuration-processor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-additional-spring-configuration-metadata-json"><a href="#4-additional-spring-configuration-metadata-json" class="headerlink" title="4. additional-spring-configuration-metadata.json"></a>4. additional-spring-configuration-metadata.json</h3><p>在<code>META-INF/additional-spring-configuration-metadata.json</code>中配置，<br>可以去除<code>application.yml</code>中自定义配置的红线警告，<br>并且为自定义配置添加<code>hint</code>提醒。</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"properties"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"application.name"</span><span class="token punctuation">,</span>
+            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Default value is artifactId in pom.xml."</span><span class="token punctuation">,</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.String"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"application.version"</span><span class="token punctuation">,</span>
+            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Default value is version in pom.xml."</span><span class="token punctuation">,</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.String"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -793,7 +803,7 @@
                     </span>
                     <a href="https://yezhechenyang.gitee.io" class="b-link-green">叶遮沉阳</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/07/13/spring-framework-shi-me-shi-ioc/" class="b-link-green">【Spring Framework】什么是IoC？</a>
+                    <a href="/2020/07/20/spring-boot-du-qu-property/" class="b-link-green">【Spring Boot】读取property</a>
                 </p>
             </div>
 
@@ -1117,31 +1127,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/">
+                <a href="/2020/07/20/spring-boot-actuator-jian-kong-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="【Hexo】PicGo+Gitee搭建个人图床">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【Spring Boot】Actuator监控器">
                         
-                        <span class="card-title">【Hexo】PicGo+Gitee搭建个人图床</span>
+                        <span class="card-title">【Spring Boot】Actuator监控器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PicGo+Gitee搭建个人图床
+                            简单介绍一下在Spring Boot中引入Actuator
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-14
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-20
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                    Spring Boot
                                 </a>
                             
                             
@@ -1151,16 +1161,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/PicGo/" target="_blank">
-                        <span class="chip bg-color">PicGo</span>
-                    </a>
-                    
-                    <a href="/tags/Gitee/" target="_blank">
-                        <span class="chip bg-color">Gitee</span>
+                    <a href="/tags/Actuator/" target="_blank">
+                        <span class="chip bg-color">Actuator</span>
                     </a>
                     
                 </div>
@@ -1174,31 +1180,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/">
+                <a href="/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【Hexo】头像防盗链破解">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【bat脚本】字符串替换">
                         
-                        <span class="card-title">【Hexo】头像防盗链破解</span>
+                        <span class="card-title">【bat脚本】字符串替换</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            破解防盗链，加载CSDN头像链接！
+                            看看bat脚本中如何替换字符串
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/bat脚本/" class="post-category" target="_blank">
+                                    bat脚本
                                 </a>
                             
                             
@@ -1208,8 +1214,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/bat脚本/" target="_blank">
+                        <span class="chip bg-color">bat脚本</span>
                     </a>
                     
                 </div>

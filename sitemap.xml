@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/</loc>
+    
+    <lastmod>2020-07-20T03:01:10.581Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-du-qu-property/</loc>
+    
+    <lastmod>2020-07-20T01:10:02.286Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/</loc>
     
     <lastmod>2020-07-18T12:59:01.242Z</lastmod>
@@ -163,14 +177,14 @@
   </url>
   
   <url>
-    <loc>https://yezhechenyang.gitee.io/tags/index.html</loc>
+    <loc>https://yezhechenyang.gitee.io/galleries/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yezhechenyang.gitee.io/galleries/index.html</loc>
+    <loc>https://yezhechenyang.gitee.io/tags/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
     

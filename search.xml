@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>【Spring Boot】Actuator监控器</title>
+      <link href="/2020/07/20/spring-boot-actuator-jian-kong-qi/"/>
+      <url>/2020/07/20/spring-boot-actuator-jian-kong-qi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p><code>Actuator</code>是一款<code>Spring</code>自带的监控神器。</p><p>可以帮助你监控和管理<code>Spring Boot</code>应用，比如健康检查、审计、统计和<code>HTTP</code>追踪等。</p><p>集成非常简单，使用起来更是简单到爽歪歪，就是简单地<code>rest</code>接口调用查看，在要求不高的监控环境可以使用。</p><p>如果需要可视化的监控推荐：<code>Grafana</code>结合<code>prometheus</code>,提供了非常好的仪表盘、图标、分析和告警等功能。</p><h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><h4 id="2-1-配置"><a href="#2-1-配置" class="headerlink" title="2.1 配置"></a>2.1 配置</h4><p>引入<code>Maven</code>依赖。</p><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-actuator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>在<code>application.yml</code>中配置<code>Actuator</code>。</p><pre class="line-numbers language-xml"><code class="language-xml">server:  port: 8080  servlet:    context-path: /demomanagement:  # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离  server:    port: 8090    servlet:      context-path: /sys  # 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况  endpoint:    health:      show-details: always  # 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点  endpoints:    web:      exposure:        include: '*'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="2-2-调用"><a href="#2-2-调用" class="headerlink" title="2.2 调用"></a>2.2 调用</h4><p>启动项目后，可在浏览器直接访问<code>http://localhost:8090/sys/actuator</code>。</p><p><code>/actuator</code>是默认根路径。也可以自定义，比如：</p><pre><code>management.endpoints.web.base-path=/monitor</code></pre><p>访问<code>/actuator</code>你可以看到<code>Actuator</code>提供的所有<code>rest</code>接口。</p><p>然后，你可以一个个去调用看看，到底提供了些啥呢？</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Boot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+            <tag> Actuator </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Spring Boot】读取property</title>
+      <link href="/2020/07/20/spring-boot-du-qu-property/"/>
+      <url>/2020/07/20/spring-boot-du-qu-property/</url>
+      
+        <content type="html"><![CDATA[<p>假如要从<code>application.yml</code>中读取自定义属性，在<code>Spring Boot</code>中该如何实现呢？</p><pre class="line-numbers language-xml"><code class="language-xml">application:  name: 我的应用名称  version: 我的应用版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="1-Value"><a href="#1-Value" class="headerlink" title="1. @Value"></a>1. @Value</h3><p>通过<code>@Value</code>可以轻松实现自定义属性的获取。</p><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span><span class="token annotation punctuation">@Component</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApplicationProperty</span> <span class="token punctuation">{</span>    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${application.name}"</span><span class="token punctuation">)</span>    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${application.version}"</span><span class="token punctuation">)</span>    <span class="token keyword">private</span> String version<span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="2-ConfigurationProperties"><a href="#2-ConfigurationProperties" class="headerlink" title="2. @ConfigurationProperties"></a>2. @ConfigurationProperties</h3><p>使用<code>@ConfigurationProperties</code>就不用每个属性配置<code>@Value</code>了。</p><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span><span class="token annotation punctuation">@Component</span><span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"application"</span><span class="token punctuation">)</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApplicationProperty</span> <span class="token punctuation">{</span>    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>    <span class="token keyword">private</span> String version<span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="3-spring-boot-configuration-processor"><a href="#3-spring-boot-configuration-processor" class="headerlink" title="3. spring-boot-configuration-processor"></a>3. spring-boot-configuration-processor</h3><p>在<code>IDEA</code>中可能提示<code>Spring Boot configuration annotation processor not found in classpath</code>错误。</p><p>那么，需要添加<code>spring-boot-configuration-processor</code>依赖。</p><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-configuration-processor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="4-additional-spring-configuration-metadata-json"><a href="#4-additional-spring-configuration-metadata-json" class="headerlink" title="4. additional-spring-configuration-metadata.json"></a>4. additional-spring-configuration-metadata.json</h3><p>在<code>META-INF/additional-spring-configuration-metadata.json</code>中配置，<br>可以去除<code>application.yml</code>中自定义配置的红线警告，<br>并且为自定义配置添加<code>hint</code>提醒。</p><pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>    <span class="token property">"properties"</span><span class="token operator">:</span> <span class="token punctuation">[</span>        <span class="token punctuation">{</span>            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"application.name"</span><span class="token punctuation">,</span>            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Default value is artifactId in pom.xml."</span><span class="token punctuation">,</span>            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.String"</span>        <span class="token punctuation">}</span><span class="token punctuation">,</span>        <span class="token punctuation">{</span>            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"application.version"</span><span class="token punctuation">,</span>            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Default value is version in pom.xml."</span><span class="token punctuation">,</span>            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.String"</span>        <span class="token punctuation">}</span>    <span class="token punctuation">]</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Boot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【bat脚本】字符串替换</title>
       <link href="/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/"/>
       <url>/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/</url>
@@ -334,11 +386,11 @@
       
         <tags>
             
+            <tag> Spring Boot </tag>
+            
             <tag> Spring Framework </tag>
             
             <tag> Spring </tag>
-            
-            <tag> Spring Boot </tag>
             
             <tag> Spring Cloud </tag>
             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-18T12:59:01.242Z</updated>
+  <updated>2020-07-20T03:01:10.581Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】Actuator监控器</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/</id>
+    <published>2020-07-20T02:56:42.000Z</published>
+    <updated>2020-07-20T03:01:10.581Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot; class=&quot;headerlink&quot; title=&quot;1. 概述&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Spring Boot】读取property</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/20/spring-boot-du-qu-property/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-du-qu-property/</id>
+    <published>2020-07-20T01:06:51.000Z</published>
+    <updated>2020-07-20T01:10:02.286Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;假如要从&lt;code&gt;application.yml&lt;/code&gt;中读取自定义属性，在&lt;code&gt;Spring Boot&lt;/code&gt;中该如何实现呢？&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-xml&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+  </entry>
   
   <entry>
     <title>【bat脚本】字符串替换</title>
@@ -368,11 +423,11 @@
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
     
     
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
       <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
     
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/tags/Spring/"/>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
       <category term="Spring Cloud" scheme="https://yezhechenyang.gitee.io/tags/Spring-Cloud/"/>
     

@@ -6,12 +6,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Spring Framework】什么是IoC？, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】Actuator监控器, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="英文全称：Inversion of Control中文翻译：控制反转  
-1. 定义IoC是面向对象的一种思想，意在控制对象获取依赖对象的方式，由原来在对象中通过硬编码获取依赖对象，转变成通过第三方（IoC容器）向对象推送依赖对象。
-2. ">
+    <meta name="description" content="1. 概述Actuator是一款Spring自带的监控神器。
+可以帮助你监控和管理Spring Boot应用，比如健康检查、审计、统计和HTTP追踪等。
+集成非常简单，使用起来更是简单到爽歪歪，就是简单地rest接口调用查看，在要求不高的监">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Spring Framework】什么是IoC？ | 叶遮沉阳</title>
+    <title>【Spring Boot】Actuator监控器 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -540,7 +540,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Spring Framework】什么是IoC？
+                        【Spring Boot】Actuator监控器
                     </div>
                 </div>
             </div>
@@ -652,16 +652,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring-Framework/" target="_blank">
-                                <span class="chip bg-color">Spring Framework</span>
+                            <a href="/tags/Spring-Boot/" target="_blank">
+                                <span class="chip bg-color">Spring Boot</span>
                             </a>
                         
-                            <a href="/tags/IoC/" target="_blank">
-                                <span class="chip bg-color">IoC</span>
-                            </a>
-                        
-                            <a href="/tags/DI/" target="_blank">
-                                <span class="chip bg-color">DI</span>
+                            <a href="/tags/Actuator/" target="_blank">
+                                <span class="chip bg-color">Actuator</span>
                             </a>
                         
                     </div>
@@ -672,8 +668,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring/" class="post-category" target="_blank">
-                                Spring
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                Spring Boot
                             </a>
                         
                     </div>
@@ -684,7 +680,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-20
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -698,14 +694,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        643
+                        401
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -722,33 +718,40 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>英文全称：Inversion of Control<br>中文翻译：控制反转  </p>
-<h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h3><p>IoC是面向对象的一种思想，意在<strong>控制对象获取依赖对象的方式</strong>，由原来在对象中通过硬编码获取依赖对象，转变成通过第三方（IoC容器）向对象推送依赖对象。</p>
-<h3 id="2-对象与依赖对象的关系"><a href="#2-对象与依赖对象的关系" class="headerlink" title="2. 对象与依赖对象的关系"></a>2. 对象与依赖对象的关系</h3><p>在面向对象的世界中，需要多个对象共同协作完成业务功能实现。</p>
-<p>而多个对象的共同协作便产生了对象与依赖对象的关系。</p>
-<p>比如A对象需要用到B对象完成某一功能，那么需要在A对象中创建一个B对象。如此一来，A对象对B对象产生了依赖，对于A对象来说，B对象便是它的依赖对象。</p>
-<h3 id="3-IoC的实现方式"><a href="#3-IoC的实现方式" class="headerlink" title="3. IoC的实现方式"></a>3. IoC的实现方式</h3><h4 id="3-1-依赖注入（DI）"><a href="#3-1-依赖注入（DI）" class="headerlink" title="3.1 依赖注入（DI）"></a>3.1 依赖注入（DI）</h4><p>DI（Dependency Injection）是IoC的一种具体实现方式，Spring IoC容器便是通过这种方式实现控制反转。</p>
-<p><strong>DI的实现主要通过对象先在容器中注册（简单来说就是向容器打个招呼，需要哪些依赖对象），然后容器在程序运行期间将依赖对象注入给它。</strong></p>
-<p>Spring主要通过构造注入和设值注入两种方式实现。</p>
-<p>下面是两种注入方式的示例代码：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.dao.HelloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
-
-<span class="token comment" spellcheck="true">&lt;!-- 设值注入 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iHello2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.service.HelloService2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
-
-<span class="token comment" spellcheck="true">&lt;!-- 构造注入 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iHello3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.yale.service.HelloService3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>helloDAO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>constructor-arg</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-2-依赖查找（DL）"><a href="#3-2-依赖查找（DL）" class="headerlink" title="3.2 依赖查找（DL）"></a>3.2 依赖查找（DL）</h4><p>DL（Dependency Lookup）是传统的IoC实现方式，EJB用的就是这种方式。</p>
-<p><strong>DL的实现方式是对象调用容器提供的API，主动查找自己需要的依赖对象。</strong></p>
-<h4 id="3-3-DI与DL的区别"><a href="#3-3-DI与DL的区别" class="headerlink" title="3.3 DI与DL的区别"></a>3.3 DI与DL的区别</h4><h5 id="3-3-1-被动与主动"><a href="#3-3-1-被动与主动" class="headerlink" title="3.3.1 被动与主动"></a>3.3.1 被动与主动</h5><p>DI是被动注入依赖对象，DL是主动查找依赖对象。</p>
-<h5 id="3-3-2-非侵入式与侵入式"><a href="#3-3-2-非侵入式与侵入式" class="headerlink" title="3.3.2 非侵入式与侵入式"></a>3.3.2 非侵入式与侵入式</h5><p>DI是非侵入式的，也就是说容器可以随便更改，而不需要更改对象中的代码；</p>
-<p>DL则是侵入式的，因为有调用容器提供的API，若更改容器，则需要修改对象中的代码；</p>
-<hr>
-<p><strong>IoC的本质：是将依赖对象的控制权交给了容器。</strong></p>
+                <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p><code>Actuator</code>是一款<code>Spring</code>自带的监控神器。</p>
+<p>可以帮助你监控和管理<code>Spring Boot</code>应用，比如健康检查、审计、统计和<code>HTTP</code>追踪等。</p>
+<p>集成非常简单，使用起来更是简单到爽歪歪，就是简单地<code>rest</code>接口调用查看，在要求不高的监控环境可以使用。</p>
+<p>如果需要可视化的监控推荐：<code>Grafana</code>结合<code>prometheus</code>,提供了非常好的仪表盘、图标、分析和告警等功能。</p>
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><h4 id="2-1-配置"><a href="#2-1-配置" class="headerlink" title="2.1 配置"></a>2.1 配置</h4><p>引入<code>Maven</code>依赖。</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-actuator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在<code>application.yml</code>中配置<code>Actuator</code>。</p>
+<pre class="line-numbers language-xml"><code class="language-xml">server:
+  port: 8080
+  servlet:
+    context-path: /demo
+management:
+  # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离
+  server:
+    port: 8090
+    servlet:
+      context-path: /sys
+  # 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况
+  endpoint:
+    health:
+      show-details: always
+  # 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-2-调用"><a href="#2-2-调用" class="headerlink" title="2.2 调用"></a>2.2 调用</h4><p>启动项目后，可在浏览器直接访问<code>http://localhost:8090/sys/actuator</code>。</p>
+<p><code>/actuator</code>是默认根路径。也可以自定义，比如：</p>
+<pre><code>management.endpoints.web.base-path=/monitor</code></pre><p>访问<code>/actuator</code>你可以看到<code>Actuator</code>提供的所有<code>rest</code>接口。</p>
+<p>然后，你可以一个个去调用看看，到底提供了些啥呢？</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -793,7 +796,7 @@
                     </span>
                     <a href="https://yezhechenyang.gitee.io" class="b-link-green">叶遮沉阳</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/07/13/spring-framework-shi-me-shi-ioc/" class="b-link-green">【Spring Framework】什么是IoC？</a>
+                    <a href="/2020/07/20/spring-boot-actuator-jian-kong-qi/" class="b-link-green">【Spring Boot】Actuator监控器</a>
                 </p>
             </div>
 
@@ -1113,54 +1116,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/">
+                <a href="/2020/07/20/spring-boot-actuator-jian-kong-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="【Hexo】PicGo+Gitee搭建个人图床">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【Spring Boot】Actuator监控器">
                         
-                        <span class="card-title">【Hexo】PicGo+Gitee搭建个人图床</span>
+                        <span class="card-title">【Spring Boot】Actuator监控器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PicGo+Gitee搭建个人图床
+                            简单介绍一下在Spring Boot中引入Actuator
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                    Spring Boot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/PicGo/" target="_blank">
-                        <span class="chip bg-color">PicGo</span>
-                    </a>
-                    
-                    <a href="/tags/Gitee/" target="_blank">
-                        <span class="chip bg-color">Gitee</span>
+                    <a href="/tags/Actuator/" target="_blank">
+                        <span class="chip bg-color">Actuator</span>
                     </a>
                     
                 </div>
@@ -1174,31 +1175,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/">
+                <a href="/2020/07/20/spring-boot-du-qu-property/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【Hexo】头像防盗链破解">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="【Spring Boot】读取property">
                         
-                        <span class="card-title">【Hexo】头像防盗链破解</span>
+                        <span class="card-title">【Spring Boot】读取property</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            破解防盗链，加载CSDN头像链接！
+                            Spring Boot中获取自定义property如此简单
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                    Spring Boot
                                 </a>
                             
                             
@@ -1208,8 +1209,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
                 </div>
