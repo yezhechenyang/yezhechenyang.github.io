@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-20T03:01:10.581Z</updated>
+  <updated>2020-07-21T04:54:06.606Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】Logback日志</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/21/spring-boot-logback-ri-zhi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-logback-ri-zhi/</id>
+    <published>2020-07-21T04:51:54.000Z</published>
+    <updated>2020-07-21T04:54:06.606Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Logback" scheme="https://yezhechenyang.gitee.io/tags/Logback/"/>
+    
+      <category term="Log4j" scheme="https://yezhechenyang.gitee.io/tags/Log4j/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Spring Boot】Admin可视化监控</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/21/spring-boot-admin-ke-shi-hua-jian-kong/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-admin-ke-shi-hua-jian-kong/</id>
+    <published>2020-07-21T04:48:22.000Z</published>
+    <updated>2020-07-21T04:53:38.971Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
+    
+      <category term="Admin" scheme="https://yezhechenyang.gitee.io/tags/Admin/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】Actuator监控器</title>

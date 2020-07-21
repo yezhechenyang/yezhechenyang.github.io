@@ -1,3 +1,5 @@
+https://yezhechenyang.gitee.io/2020/07/21/spring-boot-logback-ri-zhi/
+https://yezhechenyang.gitee.io/2020/07/21/spring-boot-admin-ke-shi-hua-jian-kong/
 https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/
 https://yezhechenyang.gitee.io/2020/07/20/spring-boot-du-qu-property/
 https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/

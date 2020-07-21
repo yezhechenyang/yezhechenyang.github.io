@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-logback-ri-zhi/</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-admin-ke-shi-hua-jian-kong/</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/</loc>
     <lastmod>2020-07-20</lastmod>
   </url>  <url>
