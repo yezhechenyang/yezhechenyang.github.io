@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-22T06:35:06.370Z</updated>
+  <updated>2020-07-22T06:55:12.482Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-yi-chang-tong-yi-chu-li/"/>
     <id>https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-yi-chang-tong-yi-chu-li/</id>
     <published>2020-07-22T06:32:25.000Z</published>
-    <updated>2020-07-22T06:35:06.370Z</updated>
+    <updated>2020-07-22T06:55:12.482Z</updated>
     
     <summary type="html">
     
@@ -126,9 +126,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
-    
       <category term="Admin" scheme="https://yezhechenyang.gitee.io/tags/Admin/"/>
+    
+      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
     
   </entry>
   
@@ -541,9 +541,9 @@
     
       <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
     
-      <category term="Spring" scheme="https://yezhechenyang.gitee.io/tags/Spring/"/>
-    
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Spring" scheme="https://yezhechenyang.gitee.io/tags/Spring/"/>
     
       <category term="Spring Cloud" scheme="https://yezhechenyang.gitee.io/tags/Spring-Cloud/"/>
     
