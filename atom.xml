@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-21T04:54:06.606Z</updated>
+  <updated>2020-07-22T06:35:06.370Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -17,9 +17,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【Spring Boot】异常统一处理</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-yi-chang-tong-yi-chu-li/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-yi-chang-tong-yi-chu-li/</id>
+    <published>2020-07-22T06:32:25.000Z</published>
+    <updated>2020-07-22T06:35:06.370Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Exception" scheme="https://yezhechenyang.gitee.io/tags/Exception/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Spring Boot】Aop方式记录Web请求</title>
+    <link href="https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-aop-fang-shi-ji-lu-web-qing-qiu/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-aop-fang-shi-ji-lu-web-qing-qiu/</id>
+    <published>2020-07-22T06:28:07.000Z</published>
+    <updated>2020-07-22T06:34:46.067Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;使用&lt;code&gt;Logback&lt;/code&gt;框架记录日志，不多介绍，推荐阅读：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Aop" scheme="https://yezhechenyang.gitee.io/tags/Aop/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【Spring Boot】Logback日志</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/21/spring-boot-logback-ri-zhi/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-logback-ri-zhi/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/21/springboot/spring-boot-logback-ri-zhi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/21/springboot/spring-boot-logback-ri-zhi/</id>
     <published>2020-07-21T04:51:54.000Z</published>
     <updated>2020-07-21T04:54:06.606Z</updated>
     
@@ -48,8 +104,8 @@
   
   <entry>
     <title>【Spring Boot】Admin可视化监控</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/21/spring-boot-admin-ke-shi-hua-jian-kong/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-admin-ke-shi-hua-jian-kong/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/21/springboot/spring-boot-admin-ke-shi-hua-jian-kong/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/21/springboot/spring-boot-admin-ke-shi-hua-jian-kong/</id>
     <published>2020-07-21T04:48:22.000Z</published>
     <updated>2020-07-21T04:53:38.971Z</updated>
     
@@ -78,8 +134,8 @@
   
   <entry>
     <title>【Spring Boot】Actuator监控器</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/20/springboot/spring-boot-actuator-jian-kong-qi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/20/springboot/spring-boot-actuator-jian-kong-qi/</id>
     <published>2020-07-20T02:56:42.000Z</published>
     <updated>2020-07-20T03:01:10.581Z</updated>
     
@@ -106,8 +162,8 @@
   
   <entry>
     <title>【Spring Boot】读取property</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/20/spring-boot-du-qu-property/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-du-qu-property/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/20/springboot/spring-boot-du-qu-property/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/20/springboot/spring-boot-du-qu-property/</id>
     <published>2020-07-20T01:06:51.000Z</published>
     <updated>2020-07-20T01:10:02.286Z</updated>
     
@@ -133,8 +189,8 @@
   
   <entry>
     <title>【bat脚本】字符串替换</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben/bat-jiao-ben-zi-fu-chuan-ti-huan/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben/bat-jiao-ben-zi-fu-chuan-ti-huan/</id>
     <published>2020-07-18T12:56:58.000Z</published>
     <updated>2020-07-18T12:59:01.242Z</updated>
     
@@ -159,8 +215,8 @@
   
   <entry>
     <title>【Spring Framework】Bean生命周期实验</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/18/spring/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/18/spring/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/</id>
     <published>2020-07-18T04:55:55.000Z</published>
     <updated>2020-07-18T05:00:13.359Z</updated>
     
@@ -188,8 +244,8 @@
   
   <entry>
     <title>【bat脚本】【问题修复】此时不应有xxx</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/</id>
     <published>2020-07-16T13:20:36.000Z</published>
     <updated>2020-07-16T13:22:11.002Z</updated>
     
@@ -214,8 +270,8 @@
   
   <entry>
     <title>【bat脚本】变量未正常输出问题分析</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/</id>
     <published>2020-07-16T13:18:37.000Z</published>
     <updated>2020-07-16T13:21:45.872Z</updated>
     
@@ -241,8 +297,8 @@
   
   <entry>
     <title>【bat脚本】向脚本传递参数</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/</id>
     <published>2020-07-16T13:16:08.000Z</published>
     <updated>2020-07-16T13:19:44.737Z</updated>
     
@@ -268,8 +324,8 @@
   
   <entry>
     <title>【bat脚本】单行注释与多行注释</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/</id>
     <published>2020-07-16T13:14:41.000Z</published>
     <updated>2020-07-16T13:17:15.289Z</updated>
     
@@ -294,8 +350,8 @@
   
   <entry>
     <title>【bat脚本】中文乱码</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-zhong-wen-luan-ma/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-zhong-wen-luan-ma/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-zhong-wen-luan-ma/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-zhong-wen-luan-ma/</id>
     <published>2020-07-16T13:12:33.000Z</published>
     <updated>2020-07-16T13:15:13.666Z</updated>
     
@@ -320,8 +376,8 @@
   
   <entry>
     <title>【bat脚本】窗口标题命名</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/</id>
     <published>2020-07-16T13:10:13.000Z</published>
     <updated>2020-07-16T13:13:32.526Z</updated>
     
@@ -346,8 +402,8 @@
   
   <entry>
     <title>【Spring Framework】BeanFactory和ApplicationContext介绍</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/15/spring/spring-framework-beanfactory-he-applicationcontext-jie-shao/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/15/spring/spring-framework-beanfactory-he-applicationcontext-jie-shao/</id>
     <published>2020-07-15T01:27:54.000Z</published>
     <updated>2020-07-15T01:31:47.355Z</updated>
     
@@ -376,8 +432,8 @@
   
   <entry>
     <title>【Hexo】PicGo+Gitee搭建个人图床</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/14/hexo/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/14/hexo/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/</id>
     <published>2020-07-14T09:51:16.000Z</published>
     <updated>2020-07-14T09:52:17.366Z</updated>
     
@@ -406,8 +462,8 @@
   
   <entry>
     <title>【Spring Framework】什么是IoC？</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/13/spring-framework-shi-me-shi-ioc/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/13/spring-framework-shi-me-shi-ioc/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/13/spring/spring-framework-shi-me-shi-ioc/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/13/spring/spring-framework-shi-me-shi-ioc/</id>
     <published>2020-07-13T00:42:26.000Z</published>
     <updated>2020-07-13T00:54:42.938Z</updated>
     
@@ -437,8 +493,8 @@
   
   <entry>
     <title>【Hexo】头像防盗链破解</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/11/hexo/hexo-tou-xiang-fang-dao-lian-po-jie/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/11/hexo/hexo-tou-xiang-fang-dao-lian-po-jie/</id>
     <published>2020-07-11T11:03:21.000Z</published>
     <updated>2020-07-11T11:13:30.276Z</updated>
     
@@ -463,8 +519,8 @@
   
   <entry>
     <title>【Spring】概述</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/10/spring-gai-shu/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/10/spring-gai-shu/</id>
+    <link href="https://yezhechenyang.gitee.io/2020/07/10/spring/spring-gai-shu/"/>
+    <id>https://yezhechenyang.gitee.io/2020/07/10/spring/spring-gai-shu/</id>
     <published>2020-07-10T01:15:00.000Z</published>
     <updated>2020-07-10T23:54:45.896Z</updated>
     
@@ -483,11 +539,11 @@
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
     
     
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
       <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
     
       <category term="Spring" scheme="https://yezhechenyang.gitee.io/tags/Spring/"/>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
       <category term="Spring Cloud" scheme="https://yezhechenyang.gitee.io/tags/Spring-Cloud/"/>
     
@@ -518,66 +574,6 @@
       <category term="Chrome扩展" scheme="https://yezhechenyang.gitee.io/tags/Chrome%E6%89%A9%E5%B1%95/"/>
     
       <category term="贴吧去广告" scheme="https://yezhechenyang.gitee.io/tags/%E8%B4%B4%E5%90%A7%E5%8E%BB%E5%B9%BF%E5%91%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Hexo】博客搭建</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/05/hexo-bo-ke-da-jian/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/05/hexo-bo-ke-da-jian/</id>
-    <published>2020-07-05T03:00:00.000Z</published>
-    <updated>2020-07-11T11:08:43.393Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-准备&quot;&gt;&lt;a href=&quot;#1-准备&quot; class=&quot;headerlink&quot; title=&quot;1. 准备&quot;&gt;&lt;/a&gt;1. 准备&lt;/h3&gt;&lt;p&gt;安装 Git、NodeJs、Hexo
-        
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07/04/hello-world/"/>
-    <id>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</id>
-    <published>2020-07-04T01:45:03.000Z</published>
-    <updated>2020-07-18T04:55:42.552Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Hello World!&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src)
-        
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
-    
-      <category term="Github" scheme="https://yezhechenyang.gitee.io/tags/Github/"/>
-    
-      <category term="博客" scheme="https://yezhechenyang.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   

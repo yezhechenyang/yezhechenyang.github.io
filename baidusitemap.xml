@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-logback-ri-zhi/</loc>
-    <lastmod>2020-07-21</lastmod>
+    <loc>https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-yi-chang-tong-yi-chu-li/</loc>
+    <lastmod>2020-07-22</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/21/spring-boot-admin-ke-shi-hua-jian-kong/</loc>
-    <lastmod>2020-07-21</lastmod>
-  </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-actuator-jian-kong-qi/</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/20/spring-boot-du-qu-property/</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben-zi-fu-chuan-ti-huan/</loc>
-    <lastmod>2020-07-18</lastmod>
-  </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/18/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/</loc>
-    <lastmod>2020-07-18</lastmod>
+    <loc>https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-aop-fang-shi-ji-lu-web-qing-qiu/</loc>
+    <lastmod>2020-07-22</lastmod>
   </url>  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/04/hello-world/</loc>
+    <lastmod>2020-07-22</lastmod>
+  </url>  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/21/springboot/spring-boot-logback-ri-zhi/</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/21/springboot/spring-boot-admin-ke-shi-hua-jian-kong/</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/20/springboot/spring-boot-actuator-jian-kong-qi/</loc>
+    <lastmod>2020-07-20</lastmod>
+  </url>  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/20/springboot/spring-boot-du-qu-property/</loc>
+    <lastmod>2020-07-20</lastmod>
+  </url>  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/18/bat-jiao-ben/bat-jiao-ben-zi-fu-chuan-ti-huan/</loc>
     <lastmod>2020-07-18</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/18/spring/spring-framework-bean-sheng-ming-zhou-qi-shi-yan/</loc>
+    <lastmod>2020-07-18</lastmod>
+  </url>  <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-wen-ti-xiu-fu-ci-shi-bu-ying-you-xxx/</loc>
     <lastmod>2020-07-16</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-bian-liang-wei-zheng-chang-shu-chu-wen-ti-fen-xi/</loc>
     <lastmod>2020-07-16</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-xiang-jiao-ben-chuan-di-can-shu/</loc>
     <lastmod>2020-07-16</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-dan-xing-zhu-shi-yu-duo-xing-zhu-shi/</loc>
     <lastmod>2020-07-16</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-zhong-wen-luan-ma/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-zhong-wen-luan-ma/</loc>
     <lastmod>2020-07-16</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/16/bat-jiao-ben/bat-jiao-ben-chuang-kou-biao-ti-ming-ming/</loc>
     <lastmod>2020-07-16</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/15/spring-framework-beanfactory-he-applicationcontext-jie-shao/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/15/spring/spring-framework-beanfactory-he-applicationcontext-jie-shao/</loc>
     <lastmod>2020-07-15</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/14/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/14/hexo/hexo-picgo-gitee-da-jian-ge-ren-tu-chuang/</loc>
     <lastmod>2020-07-14</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/13/spring-framework-shi-me-shi-ioc/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/13/spring/spring-framework-shi-me-shi-ioc/</loc>
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/11/hexo-tou-xiang-fang-dao-lian-po-jie/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/11/hexo/hexo-tou-xiang-fang-dao-lian-po-jie/</loc>
     <lastmod>2020-07-11</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/05/hexo-bo-ke-da-jian/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/05/hexo/hexo-bo-ke-da-jian/</loc>
     <lastmod>2020-07-11</lastmod>
   </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/10/spring-gai-shu/</loc>
+    <loc>https://yezhechenyang.gitee.io/2020/07/10/spring/spring-gai-shu/</loc>
     <lastmod>2020-07-10</lastmod>
   </url>  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/07/chrome-kuo-zhan-kai-fa-qu-tie-ba-guang-gao/</loc>
