@@ -695,7 +695,7 @@ git clone https://github.com/shw201">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        311
+                        329
                     </div>
                     
 
@@ -728,7 +728,7 @@ git clone https://github.com/shw201">
 <h3 id="2-下载模板"><a href="#2-下载模板" class="headerlink" title="2. 下载模板"></a>2. 下载模板</h3><p>推荐使用 <a href="https://github.com/shw2018/hexo-blog-fly.git" target="_blank" rel="noopener">hexo-blog-fly</a></p>
 <pre><code>git clone https://github.com/shw2018/hexo-blog-fly.git</code></pre><h3 id="3-本地运行"><a href="#3-本地运行" class="headerlink" title="3. 本地运行"></a>3. 本地运行</h3><h4 id="3-1-修改个人信息"><a href="#3-1-修改个人信息" class="headerlink" title="3.1 修改个人信息"></a>3.1 修改个人信息</h4><pre><code>Hexo博客框架的配置：_config.yml
 Matery主题的配置：themes\matery\_config.yml</code></pre><h4 id="3-2-运行"><a href="#3-2-运行" class="headerlink" title="3.2 运行"></a>3.2 运行</h4><pre><code>npm i   # 先安装依赖
-hexo s  # 再运行</code></pre><h3 id="3-3-访问查看效果"><a href="#3-3-访问查看效果" class="headerlink" title="3.3 访问查看效果"></a>3.3 访问查看效果</h3><pre><code>localhost:4000</code></pre><h3 id="4-部署"><a href="#4-部署" class="headerlink" title="4. 部署"></a>4. 部署</h3><h4 id="4-1-在Gitee上创建一个仓库"><a href="#4-1-在Gitee上创建一个仓库" class="headerlink" title="4.1 在Gitee上创建一个仓库"></a>4.1 在Gitee上创建一个仓库</h4><pre><code>仓库名称：myblog （名字随便自己取）
+hexo s  # 再运行</code></pre><h3 id="3-3-访问查看效果"><a href="#3-3-访问查看效果" class="headerlink" title="3.3 访问查看效果"></a>3.3 访问查看效果</h3><pre><code>localhost:4000</code></pre><h3 id="4-部署"><a href="#4-部署" class="headerlink" title="4. 部署"></a>4. 部署</h3><h4 id="4-1-在Gitee上创建一个仓库"><a href="#4-1-在Gitee上创建一个仓库" class="headerlink" title="4.1 在Gitee上创建一个仓库"></a>4.1 在Gitee上创建一个仓库</h4><pre><code>仓库名称：myblog （名字随便自己取，如果和用户名相同，可以获得唯一标识域名）
 是否开源：公开
 勾选：使用Readme文件初始化这个仓库</code></pre><h4 id="4-2-本地推送"><a href="#4-2-本地推送" class="headerlink" title="4.2 本地推送"></a>4.2 本地推送</h4><p>修改 _config.yml 中配置的网址配置</p>
 <pre><code>url: https://gitee.com/yezhechenyang/myblog
@@ -965,7 +965,6 @@ root: /myblog/</code></pre><p>修改 _config.yml 中配置的部署仓库地址<
     /* valine 评论框增加背景图片 */
     #vcomments textarea {
         box-sizing: border-box;
-        background: url("") 100% 100% no-repeat;
     }
 
     #vcomments input[type=text],
@@ -1204,6 +1203,78 @@ root: /myblog/</code></pre><p>修改 _config.yml 中配置的部署仓库地址<
     .v[data-class=v] .vinput {
         padding: 0px 0px;
     }
+
+    #veditor {
+        background-image: url(https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255, 255, 255, 0);
+        resize: vertical
+    }
+
+    #veditor:focus{
+        background-position-y: 200px;
+        transition: all 0.2s ease-in-out 0s;
+    }
+
+    #vcomments .vheader .vnick {
+        width: 30%;
+        height: 40px;
+        border: 2px solid #dedede;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px
+    }
+
+    #vcomments .vheader .vmail {
+        width: 30%;
+        height: 40px;
+        border: 2px solid #dedede;
+        margin-left: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px
+    }
+
+    #vcomments .vheader .vlink {
+        width: 30%;
+        height: 40px;
+        border: 2px solid #dedede;
+        margin-left: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px
+    }
+
+    img.vimg {
+        transition: all 1s   /* 旋转时间为 1s */
+    }
+
+    img.vimg:hover {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+    }
+
+    #vcomments .vcards .vcard {
+        padding: 15px 20px 0 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+        transition: all .3s
+    }
+
+    #vcomments .vcards .vcard:hover {
+        box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+    }
+
+    #vcomments .vcards .vcard .vh .vcard {
+        border: none;
+        box-shadow: none;
+    }
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
@@ -1212,12 +1283,15 @@ root: /myblog/</code></pre><p>修改 _config.yml 中配置的部署仓库地址<
 
 <script src="/libs/valine/av-min.js"></script>
 <!--<script src="/libs/valine/Valine.min.js"></script>-->
-<script src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script>
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script>-->
+<!--//魔改版 Valine.min.js-->
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
 <!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
 <script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
 <script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
 <script>
-
+    let metaPlaceholder = {"nick":"昵称 / QQ 号","mail":"邮箱 (必填)"}
     new Valine({
         el: '#vcomments',
         enableQQ: true,
@@ -1232,6 +1306,10 @@ root: /myblog/</code></pre><p>修改 _config.yml 中配置的部署仓库地址<
         lang: 'zh-cn',
         placeholder: '昵称填写qq可以显示qq头像和昵称哦~',
         requiredFields: ['nick','mail'], //设置必填项
+        master: ["7a455d704b60807098d18cc8c2470da2"],
+        friends: ["86ba473e344767acb603852ad97478fd"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
         // 设置Bilibili表情包地址
         emojiCDN: '//i0.hdslb.com/bfs/emote/',
         // 表情title和图片映射
@@ -1573,7 +1651,7 @@ root: /myblog/</code></pre><p>修改 _config.yml 中配置的部署仓库地址<
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2020 叶遮沉阳.
+            Copyright&copy; 2020 叶遮沉阳 | Powered by Hexo | Theme Matery | Comments Valine
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1596,7 +1674,7 @@ root: /myblog/</code></pre><p>修改 _config.yml 中配置的部署仓库地址<
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">11.4k</span> 字
+                <span class="white-color">11.5k</span> 字
             
 
             

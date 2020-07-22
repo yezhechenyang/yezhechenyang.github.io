@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yezhechenyang.gitee.io/2020/07/05/hexo/hexo-bo-ke-da-jian/</loc>
+    <lastmod>2020-07-22</lastmod>
+  </url>  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/22/springboot/spring-boot-yi-chang-tong-yi-chu-li/</loc>
     <lastmod>2020-07-22</lastmod>
   </url>  <url>
@@ -56,9 +59,6 @@
     <lastmod>2020-07-13</lastmod>
   </url>  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/11/hexo/hexo-tou-xiang-fang-dao-lian-po-jie/</loc>
-    <lastmod>2020-07-11</lastmod>
-  </url>  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/07/05/hexo/hexo-bo-ke-da-jian/</loc>
     <lastmod>2020-07-11</lastmod>
   </url>  <url>
     <loc>https://yezhechenyang.gitee.io/2020/07/10/spring/spring-gai-shu/</loc>
