@@ -502,11 +502,11 @@
       
         <tags>
             
+            <tag> Spring Framework </tag>
+            
             <tag> IoC </tag>
             
             <tag> DI </tag>
-            
-            <tag> Spring Framework </tag>
             
         </tags>
       
@@ -556,11 +556,11 @@
       
         <tags>
             
-            <tag> Spring Boot </tag>
-            
             <tag> Spring Framework </tag>
             
             <tag> Spring </tag>
+            
+            <tag> Spring Boot </tag>
             
             <tag> Spring Cloud </tag>
             
