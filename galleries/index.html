@@ -590,10 +590,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2020 叶遮沉阳 | Powered by Hexo | Theme Matery | Comments Valine
+            Copyright&copy; 2020 <a href="/about" target="_blank" class="white-color">叶遮沉阳</a>
+            | Powered by <a href="https://hexo.io/zh-cn/" target="_blank" class="white-color">Hexo</a>
+            | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" class="white-color">Matery</a>
+            | Comments <a href="https://valine.js.org/" target="_blank" class="white-color">Valine</a>
 
             <br>
-            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <span>本站已勉强运行&nbsp;</span>
+            <span id="sitetime" class="white-color"></span>&nbsp;<span class="my-face">ღゝ◡╹)ノ♡</span>
             <br>
 
             
@@ -613,7 +617,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">11.5k</span> 字
+                <span class="white-color">12.7k</span> 字
             
 
             
@@ -693,7 +697,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
             minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+        document.getElementById("sitetime").innerHTML = diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
     } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
     siteTime();
