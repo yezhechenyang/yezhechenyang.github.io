@@ -22,9 +22,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> 模板引擎 </tag>
-            
             <tag> Enjoy </tag>
+            
+            <tag> 模板引擎 </tag>
             
         </tags>
       
@@ -51,9 +51,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Beetl </tag>
-            
             <tag> 模板引擎 </tag>
+            
+            <tag> Beetl </tag>
             
         </tags>
       
@@ -66,7 +66,7 @@
       <link href="/2020/072464165.html"/>
       <url>/2020/072464165.html</url>
       
-        <content type="html"><![CDATA[<h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文介绍一个脚本，实现自动化个人图床。</p><p>具体来说，就是将当前目录下包括子目录下的所有图片添加一个<code>img</code>标签，然后放到一个<code>HTML</code>中。打开<code>HTML</code>可以看到所有的图片。</p><h3 id="2-脚本"><a href="#2-脚本" class="headerlink" title="2. 脚本"></a>2. 脚本</h3><p>不多废话，直接上脚本。</p><pre class="line-numbers language-bat"><code class="language-bat">@echo off&setlocal enabledelayedexpansiontitle 自动化生成图床HTML网页:: 当前路径set basePath=%CD%\rem echo !basePath!:: blog目录set subDir=blog\:: 自增变量set /a n=1:: 循环遍历所有图片文件for /r  %%i in (*.jpg, *.png) do (    :: %%~nxi表示当前文件名称加文件后缀    rem echo %%~nxi    :: 是否为博客图片文件    set isBlogFile=false    :: 将循环量赋值给str    set str=%%i    :: 将str中的当前路径替换为空    set str=!str:%basePath%=!    rem echo !str!    rem echo !subDir!    :: 再将str中的blog目录替换掉    set fileName=!str:%subDir%=!    rem echo !fileName!     :: 若替换blog目录后只剩文件名，说明改文件是博客图片文件    if "!fileName!"=="%%~nxi" (        set isBlogFile=true    )    rem echo !isBlogFile!     :: 如果不是博客图片文件，则添加img标签输出到HTML中去    if "!isBlogFile!"=="false" (        :: 将str中的反斜杠替换为斜杠        set str=!str:\=/!        :: 添加img标签        set "str=<img src="!str!" />"        :: 如果是第一次，则直接替换文件内容，否则，在文件后面追加内容        if !n!==1 (            echo !str!>image.html            ) else (            echo !str!>>image.html        )        :: 自增加1        set /a n+=1    ))copy /b head.html+image.html index.html:: 暂停程序，按任意键继续pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="3-实践项目"><a href="#3-实践项目" class="headerlink" title="3. 实践项目"></a>3. 实践项目</h3><p>上面的<code>head.html</code>所包含的<code>css</code>和<code>js</code>，我已放到<code>Gitee</code>上去了。</p><p>项目地址：<code>https://gitee.com/yezhechenyang/imagebed.git</code></p><p>效果演示：<code>https://yezhechenyang.gitee.io/imagebed/</code></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文介绍一个脚本，实现自动化个人图床。</p><p>具体来说，就是将当前目录下包括子目录下的所有图片添加一个<code>img</code>标签，然后放到一个<code>HTML</code>中。打开<code>HTML</code>可以看到所有的图片。</p><h3 id="2-脚本"><a href="#2-脚本" class="headerlink" title="2. 脚本"></a>2. 脚本</h3><p>不多废话，直接上脚本。</p><pre class="line-numbers language-bash"><code class="language-bash">@echo off<span class="token operator">&amp;</span>setlocal enabledelayedexpansiontitle 自动化生成图床HTML网页:: 当前路径<span class="token keyword">set</span> basePath<span class="token operator">=</span>%CD%\rem <span class="token keyword">echo</span> <span class="token operator">!</span>basePath<span class="token operator">!</span>:: blog目录<span class="token keyword">set</span> subDir<span class="token operator">=</span>blog\:: 自增变量<span class="token keyword">set</span> /a n<span class="token operator">=</span>1:: 循环遍历所有图片文件<span class="token keyword">for</span> /r  %%i <span class="token keyword">in</span> <span class="token punctuation">(</span>*.jpg, *.png<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token punctuation">(</span>    :: %%~nxi表示当前文件名称加文件后缀    rem <span class="token keyword">echo</span> %%~nxi    :: 是否为博客图片文件    <span class="token keyword">set</span> isBlogFile<span class="token operator">=</span>false    :: 将循环量赋值给str    <span class="token keyword">set</span> str<span class="token operator">=</span>%%i    :: 将str中的当前路径替换为空    <span class="token keyword">set</span> str<span class="token operator">=</span><span class="token operator">!</span>str:%basePath%<span class="token operator">=</span><span class="token operator">!</span>    rem <span class="token keyword">echo</span> <span class="token operator">!</span>str<span class="token operator">!</span>    rem <span class="token keyword">echo</span> <span class="token operator">!</span>subDir<span class="token operator">!</span>    :: 再将str中的blog目录替换掉    <span class="token keyword">set</span> fileName<span class="token operator">=</span><span class="token operator">!</span>str:%subDir%<span class="token operator">=</span><span class="token operator">!</span>    rem <span class="token keyword">echo</span> <span class="token operator">!</span>fileName<span class="token operator">!</span>     :: 若替换blog目录后只剩文件名，说明改文件是博客图片文件    <span class="token keyword">if</span> <span class="token string">"!fileName!"</span><span class="token operator">==</span><span class="token string">"%%~nxi"</span> <span class="token punctuation">(</span>        <span class="token keyword">set</span> isBlogFile<span class="token operator">=</span>true    <span class="token punctuation">)</span>    rem <span class="token keyword">echo</span> <span class="token operator">!</span>isBlogFile<span class="token operator">!</span>     :: 如果不是博客图片文件，则添加img标签输出到HTML中去    <span class="token keyword">if</span> <span class="token string">"!isBlogFile!"</span><span class="token operator">==</span><span class="token string">"false"</span> <span class="token punctuation">(</span>        :: 将str中的反斜杠替换为斜杠        <span class="token keyword">set</span> str<span class="token operator">=</span><span class="token operator">!</span>str:\<span class="token operator">=</span>/<span class="token operator">!</span>        :: 添加img标签        <span class="token keyword">set</span> <span class="token string">"str=&lt;img src="</span><span class="token operator">!</span>str<span class="token operator">!</span><span class="token string">" />"</span>        :: 如果是第一次，则直接替换文件内容，否则，在文件后面追加内容        <span class="token keyword">if</span> <span class="token operator">!</span>n<span class="token operator">!=</span><span class="token operator">=</span>1 <span class="token punctuation">(</span>            <span class="token keyword">echo</span> <span class="token operator">!</span>str<span class="token operator">!</span><span class="token operator">></span>image.html            <span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">(</span>            <span class="token keyword">echo</span> <span class="token operator">!</span>str<span class="token operator">!</span><span class="token operator">>></span>image.html        <span class="token punctuation">)</span>        :: 自增加1        <span class="token keyword">set</span> /a n+<span class="token operator">=</span>1    <span class="token punctuation">)</span><span class="token punctuation">)</span>:: 合并文件copy /b head.html+image.html index.html:: 暂停程序，按任意键继续pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="3-实践项目"><a href="#3-实践项目" class="headerlink" title="3. 实践项目"></a>3. 实践项目</h3><p>上面的<code>head.html</code>所包含的<code>css</code>和<code>js</code>，我已放到<code>Gitee</code>上去了。</p><p>项目地址：<code>https://gitee.com/yezhechenyang/imagebed.git</code></p><p>效果演示：<code>https://yezhechenyang.gitee.io/imagebed/</code></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -587,11 +587,11 @@
       
         <tags>
             
-            <tag> Spring Framework </tag>
-            
             <tag> IoC </tag>
             
             <tag> DI </tag>
+            
+            <tag> Spring Framework </tag>
             
         </tags>
       
@@ -643,9 +643,9 @@
             
             <tag> Spring Framework </tag>
             
-            <tag> Spring </tag>
-            
             <tag> Spring Boot </tag>
+            
+            <tag> Spring </tag>
             
             <tag> Spring Cloud </tag>
             
