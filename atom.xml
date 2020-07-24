@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-23T02:46:46.940Z</updated>
+  <updated>2020-07-24T06:06:12.486Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】Enjoy魔板引擎</title>
+    <link href="https://yezhechenyang.gitee.io/2020/072434875.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/072434875.html</id>
+    <published>2020-07-24T06:05:35.000Z</published>
+    <updated>2020-07-24T06:06:12.486Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Hello World!&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src)
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Spring Boot】Beetl模板引擎</title>
+    <link href="https://yezhechenyang.gitee.io/2020/072413245.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/072413245.html</id>
+    <published>2020-07-24T06:03:36.000Z</published>
+    <updated>2020-07-24T06:06:12.478Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-Beetle介绍&quot;&gt;&lt;a href=&quot;#1-Beetle介绍&quot; class=&quot;headerlink&quot; title=&quot;1. Beetle介绍&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
+    
+      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【bat脚本】个人图床自动化</title>
+    <link href="https://yezhechenyang.gitee.io/2020/072464165.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/072464165.html</id>
+    <published>2020-07-24T06:00:08.000Z</published>
+    <updated>2020-07-24T06:06:12.493Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="个人图床" scheme="https://yezhechenyang.gitee.io/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】Thymeleaf模板引擎</title>
@@ -71,9 +163,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Freemarker" scheme="https://yezhechenyang.gitee.io/tags/Freemarker/"/>
-    
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="Freemarker" scheme="https://yezhechenyang.gitee.io/tags/Freemarker/"/>
     
   </entry>
   
@@ -488,93 +580,6 @@
       <category term="BeanFactory" scheme="https://yezhechenyang.gitee.io/tags/BeanFactory/"/>
     
       <category term="ApplicationContext" scheme="https://yezhechenyang.gitee.io/tags/ApplicationContext/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Hexo】PicGo+Gitee搭建个人图床</title>
-    <link href="https://yezhechenyang.gitee.io/2020/071461460.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/071461460.html</id>
-    <published>2020-07-14T09:51:16.000Z</published>
-    <updated>2020-07-23T02:50:14.032Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-摘要&quot;&gt;&lt;a href=&quot;#1-摘要&quot; class=&quot;headerlink&quot; title=&quot;1. 摘要&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
-    
-      <category term="PicGo" scheme="https://yezhechenyang.gitee.io/tags/PicGo/"/>
-    
-      <category term="Gitee" scheme="https://yezhechenyang.gitee.io/tags/Gitee/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Framework】什么是IoC？</title>
-    <link href="https://yezhechenyang.gitee.io/2020/071325754.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/071325754.html</id>
-    <published>2020-07-13T00:42:26.000Z</published>
-    <updated>2020-07-23T02:50:14.056Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;英文全称：Inversion of Control&lt;br&gt;中文翻译：控制反转  &lt;/p&gt;
-&lt;h3 id=&quot;1-定义&quot;&gt;&lt;a href=&quot;#1-定义&quot; class=&quot;headerlink&quot; title=&quot;1. 定义&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
-    
-    
-      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
-    
-      <category term="IoC" scheme="https://yezhechenyang.gitee.io/tags/IoC/"/>
-    
-      <category term="DI" scheme="https://yezhechenyang.gitee.io/tags/DI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Hexo】头像防盗链破解</title>
-    <link href="https://yezhechenyang.gitee.io/2020/071148461.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/071148461.html</id>
-    <published>2020-07-11T11:03:21.000Z</published>
-    <updated>2020-07-23T02:50:14.064Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-情景描述&quot;&gt;&lt;a href=&quot;#1-情景描述&quot; class=&quot;headerlink&quot; title=&quot;1. 情景描述&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
     
   </entry>
   
