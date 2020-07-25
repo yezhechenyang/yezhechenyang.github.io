@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-24T06:06:12.486Z</updated>
+  <updated>2020-07-25T03:53:24.437Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】JdbcTemplate的使用</title>
+    <link href="https://yezhechenyang.gitee.io/2020/072540468.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/072540468.html</id>
+    <published>2020-07-25T03:51:12.000Z</published>
+    <updated>2020-07-25T03:53:24.437Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;本文介绍在&lt;code&gt;Spring Boot&lt;/code&gt;项目中使用&lt;code&gt;Spring
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="JdbcTemplate" scheme="https://yezhechenyang.gitee.io/tags/JdbcTemplate/"/>
+    
+      <category term="orm" scheme="https://yezhechenyang.gitee.io/tags/orm/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】Enjoy魔板引擎</title>
@@ -44,9 +74,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
-    
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
     
   </entry>
   
@@ -74,9 +104,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
-    
       <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
+    
+      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
   </entry>
   
@@ -550,36 +580,6 @@
     
     
       <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Framework】BeanFactory和ApplicationContext介绍</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07152326.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/07152326.html</id>
-    <published>2020-07-15T01:27:54.000Z</published>
-    <updated>2020-07-23T02:50:14.039Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-BeanFactory的定义&quot;&gt;&lt;a href=&quot;#1-BeanFactory的定义&quot; class=&quot;headerlink&quot; title=&quot;1. BeanFactory的定义&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring" scheme="https://yezhechenyang.gitee.io/categories/Spring/"/>
-    
-    
-      <category term="Spring Framework" scheme="https://yezhechenyang.gitee.io/tags/Spring-Framework/"/>
-    
-      <category term="BeanFactory" scheme="https://yezhechenyang.gitee.io/tags/BeanFactory/"/>
-    
-      <category term="ApplicationContext" scheme="https://yezhechenyang.gitee.io/tags/ApplicationContext/"/>
     
   </entry>
   
