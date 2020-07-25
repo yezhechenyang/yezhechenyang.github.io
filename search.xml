@@ -78,9 +78,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> 模板引擎 </tag>
-            
             <tag> Enjoy </tag>
+            
+            <tag> 模板引擎 </tag>
             
         </tags>
       
@@ -107,9 +107,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Beetl </tag>
-            
             <tag> 模板引擎 </tag>
+            
+            <tag> Beetl </tag>
             
         </tags>
       
@@ -304,9 +304,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Admin </tag>
-            
             <tag> Actuator </tag>
+            
+            <tag> Admin </tag>
             
         </tags>
       

@@ -1958,6 +1958,8 @@ footer .copy-right {
 /* 二级菜单样式定义 洪卫 shw2018 add 2019.09.17 */
 .nav-menu {}
 
+.nav-menu i {font-size: 1rem}
+
 .nav-menu li .sub-nav {
     position: absolute;
     top: 77px;
