@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yezhechenyang.gitee.io/2020/072434875.html</loc>
+    
+    <lastmod>2020-07-25T13:29:59.382Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yezhechenyang.gitee.io/2020/072544009.html</loc>
     
     <lastmod>2020-07-25T11:03:01.390Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://yezhechenyang.gitee.io/2020/072464165.html</loc>
     
     <lastmod>2020-07-24T06:36:27.465Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yezhechenyang.gitee.io/2020/072434875.html</loc>
-    
-    <lastmod>2020-07-24T06:06:12.486Z</lastmod>
     
   </url>
   
@@ -240,13 +240,6 @@
   </url>
   
   <url>
-    <loc>https://yezhechenyang.gitee.io/friends/index.html</loc>
-    
-    <lastmod>2020-07-01T23:18:40.322Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yezhechenyang.gitee.io/categories/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
@@ -254,7 +247,7 @@
   </url>
   
   <url>
-    <loc>https://yezhechenyang.gitee.io/tags/index.html</loc>
+    <loc>https://yezhechenyang.gitee.io/friends/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
     
@@ -262,6 +255,13 @@
   
   <url>
     <loc>https://yezhechenyang.gitee.io/galleries/index.html</loc>
+    
+    <lastmod>2020-07-01T23:18:40.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yezhechenyang.gitee.io/tags/index.html</loc>
     
     <lastmod>2020-07-01T23:18:40.322Z</lastmod>
     
