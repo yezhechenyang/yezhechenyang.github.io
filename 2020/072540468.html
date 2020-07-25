@@ -1390,8 +1390,7 @@ DataSourceInitializationMode<span class="token punctuation">.</span>NEVER<span a
   <span class="token punctuation">`</span>last_update_time<span class="token punctuation">`</span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">COMMENT</span> <span class="token string">'上次更新时间'</span>
 <span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COMMENT</span><span class="token operator">=</span><span class="token string">'Spring Boot Demo Orm 系列示例表'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="5-1-2-src-main-resources-db-data-sql"><a href="#5-1-2-src-main-resources-db-data-sql" class="headerlink" title="5.1.2 src\main\resources\db\data.sql"></a>5.1.2 <code>src\main\resources\db\data.sql</code></h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>orm_user<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>password<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>salt<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>email<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>phone_number<span class="token punctuation">`</span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'user_1'</span><span class="token punctuation">,</span> <span class="token string">'ff342e862e7c3285cdc07e56d6b8973b'</span><span class="token punctuation">,</span> <span class="token string">'412365a109674b2dbb1981ed561a4c70'</span><span class="token punctuation">,</span> <span class="token string">'user1@xkcoding.com'</span><span class="token punctuation">,</span> <span class="token string">'17300000001'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>orm_user<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>password<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>salt<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>email<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>phone_number<span class="token punctuation">`</span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'user_2'</span><span class="token punctuation">,</span> <span class="token string">'6c6bf02c8d5d3d128f34b1700cb1e32c'</span><span class="token punctuation">,</span> <span class="token string">'fcbdd0e8a9404a5585ea4e01d0e4d7a0'</span><span class="token punctuation">,</span> <span class="token string">'user2@xkcoding.com'</span><span class="token punctuation">,</span> <span class="token string">'17300000002'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">`</span><span class="token punctuation">`</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>orm_user<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>password<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>salt<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>email<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>phone_number<span class="token punctuation">`</span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'user_2'</span><span class="token punctuation">,</span> <span class="token string">'6c6bf02c8d5d3d128f34b1700cb1e32c'</span><span class="token punctuation">,</span> <span class="token string">'fcbdd0e8a9404a5585ea4e01d0e4d7a0'</span><span class="token punctuation">,</span> <span class="token string">'user2@xkcoding.com'</span><span class="token punctuation">,</span> <span class="token string">'17300000002'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -2047,56 +2046,50 @@ DataSourceInitializationMode<span class="token punctuation">.</span>NEVER<span a
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/072540468.html">
+                <a href="/2020/072544009.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="【Spring Boot】JdbcTemplate的使用">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【JavaScript】解决let变量重复定义报错问题">
                         
-                        <span class="card-title">【Spring Boot】JdbcTemplate的使用</span>
+                        <span class="card-title">【JavaScript】解决let变量重复定义报错问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Spring JdbcTemplate的引入与配置
+                            限定作用域解决let变量重复定义报错
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
-                                    Spring Boot
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring-Boot/" target="_blank">
-                        <span class="chip bg-color">Spring Boot</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/JdbcTemplate/" target="_blank">
-                        <span class="chip bg-color">JdbcTemplate</span>
-                    </a>
-                    
-                    <a href="/tags/orm/" target="_blank">
-                        <span class="chip bg-color">orm</span>
+                    <a href="/tags/let/" target="_blank">
+                        <span class="chip bg-color">let</span>
                     </a>
                     
                 </div>
@@ -2332,7 +2325,7 @@ DataSourceInitializationMode<span class="token punctuation">.</span>NEVER<span a
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">16.8k</span> 字
+                <span class="white-color">17.1k</span> 字
             
 
             
