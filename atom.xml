@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-27T01:26:54.301Z</updated>
+  <updated>2020-07-27T03:23:43.649Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】ORM系列之MyBatis</title>
+    <link href="https://yezhechenyang.gitee.io/2020/072722410.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/072722410.html</id>
+    <published>2020-07-27T03:23:05.000Z</published>
+    <updated>2020-07-27T03:23:43.649Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="MyBatis" scheme="https://yezhechenyang.gitee.io/tags/MyBatis/"/>
+    
+      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】ORM系列之SpringDataJPA</title>
@@ -40,9 +70,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
-    
       <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
+    
+      <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
     
   </entry>
   
@@ -128,9 +158,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
-    
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
     
   </entry>
   
@@ -158,9 +188,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
-    
       <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
+    
+      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
   </entry>
   
@@ -547,32 +577,6 @@
         
           &lt;h3 id=&quot;1-参数传入&quot;&gt;&lt;a href=&quot;#1-参数传入&quot; class=&quot;headerlink&quot; title=&quot;1. 参数传入&quot;&gt;&lt;/a&gt;1. 参数传入&lt;/h3&gt;&lt;p&gt;在运行脚本时，可以向脚本传递一些参数。比如：&lt;/p&gt;
 &lt;pre class=&quot;line-numbers
-        
-      
-    
-    </summary>
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【bat脚本】单行注释与多行注释</title>
-    <link href="https://yezhechenyang.gitee.io/2020/071657563.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/071657563.html</id>
-    <published>2020-07-16T13:14:41.000Z</published>
-    <updated>2020-07-23T02:50:14.117Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-单行注释&quot;&gt;&lt;a href=&quot;#1-单行注释&quot; class=&quot;headerlink&quot; title=&quot;1. 单行注释&quot;&gt;&lt;/a&gt;1. 单行注释&lt;/h3&gt;&lt;h4 id=&quot;1-1-rem&quot;&gt;&lt;a href=&quot;#1-1-rem&quot; class=&quot;headerlink&quot;
         
       
     
