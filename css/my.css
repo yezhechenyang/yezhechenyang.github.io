@@ -59,3 +59,24 @@
 }
 
 .copy-right a:hover{color: #09f;text-decoration:underline}
+
+/*小屏幕下(手机类)的样式*/
+@media only screen and (max-width: 601px) {
+    .video-player {
+        font-size: 8px;
+    }
+}
+
+/*中等屏幕下(平板类)的样式*/
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .video-player {
+        font-size: 10px;
+    }
+}
+
+/*大屏幕下(桌面类)的样式*/
+@media only screen and (min-width: 993px) {
+    .video-player {
+        font-size: 15px;
+    }
+}

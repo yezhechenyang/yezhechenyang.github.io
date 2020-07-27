@@ -6,17 +6,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【bat脚本】变量未正常输出问题分析, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】ORM系列之SpringDataJPA, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 问题描述有这么一段简单的代码：
-set basePath = %CD%\
-
-echo %basePath%
-结果却输出：
-ECHO 处于关闭状态。
-纠结了好长一段时间，原来是“=”左右的空格问题。
-2. 解决问题去掉“=”左右的空格，">
+    <meta name="description" content="1. 前言SpringDataJPA是Spring提供的基于JPA规范实现的ORM框架。
+底层还是用到了Hibernate的JPA实现。
+可以不用写DAO的实现类，提高开发效率。
+下面介绍如何引入、如何配置以及如何使用。
+2. 引入使用Ma">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +21,7 @@ ECHO 处于关闭状态。
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【bat脚本】变量未正常输出问题分析 | 叶遮沉阳</title>
+    <title>【Spring Boot】ORM系列之SpringDataJPA | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -543,13 +540,13 @@ ECHO 处于关闭状态。
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【bat脚本】变量未正常输出问题分析
+                        【Spring Boot】ORM系列之SpringDataJPA
                     </div>
                 </div>
             </div>
@@ -661,8 +658,16 @@ ECHO 处于关闭状态。
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/bat脚本/" target="_blank">
-                                <span class="chip bg-color">bat脚本</span>
+                            <a href="/tags/Spring-Boot/" target="_blank">
+                                <span class="chip bg-color">Spring Boot</span>
+                            </a>
+                        
+                            <a href="/tags/SpringData-JPA/" target="_blank">
+                                <span class="chip bg-color">SpringData JPA</span>
+                            </a>
+                        
+                            <a href="/tags/ORM/" target="_blank">
+                                <span class="chip bg-color">ORM</span>
                             </a>
                         
                     </div>
@@ -673,8 +678,8 @@ ECHO 处于关闭状态。
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/bat脚本/" class="post-category" target="_blank">
-                                bat脚本
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                Spring Boot
                             </a>
                         
                     </div>
@@ -685,7 +690,7 @@ ECHO 处于关闭状态。
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-16
+                    2020-07-27
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -699,14 +704,14 @@ ECHO 处于关闭状态。
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        137
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        8 分
                     </div>
                     
                 
@@ -723,19 +728,378 @@ ECHO 处于关闭状态。
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>有这么一段简单的代码：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> basePath <span class="token operator">=</span> %CD%\
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p><code>SpringDataJPA</code>是<code>Spring</code>提供的基于<code>JPA</code>规范实现的<code>ORM</code>框架。</p>
+<p>底层还是用到了<code>Hibernate</code>的<code>JPA</code>实现。</p>
+<p>可以不用写<code>DAO</code>的实现类，提高开发效率。</p>
+<p>下面介绍如何引入、如何配置以及如何使用。</p>
+<h3 id="2-引入"><a href="#2-引入" class="headerlink" title="2. 引入"></a>2. 引入</h3><p>使用<code>Maven</code>的方式引入依赖。</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-jpa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><h4 id="3-1-application-yml"><a href="#3-1-application-yml" class="headerlink" title="3.1 application.yml"></a>3.1 <code>application.yml</code></h4><p>在这里使用的数据源是<code>Hikari</code>。</p>
+<p><code>spring.jpa.hibernate.ddl</code>配置说明：</p>
+<ul>
+<li><code>create</code>每次运行该程序，没有表格会新建表格，表内有数据会清空；</li>
+<li><code>create-drop</code>每次程序结束的时候会清空表</li>
+<li><code>update</code>每次运行程序，没有表格会新建表格，表内有数据不会清空，只会更新</li>
+<li><code>validate</code>运行程序会校验数据与数据库的字段类型是否相同，不同会报错。</li>
+</ul>
+<p><code>open-in-view</code>它允许在事务提交之后延迟加载显示所需要的对象。 </p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token key atrule">jdbc-url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>3306/spring<span class="token punctuation">-</span>boot<span class="token punctuation">-</span>demo<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding</span>=UTF<span class="token punctuation">-</span>8<span class="token important">&amp;useSSL</span>=false<span class="token important">&amp;autoReconnect</span>=true<span class="token important">&amp;failOverReadOnly</span>=false<span class="token important">&amp;serverTimezone</span>=GMT%2B8
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.zaxxer.hikari.HikariDataSource
+    <span class="token key atrule">initialization-mode</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">continue-on-error</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">schema</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">"classpath:db/schema.sql"</span>
+    <span class="token key atrule">data</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">"classpath:db/data.sql"</span>
+    <span class="token key atrule">hikari</span><span class="token punctuation">:</span>
+      <span class="token key atrule">minimum-idle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+      <span class="token key atrule">connection-test-query</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+      <span class="token key atrule">maximum-pool-size</span><span class="token punctuation">:</span> <span class="token number">20</span>
+      <span class="token key atrule">auto-commit</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">idle-timeout</span><span class="token punctuation">:</span> <span class="token number">30000</span>
+      <span class="token key atrule">pool-name</span><span class="token punctuation">:</span> SpringBootDemoHikariCP
+      <span class="token key atrule">max-lifetime</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+      <span class="token key atrule">connection-timeout</span><span class="token punctuation">:</span> <span class="token number">30000</span>
+  <span class="token key atrule">jpa</span><span class="token punctuation">:</span>
+    <span class="token key atrule">show-sql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">hibernate</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ddl-auto</span><span class="token punctuation">:</span> validate
+    <span class="token key atrule">properties</span><span class="token punctuation">:</span>
+      <span class="token key atrule">hibernate</span><span class="token punctuation">:</span>
+        <span class="token key atrule">dialect</span><span class="token punctuation">:</span> org.hibernate.dialect.MySQL57InnoDBDialect
+    <span class="token key atrule">open-in-view</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-JpaConfig"><a href="#3-2-JpaConfig" class="headerlink" title="3.2 JpaConfig"></a>3.2 <code>JpaConfig</code></h4><p><code>@EnableJpaAuditing</code>启用审计功能，可自动化填充参数,比如<code>创建时间</code> <code>修改时间</code> <code>创建者</code> <code>修改者</code>。</p>
+<p>主要配置：数据源、实体类管理工厂、事务管理。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableTransactionManagement</span>
+<span class="token annotation punctuation">@EnableJpaAuditing</span>
+<span class="token annotation punctuation">@EnableJpaRepositories</span><span class="token punctuation">(</span>basePackages <span class="token operator">=</span> <span class="token string">"com.xkcoding.orm.jpa.repository"</span><span class="token punctuation">,</span> transactionManagerRef <span class="token operator">=</span> <span class="token string">"jpaTransactionManager"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JpaConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"spring.datasource"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> DataSource <span class="token function">dataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> DataSourceBuilder<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token keyword">echo</span> %basePath%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>结果却输出：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">ECHO 处于关闭状态。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>纠结了好长一段时间，原来是“=”左右的空格问题。</p>
-<h3 id="2-解决问题"><a href="#2-解决问题" class="headerlink" title="2. 解决问题"></a>2. 解决问题</h3><p><strong>去掉“=”左右的空格</strong>，代码如下：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> basePath<span class="token operator">=</span>%CD%\
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> LocalContainerEntityManagerFactoryBean <span class="token function">entityManagerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HibernateJpaVendorAdapter japVendor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HibernateJpaVendorAdapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        japVendor<span class="token punctuation">.</span><span class="token function">setGenerateDdl</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        LocalContainerEntityManagerFactoryBean entityManagerFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LocalContainerEntityManagerFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        entityManagerFactory<span class="token punctuation">.</span><span class="token function">setDataSource</span><span class="token punctuation">(</span><span class="token function">dataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        entityManagerFactory<span class="token punctuation">.</span><span class="token function">setJpaVendorAdapter</span><span class="token punctuation">(</span>japVendor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        entityManagerFactory<span class="token punctuation">.</span><span class="token function">setPackagesToScan</span><span class="token punctuation">(</span><span class="token string">"com.xkcoding.orm.jpa.entity"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> entityManagerFactory<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token keyword">echo</span> %basePath%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>运行后，便正常输出了。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">D:\CodeTest\BatTest\imagebed\<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> PlatformTransactionManager <span class="token function">jpaTransactionManager</span><span class="token punctuation">(</span>EntityManagerFactory entityManagerFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JpaTransactionManager transactionManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JpaTransactionManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        transactionManager<span class="token punctuation">.</span><span class="token function">setEntityManagerFactory</span><span class="token punctuation">(</span>entityManagerFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> transactionManager<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-使用"><a href="#4-使用" class="headerlink" title="4. 使用"></a>4. 使用</h3><h4 id="4-1-Entity"><a href="#4-1-Entity" class="headerlink" title="4.1 Entity"></a>4.1 <code>Entity</code></h4><h5 id="4-1-1-AbstractAuditModel"><a href="#4-1-1-AbstractAuditModel" class="headerlink" title="4.1.1 AbstractAuditModel"></a>4.1.1 <code>AbstractAuditModel</code></h5><p>前面配置了<code>@EnableJpaAuditing</code>，在实体类还要配置<code>@EntityListeners</code>才能实现参数自动填充。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@MappedSuperclass</span>
+<span class="token annotation punctuation">@EntityListeners</span><span class="token punctuation">(</span>AuditingEntityListener<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractAuditModel</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 主键
+     */</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 创建时间
+     */</span>
+    <span class="token annotation punctuation">@Temporal</span><span class="token punctuation">(</span>TemporalType<span class="token punctuation">.</span>TIMESTAMP<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"create_time"</span><span class="token punctuation">,</span> nullable <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> updatable <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@CreatedDate</span>
+    <span class="token keyword">private</span> Date createTime<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 上次更新时间
+     */</span>
+    <span class="token annotation punctuation">@Temporal</span><span class="token punctuation">(</span>TemporalType<span class="token punctuation">.</span>TIMESTAMP<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"last_update_time"</span><span class="token punctuation">,</span> nullable <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@LastModifiedDate</span>
+    <span class="token keyword">private</span> Date lastUpdateTime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="4-1-2-User"><a href="#4-1-2-User" class="headerlink" title="4.1.2 User"></a>4.1.2 <code>User</code></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@EqualsAndHashCode</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@NoArgsConstructor</span>
+<span class="token annotation punctuation">@AllArgsConstructor</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@Builder</span>
+<span class="token annotation punctuation">@Entity</span>
+<span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"orm_user"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ToString</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractAuditModel</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 用户名
+     */</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 加密后的密码
+     */</span>
+    <span class="token keyword">private</span> String password<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 加密使用的盐
+     */</span>
+    <span class="token keyword">private</span> String salt<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 邮箱
+     */</span>
+    <span class="token keyword">private</span> String email<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 手机号码
+     */</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"phone_number"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String phoneNumber<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 状态，-1：逻辑删除，0：禁用，1：启用
+     */</span>
+    <span class="token keyword">private</span> Integer status<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 上次登录时间
+     */</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"last_login_time"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Date lastLoginTime<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 关联部门表
+     * 1、关系维护端，负责多对多关系的绑定和解除
+     * 2、@JoinTable注解的name属性指定关联表的名字，joinColumns指定外键的名字，关联到关系维护端(User)
+     * 3、inverseJoinColumns指定外键的名字，要关联的关系被维护端(Department)
+     * 4、其实可以不使用@JoinTable注解，默认生成的关联表名称为主表表名+下划线+从表表名，
+     * 即表名为user_department
+     * 关联到主表的外键名：主表名+下划线+主表中的主键列名,即user_id,这里使用referencedColumnName指定
+     * 关联到从表的外键名：主表中用于关联的属性名+下划线+从表的主键列名,department_id
+     * 主表就是关系维护端对应的表，从表就是关系被维护端对应的表
+     */</span>
+    <span class="token annotation punctuation">@ManyToMany</span><span class="token punctuation">(</span>cascade <span class="token operator">=</span> CascadeType<span class="token punctuation">.</span>ALL<span class="token punctuation">,</span> fetch <span class="token operator">=</span> FetchType<span class="token punctuation">.</span>EAGER<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@JoinTable</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"orm_user_dept"</span><span class="token punctuation">,</span> joinColumns <span class="token operator">=</span> <span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"user_id"</span><span class="token punctuation">,</span> referencedColumnName <span class="token operator">=</span> <span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> inverseJoinColumns <span class="token operator">=</span> <span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"dept_id"</span><span class="token punctuation">,</span> referencedColumnName <span class="token operator">=</span> <span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Collection<span class="token operator">&lt;</span>Department<span class="token operator">></span> departmentList<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="4-1-3-Department"><a href="#4-1-3-Department" class="headerlink" title="4.1.3 Department"></a>4.1.3 <code>Department</code></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@EqualsAndHashCode</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@NoArgsConstructor</span>
+<span class="token annotation punctuation">@AllArgsConstructor</span>
+<span class="token annotation punctuation">@Builder</span>
+<span class="token annotation punctuation">@Entity</span>
+<span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"orm_department"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ToString</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Department</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractAuditModel</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 部门名
+     */</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"name"</span><span class="token punctuation">,</span> columnDefinition <span class="token operator">=</span> <span class="token string">"varchar(255) not null"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 上级部门id
+     */</span>
+    <span class="token annotation punctuation">@ManyToOne</span><span class="token punctuation">(</span>cascade <span class="token operator">=</span> <span class="token punctuation">{</span>CascadeType<span class="token punctuation">.</span>REFRESH<span class="token punctuation">}</span><span class="token punctuation">,</span> optional <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"superior"</span><span class="token punctuation">,</span> referencedColumnName <span class="token operator">=</span> <span class="token string">"id"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Department superior<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 所属层级
+     */</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"levels"</span><span class="token punctuation">,</span> columnDefinition <span class="token operator">=</span> <span class="token string">"int not null default 0"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer levels<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 排序
+     */</span>
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"order_no"</span><span class="token punctuation">,</span> columnDefinition <span class="token operator">=</span> <span class="token string">"int not null default 0"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer orderNo<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 子部门集合
+     */</span>
+    <span class="token annotation punctuation">@OneToMany</span><span class="token punctuation">(</span>cascade <span class="token operator">=</span> <span class="token punctuation">{</span>CascadeType<span class="token punctuation">.</span>REFRESH<span class="token punctuation">,</span> CascadeType<span class="token punctuation">.</span>REMOVE<span class="token punctuation">}</span><span class="token punctuation">,</span> fetch <span class="token operator">=</span> FetchType<span class="token punctuation">.</span>EAGER<span class="token punctuation">,</span> mappedBy <span class="token operator">=</span> <span class="token string">"superior"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Collection<span class="token operator">&lt;</span>Department<span class="token operator">></span> children<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 部门下用户集合
+     */</span>
+    <span class="token annotation punctuation">@ManyToMany</span><span class="token punctuation">(</span>mappedBy <span class="token operator">=</span> <span class="token string">"departmentList"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Collection<span class="token operator">&lt;</span>User<span class="token operator">></span> userList<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-2-DAO"><a href="#4-2-DAO" class="headerlink" title="4.2 DAO"></a>4.2 <code>DAO</code></h4><p>在<code>DAO</code>接口中只要继承<code>JpaRepository</code>即可，不用写实现类。</p>
+<h5 id="4-2-1-UserDao"><a href="#4-2-1-UserDao" class="headerlink" title="4.2.1 UserDao"></a>4.2.1 <code>UserDao</code></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Repository</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserDao</span> <span class="token keyword">extends</span> <span class="token class-name">JpaRepository</span><span class="token operator">&lt;</span>User<span class="token punctuation">,</span> Long<span class="token operator">></span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="4-2-2-DepartmentDao"><a href="#4-2-2-DepartmentDao" class="headerlink" title="4.2.2 DepartmentDao"></a>4.2.2 <code>DepartmentDao</code></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Repository</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DepartmentDao</span> <span class="token keyword">extends</span> <span class="token class-name">JpaRepository</span><span class="token operator">&lt;</span>Department<span class="token punctuation">,</span> Long<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 根据层级查询部门
+     *
+     * @param level 层级
+     * @return 部门列表
+     */</span>
+    List<span class="token operator">&lt;</span>Department<span class="token operator">></span> <span class="token function">findDepartmentsByLevels</span><span class="token punctuation">(</span>Integer level<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>值得注意的是<code>DepartmentDao</code>有一个自定义的方法<code>findDepartmentsByLevels()</code>，也会被默认实现。</p>
+<p>这就要注意<code>Spring JPA</code>的潜规则了，方法命名只要按照约定走，就会帮你自动完成<code>DAO</code>的实现。</p>
+<p>比如上面的<code>findDepartmentsByLevels()</code>方法，解析方法名称发现最后的<code>Levels</code>是<code>Department</code>的属性，便会在数据库中根据这个字段去查询数据。</p>
+<p>更多的关键字以及对应的<code>jpql</code>语句如下：</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Sample</th>
+<th>JPQL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>And</td>
+<td>findByLastnameAndFirstname</td>
+<td>… where x.lastname = ?1 and x.firstname = ?2</td>
+</tr>
+<tr>
+<td>Or</td>
+<td>findByLastnameOrFirstname</td>
+<td>… where x.lastname = ?1 or x.firstname = ?2</td>
+</tr>
+<tr>
+<td>Is,Equals</td>
+<td>findByFirstnameIs,findByFirstnameEquals</td>
+<td>… where x.firstname = ?1</td>
+</tr>
+<tr>
+<td>Between</td>
+<td>findByStartDateBetween</td>
+<td>… where x.startDate between ?1 and ?2</td>
+</tr>
+<tr>
+<td>LessThan</td>
+<td>findByAgeLessThan</td>
+<td>… where x.age &lt; ?1</td>
+</tr>
+<tr>
+<td>LessThanEqual</td>
+<td>indByAgeLessThanEqual</td>
+<td>… where x.age ⇐ ?1</td>
+</tr>
+<tr>
+<td>GreaterThan</td>
+<td>findByAgeGreaterThan</td>
+<td>… where x.age &gt; ?1</td>
+</tr>
+<tr>
+<td>GreaterThanEqual</td>
+<td>findByAgeGreaterThanEqual</td>
+<td>… where x.age &gt;= ?1</td>
+</tr>
+<tr>
+<td>After</td>
+<td>findByStartDateAfter</td>
+<td>… where x.startDate &gt; ?1</td>
+</tr>
+<tr>
+<td>Before</td>
+<td>findByStartDateBefore</td>
+<td>… where x.startDate &lt; ?1</td>
+</tr>
+<tr>
+<td>IsNull</td>
+<td>findByAgeIsNull</td>
+<td>… where x.age is null</td>
+</tr>
+<tr>
+<td>IsNotNull,NotNull</td>
+<td>findByAge(Is)NotNull</td>
+<td>… where x.age not null</td>
+</tr>
+<tr>
+<td>Like</td>
+<td>findByFirstnameLike</td>
+<td>… where x.firstname like ?1</td>
+</tr>
+<tr>
+<td>NotLike</td>
+<td>findByFirstnameNotLike</td>
+<td>… where x.firstname not like ?1</td>
+</tr>
+<tr>
+<td>StartingWith</td>
+<td>findByFirstnameStartingWith</td>
+<td>… where x.firstname like ?1 (parameter bound with appended %)</td>
+</tr>
+<tr>
+<td>EndingWith</td>
+<td>findByFirstnameEndingWith</td>
+<td>… where x.firstname like ?1 (parameter bound with prepended %)</td>
+</tr>
+<tr>
+<td>Containing</td>
+<td>findByFirstnameContaining</td>
+<td>… where x.firstname like ?1 (parameter bound wrapped in %)</td>
+</tr>
+<tr>
+<td>OrderBy</td>
+<td>findByAgeOrderByLastnameDesc</td>
+<td>… where x.age = ?1 order by x.lastname desc</td>
+</tr>
+<tr>
+<td>Not</td>
+<td>findByLastnameNot</td>
+<td>… where x.lastname &lt;&gt; ?1</td>
+</tr>
+<tr>
+<td>In</td>
+<td>findByAgeIn(Collection ages)</td>
+<td>… where x.age in ?1</td>
+</tr>
+<tr>
+<td>NotIn</td>
+<td>findByAgeNotIn(Collection age)</td>
+<td>… where x.age not in ?1</td>
+</tr>
+<tr>
+<td>TRUE</td>
+<td>findByActiveTrue()</td>
+<td>… where x.active = true</td>
+</tr>
+<tr>
+<td>FALSE</td>
+<td>findByActiveFalse()</td>
+<td>… where x.active = false</td>
+</tr>
+<tr>
+<td>IgnoreCase</td>
+<td>findByFirstnameIgnoreCase</td>
+<td>… where UPPER(x.firstame) = UPPER(?1)</td>
+</tr>
+</tbody></table>
+<h5 id="方法名解析规则"><a href="#方法名解析规则" class="headerlink" title="方法名解析规则"></a>方法名解析规则</h5><p><code>Spring Data JPA</code>框架在进行方法名解析时，会先把方法名多余的前缀截取掉，<br>比如<code>find，findBy，read，readBy，get，getBy</code>，然后对剩下的部分进行解析。<br>假如创建如下的查询：<code>findByUserDepUuid()</code>，框架在解析该方法时，首先剔除<code>findBy</code>，<br>然后对剩下的属性进行解析，假设查询实体为<code>Doc</code></p>
+<ol>
+<li>先判断<code>userDepUuid</code>（根据<code>POJO</code>规范，首字母变为小写）是否为查询实体的一个属性，如果是，则表示根据该属性进行查询;如果没有该属性，继续第二步;</li>
+<li>从右往左截取第一个大写字母开头的字符串此处为<code>UUID</code>），然后检查剩下的字符串是否为查询实体的一个属性，如果是，则表示根据该属性进行查询;如果没有该属性，则重复第二步，继续从右往左截取;最后假设用户为查询实体的一个属性;</li>
+<li>接着处理剩下部分（<code>DepUuid</code>），先判断用户所对应的类型是否有<code>depUuid</code>属性，如果有，则表示该方法最终是根据<code>Doc.user.depUuid</code>的取值进行查询;否则继续按照步骤2的规则从右往左截取，最终表示根据<code>Doc.user.dep.uuid</code>的值进行查询。</li>
+<li>可能会存在一种特殊情况，比如<code>Doc</code>包含一个用户的属性，也有一个<code>userDep</code>属性，此时会存在混合。可以明确在属性之间加上<code>_</code>以显式表达意思，比如<code>findByUser_DepUui()</code>或者<code>findByUserDep_uuid()</code></li>
+</ol>
+<blockquote>
+<p>方法名解析规则引自博客园“一心二念”的<a href="https://www.cnblogs.com/h-c-g/p/10980469.html" target="_blank" rel="noopener">spring-data-JPA repository自定义方法规则</a></p>
+</blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -905,8 +1269,8 @@ ECHO 处于关闭状态。
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/071626216.html">
-                        https://yezhechenyang.gitee.io/2020/071626216.html</a></span>
+                <span class="reprint-info"><a href="/2020/0727302.html">
+                        https://yezhechenyang.gitee.io/2020/0727302.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1391,46 +1755,56 @@ ECHO 处于关闭状态。
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/071653962.html">
+                <a href="/2020/0727302.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【bat脚本】【问题修复】此时不应有xxx">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【Spring Boot】ORM系列之SpringDataJPA">
                         
-                        <span class="card-title">【bat脚本】【问题修复】此时不应有xxx</span>
+                        <span class="card-title">【Spring Boot】ORM系列之SpringDataJPA</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            解决问题：此时不应有xxx
+                            来和SpringDataJPA混个脸熟
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/bat脚本/" class="post-category" target="_blank">
-                                    bat脚本
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                    Spring Boot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/bat脚本/" target="_blank">
-                        <span class="chip bg-color">bat脚本</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring Boot</span>
+                    </a>
+                    
+                    <a href="/tags/SpringData-JPA/" target="_blank">
+                        <span class="chip bg-color">SpringData JPA</span>
+                    </a>
+                    
+                    <a href="/tags/ORM/" target="_blank">
+                        <span class="chip bg-color">ORM</span>
                     </a>
                     
                 </div>
@@ -1444,31 +1818,31 @@ ECHO 处于关闭状态。
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/071612645.html">
+                <a href="/2020/072544009.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="【bat脚本】向脚本传递参数">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【JavaScript】解决let变量重复定义报错问题">
                         
-                        <span class="card-title">【bat脚本】向脚本传递参数</span>
+                        <span class="card-title">【JavaScript】解决let变量重复定义报错问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍如何向脚本中传递参数
+                            限定作用域解决let变量重复定义报错
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/bat脚本/" class="post-category" target="_blank">
-                                    bat脚本
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1478,8 +1852,12 @@ ECHO 处于关闭状态。
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/bat脚本/" target="_blank">
-                        <span class="chip bg-color">bat脚本</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/let/" target="_blank">
+                        <span class="chip bg-color">let</span>
                     </a>
                     
                 </div>

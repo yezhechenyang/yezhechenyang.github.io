@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-25T11:03:01.390Z</updated>
+  <updated>2020-07-27T01:26:54.301Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】ORM系列之SpringDataJPA</title>
+    <link href="https://yezhechenyang.gitee.io/2020/0727302.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/0727302.html</id>
+    <published>2020-07-27T01:20:31.000Z</published>
+    <updated>2020-07-27T01:26:54.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
+    
+      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
+    
+  </entry>
   
   <entry>
     <title>【JavaScript】解决let变量重复定义报错问题</title>
@@ -543,32 +573,6 @@
         
         
           &lt;h3 id=&quot;1-单行注释&quot;&gt;&lt;a href=&quot;#1-单行注释&quot; class=&quot;headerlink&quot; title=&quot;1. 单行注释&quot;&gt;&lt;/a&gt;1. 单行注释&lt;/h3&gt;&lt;h4 id=&quot;1-1-rem&quot;&gt;&lt;a href=&quot;#1-1-rem&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【bat脚本】中文乱码</title>
-    <link href="https://yezhechenyang.gitee.io/2020/071662282.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/071662282.html</id>
-    <published>2020-07-16T13:12:33.000Z</published>
-    <updated>2020-07-23T02:50:14.110Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-原因描述&quot;&gt;&lt;a href=&quot;#1-原因描述&quot; class=&quot;headerlink&quot; title=&quot;1. 原因描述&quot;&gt;&lt;/a&gt;1.
         
       
     
