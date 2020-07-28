@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>【Hexo】Git上传大文件失败</title>
+      <link href="/2020/072816107.html"/>
+      <url>/2020/072816107.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>当使用<code>hexo clean &amp;&amp; hexo d</code>部署时，出现下面的错误：</p><pre class="line-numbers language-shell"><code class="language-shell">remote: Powered by GITEE.COM [GNK-5.0]remote: error: File: 251f4b6a8eb247f2fe5be01ba30b58c7bd5e64be 194.62 MB, exceeds 100.00 MB.remote: Use command below to see the filename:remote: git rev-list --objects --all | grep 251f4b6a8eb247f2fe5be01ba30b58c7bd5e64beremote: Please remove the file from history and try again. (https://gitee.com/help/articles/4232)To git@gitee.com:yezhechenyang/myblog.git ! [remote rejected] HEAD -> master (pre-receive hook declined)error: failed to push some refs to 'git@gitee.com:yezhechenyang/myblog.git'FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed    at ChildProcess.<anonymous> (D:\CodeTest\HexoTest\myblog\hexo-blog-fly\node_modules\hexo-util\lib\spawn.js:52:19)    at ChildProcess.emit (events.js:310:20)    at ChildProcess.cp.emit (D:\CodeTest\HexoTest\myblog\hexo-blog-fly\node_modules\cross-spawn\lib\enoent.js:40:29)    at Process.ChildProcess._handle.onexit (internal/child_process.js:275:12)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>有一个视频文件超过了100M，导致<code>push</code>到<code>Gitee</code>上报错。</p><h3 id="2-解决过程"><a href="#2-解决过程" class="headerlink" title="2. 解决过程"></a>2. 解决过程</h3><p>尝试删除视频文件重新部署。</p><p>删除文件后，再次运行<code>hexo clean &amp;&amp; hexo d</code>，还是会报上面的错误。</p><p>这该如何解决呢？</p><p>第二次部署的时候，很明显发现还会上传视频。说明<code>hexo</code>并没有在<code>Git</code>的本地管理中把视频清除掉。</p><p>那么需要我们自己去清理<code>Git</code>本地版本管理的视频缓存了。</p><p><strong>直接删除<code>.deploy_git</code>目录。</strong></p><p>再次运行<code>hexo clean &amp;&amp; hexo d</code>，一切正常，搞定收工！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gitee </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Spring Boot】ORM系列之MyBatis</title>
       <link href="/2020/072722410.html"/>
       <url>/2020/072722410.html</url>
@@ -674,9 +701,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> PicGo </tag>
-            
             <tag> Gitee </tag>
+            
+            <tag> PicGo </tag>
             
         </tags>
       

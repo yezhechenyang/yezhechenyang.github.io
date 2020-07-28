@@ -6,14 +6,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Spring Boot】Admin可视化监控, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Hexo】Git上传大文件失败, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 前言Actuator监控器只是提供最简单的接口调用，未提供可视化。
-本文介绍Admin可视化监控。
-主要实现Admin服务端监控Admin客户端的运行状况。
-版本说明：
-&amp;lt;spring.boot.version&gt;2.1.0.RE">
+    <meta name="description" content="1. 问题描述当使用hexo clean &amp;amp;&amp;amp; hexo d部署时，出现下面的错误：
+remote: Powered by GITEE.COM [GNK-5.0]
+remote: error: File: 251f4b6a8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Spring Boot】Admin可视化监控 | 叶遮沉阳</title>
+    <title>【Hexo】Git上传大文件失败 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -540,13 +538,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Spring Boot】Admin可视化监控
+                        【Hexo】Git上传大文件失败
                     </div>
                 </div>
             </div>
@@ -658,16 +656,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring-Boot/" target="_blank">
-                                <span class="chip bg-color">Spring Boot</span>
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/Actuator/" target="_blank">
-                                <span class="chip bg-color">Actuator</span>
-                            </a>
-                        
-                            <a href="/tags/Admin/" target="_blank">
-                                <span class="chip bg-color">Admin</span>
+                            <a href="/tags/Gitee/" target="_blank">
+                                <span class="chip bg-color">Gitee</span>
                             </a>
                         
                     </div>
@@ -678,8 +672,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
-                                Spring Boot
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                Hexo
                             </a>
                         
                     </div>
@@ -690,7 +684,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-21
+                    2020-07-28
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -704,14 +698,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1k
+                        381
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        1 分
                     </div>
                     
                 
@@ -728,135 +722,29 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p><code>Actuator</code>监控器只是提供最简单的接口调用，未提供可视化。</p>
-<p>本文介绍<code>Admin</code>可视化监控。</p>
-<p>主要实现<code>Admin</code>服务端监控<code>Admin</code>客户端的运行状况。</p>
-<p>版本说明：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring.boot.version</span><span class="token punctuation">></span></span>2.1.0.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring.boot.version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-boot-admin.version</span><span class="token punctuation">></span></span>2.1.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-boot-admin.version</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="2-服务端"><a href="#2-服务端" class="headerlink" title="2. 服务端"></a>2. 服务端</h3><h4 id="2-1-服务端Maven配置"><a href="#2-1-服务端Maven配置" class="headerlink" title="2.1 服务端Maven配置"></a>2.1 服务端Maven配置</h4><p>注意：服务端移除移除<code>Tomcat</code>，添加<code>Jetty</code>，是为了解决<code>Calling [asyncError()] is not valid</code>错误，详情可见下面的标题类目<code>5.1</code>。</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>de.codecentric<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-admin-starter-server<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-tomcat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-jetty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-2-服务端yml配置"><a href="#2-2-服务端yml配置" class="headerlink" title="2.2 服务端yml配置"></a>2.2 服务端yml配置</h4><pre class="line-numbers language-xml"><code class="language-xml">server:
-  port: 8000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="2-3-服务端启动器"><a href="#2-3-服务端启动器" class="headerlink" title="2.3 服务端启动器"></a>2.3 服务端启动器</h4><p>使用<code>@EnableAdminServer</code>注解开启<code>AdminServer</code>服务。</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@EnableAdminServer</span>
-<span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringBootDemoAdminServerApplication</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>SpringBootDemoAdminServerApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-客户端"><a href="#3-客户端" class="headerlink" title="3. 客户端"></a>3. 客户端</h3><h4 id="3-1-客户端Maven配置"><a href="#3-1-客户端Maven配置" class="headerlink" title="3.1 客户端Maven配置"></a>3.1 客户端Maven配置</h4><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>de.codecentric<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-admin-starter-client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-security<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-2-客户端yml配置"><a href="#3-2-客户端yml配置" class="headerlink" title="3.2 客户端yml配置"></a>3.2 客户端yml配置</h4><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
-  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8080</span>
-  <span class="token key atrule">servlet</span><span class="token punctuation">:</span>
-    <span class="token key atrule">context-path</span><span class="token punctuation">:</span> /demo
-<span class="token key atrule">spring</span><span class="token punctuation">:</span>
-  <span class="token key atrule">application</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># Spring Boot Admin展示的客户端项目名，不设置，会使用自动生成的随机id</span>
-    <span class="token key atrule">name</span><span class="token punctuation">:</span> spring<span class="token punctuation">-</span>boot<span class="token punctuation">-</span>demo<span class="token punctuation">-</span>admin<span class="token punctuation">-</span>client
-  <span class="token key atrule">boot</span><span class="token punctuation">:</span>
-    <span class="token key atrule">admin</span><span class="token punctuation">:</span>
-      <span class="token key atrule">client</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># Spring Boot Admin 服务端地址</span>
-        <span class="token key atrule">url</span><span class="token punctuation">:</span> <span class="token string">"http://localhost:8000/"</span>
-        <span class="token key atrule">instance</span><span class="token punctuation">:</span>
-          <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># 客户端端点信息的安全认证信息</span>
-            <span class="token key atrule">user.name</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.security.user.name<span class="token punctuation">}</span>
-            <span class="token key atrule">user.password</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.security.user.password<span class="token punctuation">}</span>
-  <span class="token key atrule">security</span><span class="token punctuation">:</span>
-    <span class="token key atrule">user</span><span class="token punctuation">:</span>
-      <span class="token key atrule">name</span><span class="token punctuation">:</span> xkcoding
-      <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">123456</span>
-<span class="token key atrule">management</span><span class="token punctuation">:</span>
-  <span class="token key atrule">endpoint</span><span class="token punctuation">:</span>
-    <span class="token key atrule">health</span><span class="token punctuation">:</span>
-      <span class="token comment" spellcheck="true"># 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况</span>
-      <span class="token key atrule">show-details</span><span class="token punctuation">:</span> always
-  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
-    <span class="token key atrule">web</span><span class="token punctuation">:</span>
-      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点</span>
-        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-3-客户端启动器"><a href="#3-3-客户端启动器" class="headerlink" title="3.3 客户端启动器"></a>3.3 客户端启动器</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringBootDemoAdminClientApplication</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>SpringBootDemoAdminClientApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h3><p>启动服务端与客户端。</p>
-<p>浏览器访问服务端：<code>http://localhost:8000/</code><br>可以直接看到启动的客户端实例列表。<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200721093933.png" alt=""></p>
-<p>然后点击菜单栏的<code>Wallbord</code>，便可看到图形化展示客户端实例。<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200721094222.png" alt=""></p>
-<p>点击任意一个实例，便可进入该实例的可视化监控界面。<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200721094349.png" alt=""></p>
-<h3 id="5-问题汇总"><a href="#5-问题汇总" class="headerlink" title="5. 问题汇总"></a>5. 问题汇总</h3><h3 id="5-1-Calling-asyncError-is-not-valid"><a href="#5-1-Calling-asyncError-is-not-valid" class="headerlink" title="5.1 Calling [asyncError()] is not valid"></a>5.1 Calling [asyncError()] is not valid</h3><p><code>Admin</code>服务端出现的错误，错误信息：</p>
-<pre><code>java.lang.IllegalStateException: Calling [asyncError()] is not valid for a request with Async state [MUST_DISPATCH]
-    at org.apache.coyote.AsyncStateMachine.asyncError(AsyncStateMachine.java:440) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:494) [tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.coyote.Request.action(Request.java:430) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.catalina.core.AsyncContextImpl.setErrorState(AsyncContextImpl.java:382) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:239) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241) [tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:53) [tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
-    at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
-    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0]
-    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0]
-    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
-    at java.lang.Thread.run(Thread.java:744) [na:1.8.0]</code></pre><p>参考网上<code>l1161558158</code>的<a href="https://blog.csdn.net/l1161558158/article/details/86569748" target="_blank" rel="noopener">博客</a>，使用<code>Jetty</code>替换<code>Tomcat</code>可解决此问题。</p>
-<p>修改<code>Admin</code>服务端的<code>pom</code>，移除<code>Tomcat</code>，添加<code>Jetty</code>。</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-tomcat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-jetty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>当使用<code>hexo clean &amp;&amp; hexo d</code>部署时，出现下面的错误：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">remote: Powered by GITEE.COM [GNK-5.0]
+remote: error: File: 251f4b6a8eb247f2fe5be01ba30b58c7bd5e64be 194.62 MB, exceeds 100.00 MB.
+remote: Use command below to see the filename:
+remote: git rev-list --objects --all | grep 251f4b6a8eb247f2fe5be01ba30b58c7bd5e64be
+remote: Please remove the file from history and try again. (https://gitee.com/help/articles/4232)
+To git@gitee.com:yezhechenyang/myblog.git
+ ! [remote rejected] HEAD -> master (pre-receive hook declined)
+error: failed to push some refs to 'git@gitee.com:yezhechenyang/myblog.git'
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: Spawn failed
+    at ChildProcess.<anonymous> (D:\CodeTest\HexoTest\myblog\hexo-blog-fly\node_modules\hexo-util\lib\spawn.js:52:19)
+    at ChildProcess.emit (events.js:310:20)
+    at ChildProcess.cp.emit (D:\CodeTest\HexoTest\myblog\hexo-blog-fly\node_modules\cross-spawn\lib\enoent.js:40:29)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:275:12)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>有一个视频文件超过了100M，导致<code>push</code>到<code>Gitee</code>上报错。</p>
+<h3 id="2-解决过程"><a href="#2-解决过程" class="headerlink" title="2. 解决过程"></a>2. 解决过程</h3><p>尝试删除视频文件重新部署。</p>
+<p>删除文件后，再次运行<code>hexo clean &amp;&amp; hexo d</code>，还是会报上面的错误。</p>
+<p>这该如何解决呢？</p>
+<p>第二次部署的时候，很明显发现还会上传视频。说明<code>hexo</code>并没有在<code>Git</code>的本地管理中把视频清除掉。</p>
+<p>那么需要我们自己去清理<code>Git</code>本地版本管理的视频缓存了。</p>
+<p><strong>直接删除<code>.deploy_git</code>目录。</strong></p>
+<p>再次运行<code>hexo clean &amp;&amp; hexo d</code>，一切正常，搞定收工！</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1026,8 +914,8 @@
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/07211248.html">
-                        https://yezhechenyang.gitee.io/2020/07211248.html</a></span>
+                <span class="reprint-info"><a href="/2020/072816107.html">
+                        https://yezhechenyang.gitee.io/2020/072816107.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1512,54 +1400,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/072160063.html">
+                <a href="/2020/072816107.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="【Spring Boot】Logback日志">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="【Hexo】Git上传大文件失败">
                         
-                        <span class="card-title">【Spring Boot】Logback日志</span>
+                        <span class="card-title">【Hexo】Git上传大文件失败</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Log4j的升级版，Logback日志框架
+                            解决Hexo中Git大文件上传失败不能push问题
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
-                                    Spring Boot
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                    Hexo
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring-Boot/" target="_blank">
-                        <span class="chip bg-color">Spring Boot</span>
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Logback/" target="_blank">
-                        <span class="chip bg-color">Logback</span>
-                    </a>
-                    
-                    <a href="/tags/Log4j/" target="_blank">
-                        <span class="chip bg-color">Log4j</span>
+                    <a href="/tags/Gitee/" target="_blank">
+                        <span class="chip bg-color">Gitee</span>
                     </a>
                     
                 </div>
@@ -1573,24 +1459,24 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/072064295.html">
+                <a href="/2020/072722410.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【Spring Boot】Actuator监控器">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Spring Boot】ORM系列之MyBatis">
                         
-                        <span class="card-title">【Spring Boot】Actuator监控器</span>
+                        <span class="card-title">【Spring Boot】ORM系列之MyBatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简单介绍一下在Spring Boot中引入Actuator
+                            当Spring Boot看上MyBatis后...
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
                             </span>
                         <span class="publish-author">
                             
@@ -1611,8 +1497,12 @@
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/Actuator/" target="_blank">
-                        <span class="chip bg-color">Actuator</span>
+                    <a href="/tags/MyBatis/" target="_blank">
+                        <span class="chip bg-color">MyBatis</span>
+                    </a>
+                    
+                    <a href="/tags/ORM/" target="_blank">
+                        <span class="chip bg-color">ORM</span>
                     </a>
                     
                 </div>

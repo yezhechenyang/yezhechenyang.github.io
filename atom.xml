@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-27T03:23:43.649Z</updated>
+  <updated>2020-07-28T14:12:18.251Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Hexo】Git上传大文件失败</title>
+    <link href="https://yezhechenyang.gitee.io/2020/072816107.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/072816107.html</id>
+    <published>2020-07-28T14:10:16.000Z</published>
+    <updated>2020-07-28T14:12:18.251Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-问题描述&quot;&gt;&lt;a href=&quot;#1-问题描述&quot; class=&quot;headerlink&quot; title=&quot;1. 问题描述&quot;&gt;&lt;/a&gt;1. 问题描述&lt;/h3&gt;&lt;p&gt;当使用&lt;code&gt;hexo clean &amp;amp;&amp;amp; hexo
+        
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
+    
+      <category term="Gitee" scheme="https://yezhechenyang.gitee.io/tags/Gitee/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】ORM系列之MyBatis</title>
@@ -549,33 +577,6 @@
         
         
           &lt;h3 id=&quot;1-问题描述&quot;&gt;&lt;a href=&quot;#1-问题描述&quot; class=&quot;headerlink&quot; title=&quot;1. 问题描述&quot;&gt;&lt;/a&gt;1. 问题描述&lt;/h3&gt;&lt;p&gt;有这么一段简单的代码：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers
-        
-      
-    
-    </summary>
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【bat脚本】向脚本传递参数</title>
-    <link href="https://yezhechenyang.gitee.io/2020/071612645.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/071612645.html</id>
-    <published>2020-07-16T13:16:08.000Z</published>
-    <updated>2020-07-23T02:50:14.131Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-参数传入&quot;&gt;&lt;a href=&quot;#1-参数传入&quot; class=&quot;headerlink&quot; title=&quot;1. 参数传入&quot;&gt;&lt;/a&gt;1. 参数传入&lt;/h3&gt;&lt;p&gt;在运行脚本时，可以向脚本传递一些参数。比如：&lt;/p&gt;
 &lt;pre class=&quot;line-numbers
         
       
