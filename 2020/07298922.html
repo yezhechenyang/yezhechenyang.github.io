@@ -6,11 +6,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Chrome扩展开发】去贴吧广告, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【JavaScript】DOM选择大全, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 本地创建插件目录和文件1.1 创建目录D:\CodeTest\BrowserExtension\RemoveAd1.2 创建文件
-“D:\CodeTest\BrowserExtension\RemoveAd\manifest.json">
+    <meta name="description" content="1. getElementsByClassName通过class类名获取元素。
+示例：
+&amp;lt;div class=&#34;logom fl&#34;&gt;&amp;lt;/div&gt;
+let logoAds = document.getElementsByClass">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Chrome扩展开发】去贴吧广告 | 叶遮沉阳</title>
+    <title>【JavaScript】DOM选择大全 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -537,13 +539,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Chrome扩展开发】去贴吧广告
+                        【JavaScript】DOM选择大全
                     </div>
                 </div>
             </div>
@@ -655,12 +657,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Chrome扩展/" target="_blank">
-                                <span class="chip bg-color">Chrome扩展</span>
+                            <a href="/tags/JavaScript/" target="_blank">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/贴吧去广告/" target="_blank">
-                                <span class="chip bg-color">贴吧去广告</span>
+                            <a href="/tags/DOM/" target="_blank">
+                                <span class="chip bg-color">DOM</span>
                             </a>
                         
                     </div>
@@ -671,8 +673,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Chrome扩展开发/" class="post-category" target="_blank">
-                                Chrome扩展开发
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                JavaScript
                             </a>
                         
                     </div>
@@ -683,7 +685,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-07
+                    2020-07-29
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -697,14 +699,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        519
+                        454
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -721,75 +723,92 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-本地创建插件目录和文件"><a href="#1-本地创建插件目录和文件" class="headerlink" title="1. 本地创建插件目录和文件"></a>1. 本地创建插件目录和文件</h3><h3 id="1-1-创建目录"><a href="#1-1-创建目录" class="headerlink" title="1.1 创建目录"></a>1.1 创建目录</h3><pre><code>D:\CodeTest\BrowserExtension\RemoveAd</code></pre><h3 id="1-2-创建文件"><a href="#1-2-创建文件" class="headerlink" title="1.2 创建文件"></a>1.2 创建文件</h3><blockquote>
-<p>“D:\CodeTest\BrowserExtension\RemoveAd\manifest.json”</p>
-</blockquote>
-<pre><code>{
-    "manifest_version": 2,
-    "name": "自定义去广告",
-    "description": "学习Chrome扩展开发，去广告实践！",
-    "version": "0.0.1",
-
-    // 需要直接注入页面的JS
-    "content_scripts": 
-    [
-        {
-            "matches": ["https://tieba.baidu.com/*"],
-            // 多个JS按顺序注入
-            "js": ["tieba-remove-ad.js"],
-            // 代码注入的时间，可选值： "document_start", "document_end", or "document_idle"，最后一个表示页面空闲时，默认document_idle
-            "run_at": "document_idle"
-        }
-    ]
-}</code></pre><blockquote>
-<p>“D:\CodeTest\BrowserExtension\RemoveAd\tieba-remove-ad.js”</p>
-</blockquote>
-<pre><code>//判断对象是否存在指定css样式的class
-function hasClass(obj, cls) {
-    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-}
-
-//给对象添加css样式，或者获取对象的css样式
-function css(obj, attr, value) {
-    switch (arguments.length) {
-        case 2:
-            //读取属性值
-            return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, null)[attr];
-            break;
-        case 3:
-            //设置属性
-            obj.style[attr] = value;
-            break;
-        default:
-            return "";
-    }
-}
-
-//帖子容器ul
-var ulItem = document.getElementById('thread_list');
-
-//帖子列表li
-var liArr = ulItem.children;
-
-//是否为置顶帖子和普通帖子
-var flag = false;
-
-for(var i = 0; i &lt; liArr.length; i++){
-    flag = hasClass(liArr[i], 'thread_top_list_folder'); //置顶帖子
-    flag = flag || hasClass(liArr[i], 'j_thread_list'); //普通帖子
-
-    if(flag){
-        continue;
-    }else{  // 其他视为广告，隐藏之
-        css(liArr[i], 'display', 'none');
-    }
-}</code></pre><h3 id="2-将插件载入Chrome"><a href="#2-将插件载入Chrome" class="headerlink" title="2. 将插件载入Chrome"></a>2. 将插件载入Chrome</h3><p>打开Chrome，地址栏输入</p>
-<pre><code>chrome://extensions/</code></pre><p>右上角点开开发者模式，会弹出“加载已解压的扩展程序”、“打包扩展程序”等按钮。</p>
-<p>点击“加载已解压的扩展程序”按钮，选择“RemoveAd”文件夹。</p>
-<p>下方会出现一个自己开发的插件卡片。</p>
-<p>卡片包含插件的名称、描述信息。<br>还生成一个唯一的ID。<br>最下面一排是详细信息文字按钮、删除文字按钮、刷新图标按钮以及开启与关闭图标按钮。</p>
-<p>修改了js，可以点击刷新按钮生效。</p>
-<p>开启与关闭图标按钮，对比使用插件前后的效果。</p>
+                <h3 id="1-getElementsByClassName"><a href="#1-getElementsByClassName" class="headerlink" title="1. getElementsByClassName"></a>1. <code>getElementsByClassName</code></h3><p>通过<code>class</code>类名获取元素。</p>
+<p>示例：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>logom fl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> logoAds <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'logom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>logoAds<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>outerHtml<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>返回<code>HTMLCollection</code>集合对象。</p>
+<h3 id="2-querySelectorAll"><a href="#2-querySelectorAll" class="headerlink" title="2. querySelectorAll"></a>2. <code>querySelectorAll</code></h3><p>通过<code>css</code>选择器来获取元素。</p>
+<p>可以根据自定义的属性来获取元素。</p>
+<p>示例：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>youdao-ad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'[aria-label="youdao-ad"]'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>返回<code>NodeList</code>集合对象。</p>
+<p>可以使用通配符匹配。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> ads <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'[class*=ads]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token keyword">class</span><span class="token operator">*</span><span class="token operator">=</span>ads<span class="token punctuation">]</span> 只要<span class="token keyword">class</span>中包含ads就会被匹配  
+<span class="token punctuation">[</span><span class="token keyword">class</span><span class="token operator">^</span><span class="token operator">=</span>ads<span class="token punctuation">]</span> 只要<span class="token keyword">class</span>中以ads开头就会被匹配
+<span class="token punctuation">[</span><span class="token keyword">class</span>$<span class="token operator">=</span>ads<span class="token punctuation">]</span> 只要<span class="token keyword">class</span>中以ads结尾就会被匹配<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>选择器格式</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>匹配所有元素</td>
+</tr>
+<tr>
+<td>element</td>
+<td>根据给定的元素名匹配所有元素</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>根据给定的ID匹配一个元素</td>
+</tr>
+<tr>
+<td>.class</td>
+<td>根据给定的类匹配元素</td>
+</tr>
+<tr>
+<td>selector, selector</td>
+<td>将每一个选择器匹配到的元素合并后一起返回</td>
+</tr>
+<tr>
+<td>ancestor descendant</td>
+<td>在给定的祖先元素下匹配所有的后代元素</td>
+</tr>
+<tr>
+<td>parent&gt;child</td>
+<td>在给定的父元素下匹配所有的子元素</td>
+</tr>
+<tr>
+<td>prev+next</td>
+<td>匹配所有在 prev 元素后的相邻next 元素</td>
+</tr>
+<tr>
+<td>prev~siblings</td>
+<td>匹配 prev 元素之后的所有 siblings 元素</td>
+</tr>
+<tr>
+<td>[attribute]</td>
+<td>匹配包含给定属性的元素</td>
+</tr>
+<tr>
+<td>[attribute=value]</td>
+<td>匹配给定的属性是某个特定值的元素</td>
+</tr>
+<tr>
+<td>[attribute^=value]</td>
+<td>匹配给定的属性是以某些值开始的元素</td>
+</tr>
+<tr>
+<td>[attribute$=value]</td>
+<td>匹配给定的属性是以某些值结尾的元素</td>
+</tr>
+<tr>
+<td>[attribute*=value]</td>
+<td>匹配给定的属性是以包含某些值的元素</td>
+</tr>
+<tr>
+<td>[attribute][attribute]</td>
+<td>复合属性选择器，需要同时满足多个条件时使用</td>
+</tr>
+</tbody></table>
+<p>未完，待更…</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -959,8 +978,8 @@ for(var i = 0; i &lt; liArr.length; i++){
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/070734290.html">
-                        https://yezhechenyang.gitee.io/2020/070734290.html</a></span>
+                <span class="reprint-info"><a href="/2020/07298922.html">
+                        https://yezhechenyang.gitee.io/2020/07298922.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1445,58 +1464,52 @@ for(var i = 0; i &lt; liArr.length; i++){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/071037478.html">
+                <a href="/2020/07298922.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【Spring】概述">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="【JavaScript】DOM选择大全">
                         
-                        <span class="card-title">【Spring】概述</span>
+                        <span class="card-title">【JavaScript】DOM选择大全</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对于Spring的了解，进行简单的描述！
+                            JavaScript中的DOM选择器
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring/" class="post-category" target="_blank">
-                                    Spring
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring-Framework/" target="_blank">
-                        <span class="chip bg-color">Spring Framework</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
-                    </a>
-                    
-                    <a href="/tags/Spring-Boot/" target="_blank">
-                        <span class="chip bg-color">Spring Boot</span>
-                    </a>
-                    
-                    <a href="/tags/Spring-Cloud/" target="_blank">
-                        <span class="chip bg-color">Spring Cloud</span>
+                    <a href="/tags/DOM/" target="_blank">
+                        <span class="chip bg-color">DOM</span>
                     </a>
                     
                 </div>
@@ -1510,24 +1523,24 @@ for(var i = 0; i &lt; liArr.length; i++){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/070557304.html">
+                <a href="/2020/072936828.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Hexo】博客搭建">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【Hexo】复制html表格至md">
                         
-                        <span class="card-title">【Hexo】博客搭建</span>
+                        <span class="card-title">【Hexo】复制html表格至md</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用 hexo-blog-fly 模板快速搭建一个博客，并托管至 Gitee 。
+                            将HTML中的表格内容复制到Markdown文章
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
                             </span>
                         <span class="publish-author">
                             
@@ -1546,6 +1559,10 @@ for(var i = 0; i &lt; liArr.length; i++){
                     
                     <a href="/tags/Hexo/" target="_blank">
                         <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/" target="_blank">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>

@@ -6,11 +6,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Chrome扩展开发】去贴吧广告, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Hexo】复制html表格至md, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 本地创建插件目录和文件1.1 创建目录D:\CodeTest\BrowserExtension\RemoveAd1.2 创建文件
-“D:\CodeTest\BrowserExtension\RemoveAd\manifest.json">
+    <meta name="description" content="1. 前言本文介绍如何将HTML中的表格内容，复制到Markdown文章中。
+Markdown中表格的语法：
+header 1 | header 2
+---|---
+row 1 col 1 | row 1 col 2
+row 2 col 1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Chrome扩展开发】去贴吧广告 | 叶遮沉阳</title>
+    <title>【Hexo】复制html表格至md | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -537,13 +541,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Chrome扩展开发】去贴吧广告
+                        【Hexo】复制html表格至md
                     </div>
                 </div>
             </div>
@@ -655,12 +659,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Chrome扩展/" target="_blank">
-                                <span class="chip bg-color">Chrome扩展</span>
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/贴吧去广告/" target="_blank">
-                                <span class="chip bg-color">贴吧去广告</span>
+                            <a href="/tags/Markdown/" target="_blank">
+                                <span class="chip bg-color">Markdown</span>
                             </a>
                         
                     </div>
@@ -671,8 +675,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Chrome扩展开发/" class="post-category" target="_blank">
-                                Chrome扩展开发
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                Hexo
                             </a>
                         
                     </div>
@@ -683,7 +687,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-07
+                    2020-07-29
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -697,14 +701,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        519
+                        203
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -721,75 +725,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-本地创建插件目录和文件"><a href="#1-本地创建插件目录和文件" class="headerlink" title="1. 本地创建插件目录和文件"></a>1. 本地创建插件目录和文件</h3><h3 id="1-1-创建目录"><a href="#1-1-创建目录" class="headerlink" title="1.1 创建目录"></a>1.1 创建目录</h3><pre><code>D:\CodeTest\BrowserExtension\RemoveAd</code></pre><h3 id="1-2-创建文件"><a href="#1-2-创建文件" class="headerlink" title="1.2 创建文件"></a>1.2 创建文件</h3><blockquote>
-<p>“D:\CodeTest\BrowserExtension\RemoveAd\manifest.json”</p>
-</blockquote>
-<pre><code>{
-    "manifest_version": 2,
-    "name": "自定义去广告",
-    "description": "学习Chrome扩展开发，去广告实践！",
-    "version": "0.0.1",
-
-    // 需要直接注入页面的JS
-    "content_scripts": 
-    [
-        {
-            "matches": ["https://tieba.baidu.com/*"],
-            // 多个JS按顺序注入
-            "js": ["tieba-remove-ad.js"],
-            // 代码注入的时间，可选值： "document_start", "document_end", or "document_idle"，最后一个表示页面空闲时，默认document_idle
-            "run_at": "document_idle"
-        }
-    ]
-}</code></pre><blockquote>
-<p>“D:\CodeTest\BrowserExtension\RemoveAd\tieba-remove-ad.js”</p>
-</blockquote>
-<pre><code>//判断对象是否存在指定css样式的class
-function hasClass(obj, cls) {
-    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-}
-
-//给对象添加css样式，或者获取对象的css样式
-function css(obj, attr, value) {
-    switch (arguments.length) {
-        case 2:
-            //读取属性值
-            return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, null)[attr];
-            break;
-        case 3:
-            //设置属性
-            obj.style[attr] = value;
-            break;
-        default:
-            return "";
-    }
-}
-
-//帖子容器ul
-var ulItem = document.getElementById('thread_list');
-
-//帖子列表li
-var liArr = ulItem.children;
-
-//是否为置顶帖子和普通帖子
-var flag = false;
-
-for(var i = 0; i &lt; liArr.length; i++){
-    flag = hasClass(liArr[i], 'thread_top_list_folder'); //置顶帖子
-    flag = flag || hasClass(liArr[i], 'j_thread_list'); //普通帖子
-
-    if(flag){
-        continue;
-    }else{  // 其他视为广告，隐藏之
-        css(liArr[i], 'display', 'none');
-    }
-}</code></pre><h3 id="2-将插件载入Chrome"><a href="#2-将插件载入Chrome" class="headerlink" title="2. 将插件载入Chrome"></a>2. 将插件载入Chrome</h3><p>打开Chrome，地址栏输入</p>
-<pre><code>chrome://extensions/</code></pre><p>右上角点开开发者模式，会弹出“加载已解压的扩展程序”、“打包扩展程序”等按钮。</p>
-<p>点击“加载已解压的扩展程序”按钮，选择“RemoveAd”文件夹。</p>
-<p>下方会出现一个自己开发的插件卡片。</p>
-<p>卡片包含插件的名称、描述信息。<br>还生成一个唯一的ID。<br>最下面一排是详细信息文字按钮、删除文字按钮、刷新图标按钮以及开启与关闭图标按钮。</p>
-<p>修改了js，可以点击刷新按钮生效。</p>
-<p>开启与关闭图标按钮，对比使用插件前后的效果。</p>
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文介绍如何将<code>HTML</code>中的表格内容，复制到<code>Markdown</code>文章中。</p>
+<p><code>Markdown</code>中表格的语法：</p>
+<pre><code>header 1 | header 2
+---|---
+row 1 col 1 | row 1 col 2
+row 2 col 1 | row 2 col 2</code></pre><h3 id="2-步骤"><a href="#2-步骤" class="headerlink" title="2. 步骤"></a>2. 步骤</h3><p>第一步，在页面选中复制表格内容；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200729110719.png" alt=""></p>
+<p>第二步，将内容粘贴到<code>Excel</code>；</p>
+<ul>
+<li><code>td</code>与<code>td</code>之间，插入<code>|</code>；</li>
+<li><code>th</code>与<code>tr</code>之间，插入<code>---</code>；</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200729111003.png" alt=""></p>
+<p>第三步，复制到文本编辑器中；</p>
+<ul>
+<li>去掉第二行<code>---</code>与<code>|</code>之间的空格；</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200729111503.png" alt=""></p>
+<p>第四步，将文本编辑器中的内容直接复制到<code>Markdown</code>文章中即可。</p>
+<ul>
+<li>注意在<code>Hexo</code>中的<code>Markdown</code>，让表格与正文空两行。</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -959,8 +916,8 @@ for(var i = 0; i &lt; liArr.length; i++){
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/070734290.html">
-                        https://yezhechenyang.gitee.io/2020/070734290.html</a></span>
+                <span class="reprint-info"><a href="/2020/072936828.html">
+                        https://yezhechenyang.gitee.io/2020/072936828.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1449,31 +1406,31 @@ for(var i = 0; i &lt; liArr.length; i++){
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/071037478.html">
+                <a href="/2020/07298922.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【Spring】概述">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="【JavaScript】DOM选择大全">
                         
-                        <span class="card-title">【Spring】概述</span>
+                        <span class="card-title">【JavaScript】DOM选择大全</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对于Spring的了解，进行简单的描述！
+                            JavaScript中的DOM选择器
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-10
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring/" class="post-category" target="_blank">
-                                    Spring
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1483,20 +1440,12 @@ for(var i = 0; i &lt; liArr.length; i++){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring-Framework/" target="_blank">
-                        <span class="chip bg-color">Spring Framework</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
-                    </a>
-                    
-                    <a href="/tags/Spring-Boot/" target="_blank">
-                        <span class="chip bg-color">Spring Boot</span>
-                    </a>
-                    
-                    <a href="/tags/Spring-Cloud/" target="_blank">
-                        <span class="chip bg-color">Spring Cloud</span>
+                    <a href="/tags/DOM/" target="_blank">
+                        <span class="chip bg-color">DOM</span>
                     </a>
                     
                 </div>
@@ -1510,24 +1459,24 @@ for(var i = 0; i &lt; liArr.length; i++){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/070557304.html">
+                <a href="/2020/072954883.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Hexo】博客搭建">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【Hexo】复制代码不换行">
                         
-                        <span class="card-title">【Hexo】博客搭建</span>
+                        <span class="card-title">【Hexo】复制代码不换行</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用 hexo-blog-fly 模板快速搭建一个博客，并托管至 Gitee 。
+                            解决在博客文章中复制代码不换行问题
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
                             </span>
                         <span class="publish-author">
                             
@@ -1546,6 +1495,10 @@ for(var i = 0; i &lt; liArr.length; i++){
                     
                     <a href="/tags/Hexo/" target="_blank">
                         <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/" target="_blank">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>

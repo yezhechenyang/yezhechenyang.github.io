@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>【JavaScript】DOM选择大全</title>
+      <link href="/2020/07298922.html"/>
+      <url>/2020/07298922.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-getElementsByClassName"><a href="#1-getElementsByClassName" class="headerlink" title="1. getElementsByClassName"></a>1. <code>getElementsByClassName</code></h3><p>通过<code>class</code>类名获取元素。</p><p>示例：</p><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>logom fl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> logoAds <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'logom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>logoAds<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>outerHtml<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>返回<code>HTMLCollection</code>集合对象。</p><h3 id="2-querySelectorAll"><a href="#2-querySelectorAll" class="headerlink" title="2. querySelectorAll"></a>2. <code>querySelectorAll</code></h3><p>通过<code>css</code>选择器来获取元素。</p><p>可以根据自定义的属性来获取元素。</p><p>示例：</p><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>youdao-ad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'[aria-label="youdao-ad"]'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>返回<code>NodeList</code>集合对象。</p><p>可以使用通配符匹配。</p><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> ads <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'[class*=ads]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token keyword">class</span><span class="token operator">*</span><span class="token operator">=</span>ads<span class="token punctuation">]</span> 只要<span class="token keyword">class</span>中包含ads就会被匹配  <span class="token punctuation">[</span><span class="token keyword">class</span><span class="token operator">^</span><span class="token operator">=</span>ads<span class="token punctuation">]</span> 只要<span class="token keyword">class</span>中以ads开头就会被匹配<span class="token punctuation">[</span><span class="token keyword">class</span>$<span class="token operator">=</span>ads<span class="token punctuation">]</span> 只要<span class="token keyword">class</span>中以ads结尾就会被匹配<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><table><thead><tr><th>选择器格式</th><th>功能描述</th></tr></thead><tbody><tr><td>*</td><td>匹配所有元素</td></tr><tr><td>element</td><td>根据给定的元素名匹配所有元素</td></tr><tr><td>#id</td><td>根据给定的ID匹配一个元素</td></tr><tr><td>.class</td><td>根据给定的类匹配元素</td></tr><tr><td>selector, selector</td><td>将每一个选择器匹配到的元素合并后一起返回</td></tr><tr><td>ancestor descendant</td><td>在给定的祖先元素下匹配所有的后代元素</td></tr><tr><td>parent&gt;child</td><td>在给定的父元素下匹配所有的子元素</td></tr><tr><td>prev+next</td><td>匹配所有在 prev 元素后的相邻next 元素</td></tr><tr><td>prev~siblings</td><td>匹配 prev 元素之后的所有 siblings 元素</td></tr><tr><td>[attribute]</td><td>匹配包含给定属性的元素</td></tr><tr><td>[attribute=value]</td><td>匹配给定的属性是某个特定值的元素</td></tr><tr><td>[attribute^=value]</td><td>匹配给定的属性是以某些值开始的元素</td></tr><tr><td>[attribute$=value]</td><td>匹配给定的属性是以某些值结尾的元素</td></tr><tr><td>[attribute*=value]</td><td>匹配给定的属性是以包含某些值的元素</td></tr><tr><td>[attribute][attribute]</td><td>复合属性选择器，需要同时满足多个条件时使用</td></tr></tbody></table><p>未完，待更…</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> DOM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Hexo】复制html表格至md</title>
+      <link href="/2020/072936828.html"/>
+      <url>/2020/072936828.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文介绍如何将<code>HTML</code>中的表格内容，复制到<code>Markdown</code>文章中。</p><p><code>Markdown</code>中表格的语法：</p><pre><code>header 1 | header 2---|---row 1 col 1 | row 1 col 2row 2 col 1 | row 2 col 2</code></pre><h3 id="2-步骤"><a href="#2-步骤" class="headerlink" title="2. 步骤"></a>2. 步骤</h3><p>第一步，在页面选中复制表格内容；</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200729110719.png" alt=""></p><p>第二步，将内容粘贴到<code>Excel</code>；</p><ul><li><code>td</code>与<code>td</code>之间，插入<code>|</code>；</li><li><code>th</code>与<code>tr</code>之间，插入<code>---</code>；</li></ul><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200729111003.png" alt=""></p><p>第三步，复制到文本编辑器中；</p><ul><li>去掉第二行<code>---</code>与<code>|</code>之间的空格；</li></ul><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200729111503.png" alt=""></p><p>第四步，将文本编辑器中的内容直接复制到<code>Markdown</code>文章中即可。</p><ul><li>注意在<code>Hexo</code>中的<code>Markdown</code>，让表格与正文空两行。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Hexo】复制代码不换行</title>
       <link href="/2020/072954883.html"/>
       <url>/2020/072954883.html</url>
@@ -76,9 +130,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> MyBatis </tag>
-            
             <tag> ORM </tag>
+            
+            <tag> MyBatis </tag>
             
         </tags>
       
@@ -105,9 +159,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> ORM </tag>
-            
             <tag> SpringData JPA </tag>
+            
+            <tag> ORM </tag>
             
         </tags>
       
@@ -416,9 +470,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Actuator </tag>
-            
             <tag> Admin </tag>
+            
+            <tag> Actuator </tag>
             
         </tags>
       
@@ -728,9 +782,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> PicGo </tag>
-            
             <tag> Gitee </tag>
+            
+            <tag> PicGo </tag>
             
         </tags>
       
@@ -809,11 +863,11 @@
       
         <tags>
             
-            <tag> Spring Boot </tag>
-            
             <tag> Spring Framework </tag>
             
             <tag> Spring </tag>
+            
+            <tag> Spring Boot </tag>
             
             <tag> Spring Cloud </tag>
             
