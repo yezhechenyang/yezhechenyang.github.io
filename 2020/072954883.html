@@ -6,14 +6,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Spring Boot】Logback日志, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Hexo】复制代码不换行, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 前言Logback是Log4j创始人设计的另一个开源日志框架。
-它是Log4j的升华，你值得拥有！
-版本：
-&amp;lt;spring.boot.version&gt;2.1.0.RELEASE&amp;lt;/spring.boot.version&gt;
-">
+    <meta name="description" content="1. 问题描述在博客文章中复制代码块时，发现不换行。
+&amp;lt;dependency&gt; &amp;lt;groupId&gt;org.mybatis.spring.boot&amp;lt;/groupId&gt; &amp;lt;artifactId&gt;mybatis-sprin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Spring Boot】Logback日志 | 叶遮沉阳</title>
+    <title>【Hexo】复制代码不换行 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -540,13 +537,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Spring Boot】Logback日志
+                        【Hexo】复制代码不换行
                     </div>
                 </div>
             </div>
@@ -658,16 +655,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring-Boot/" target="_blank">
-                                <span class="chip bg-color">Spring Boot</span>
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/Logback/" target="_blank">
-                                <span class="chip bg-color">Logback</span>
-                            </a>
-                        
-                            <a href="/tags/Log4j/" target="_blank">
-                                <span class="chip bg-color">Log4j</span>
+                            <a href="/tags/Markdown/" target="_blank">
+                                <span class="chip bg-color">Markdown</span>
                             </a>
                         
                     </div>
@@ -678,8 +671,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
-                                Spring Boot
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                Hexo
                             </a>
                         
                     </div>
@@ -690,7 +683,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-21
+                    2020-07-29
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -704,14 +697,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.2k
+                        983
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        4 分
                     </div>
                     
                 
@@ -728,124 +721,103 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p><code>Logback</code>是<code>Log4j</code>创始人设计的另一个开源日志框架。</p>
-<p>它是<code>Log4j</code>的升华，你值得拥有！</p>
-<p>版本：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring.boot.version</span><span class="token punctuation">></span></span>2.1.0.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring.boot.version</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><code>Logback</code>的版本无需关心，<code>Spring Boot</code>会自动引入。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200721112238.png" alt=""></p>
-<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h3><h4 id="2-1-Maven配置"><a href="#2-1-Maven配置" class="headerlink" title="2.1 Maven配置"></a>2.1 <code>Maven</code>配置</h4><p>引入<code>web starter</code>，会自动引入<code>Logback</code>。</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-2-yml配置"><a href="#2-2-yml配置" class="headerlink" title="2.2 yml配置"></a>2.2 <code>yml</code>配置</h4><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
-  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8080</span>
-  <span class="token key atrule">servlet</span><span class="token punctuation">:</span>
-    <span class="token key atrule">context-path</span><span class="token punctuation">:</span> /demo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-2-Logback配置"><a href="#2-2-Logback配置" class="headerlink" title="2.2 Logback配置"></a>2.2 <code>Logback</code>配置</h4><p><code>Spring Boot</code>推崇的是约定大于配置，所以官方推荐<code>Logback</code>的配置文件名称最好是<code>logback-spring.xml</code>，以便自动加载。</p>
-<p>和<code>application.yml</code>一样，放到<code>src/main/resource</code>目录下就好。</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FILE_ERROR_PATTERN<span class="token punctuation">"</span></span>
-            <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${FILE_LOG_PATTERN:-%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} %file:%line: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org/springframework/boot/logging/logback/defaults.xml<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CONSOLE<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.core.ConsoleAppender<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.classic.filter.LevelFilter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>level</span><span class="token punctuation">></span></span>INFO<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>level</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoder</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">></span></span>${CONSOLE_LOG_PATTERN}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pattern</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>charset</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>charset</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoder</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">></span></span>
+                <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>在博客文章中复制代码块时，发现不换行。</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis.spring.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${mybatis.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+来源: 叶遮沉阳
+作者: 叶遮沉阳
+链接: http://localhost:4000/2020/072722410.html
+本文章著作权归作者所有，任何形式的转载都请注明出处。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>看看源码是怎么实现的，然后在浏览器<code>F12</code>调试一下。</p>
+<h3 id="2-解决过程"><a href="#2-解决过程" class="headerlink" title="2. 解决过程"></a>2. 解决过程</h3><p>在<code>themes\matery\_config.yml</code>中，可以看到配置如下：</p>
+<pre class="line-numbers language-xml"><code class="language-xml"># 是否激活复制文章时追加博客和作者的版权信息.
+copyright:
+  enable: true
+  minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
+  description: 本文章著作权归作者所有，任何形式的转载都请注明出处。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制文章字数超过<code>120</code>就会追加版权信息。</p>
+<p>在<code>IDEA</code>中根据内容查找文件还是挺方便的，<br>按<code>ctrl+shift+f</code>，<br>在输入框输入<code>copyright.enable</code>，就找到位置了。</p>
+<p>原来在<code>themes\matery\layout\_partial\post-detail.ejs</code>中。</p>
+<p>看看源代码是怎么实现的：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>copyright<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#articleContent'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'copy'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// IE8 or earlier browser is 'undefined'</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> window<span class="token punctuation">.</span>getSelection <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FILE_INFO<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.RollingFileAppender<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高， 所以我们使用下面的策略，可以避免输出 Error 的日志--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.classic.filter.LevelFilter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--过滤 Error--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>level</span><span class="token punctuation">></span></span>ERROR<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>level</span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--匹配到就禁止--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>onMatch</span><span class="token punctuation">></span></span>DENY<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>onMatch</span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--没有匹配到就允许--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>onMismatch</span><span class="token punctuation">></span></span>ACCEPT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>onMismatch</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则如果同时有&lt;File>和&lt;FileNamePattern>，那么当天日志是&lt;File>，明天会自动把今天的日志改名为今天的日期。即，&lt;File> 的日志都是当天的。--></span>
-        <span class="token comment" spellcheck="true">&lt;!--&lt;File>logs/info.spring-boot-demo-logback.log&lt;/File>--></span>
-        <span class="token comment" spellcheck="true">&lt;!--滚动策略，按照时间滚动 TimeBasedRollingPolicy--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rollingPolicy</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.TimeBasedRollingPolicy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FileNamePattern</span><span class="token punctuation">></span></span>logs/spring-boot-demo-logback/info.created_on_%d{yyyy-MM-dd}.part_%i.log<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FileNamePattern</span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--只保留最近90天的日志--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maxHistory</span><span class="token punctuation">></span></span>90<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maxHistory</span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志--></span>
-            <span class="token comment" spellcheck="true">&lt;!--&lt;totalSizeCap>1GB&lt;/totalSizeCap>--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timeBasedFileNamingAndTriggeringPolicy</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                <span class="token comment" spellcheck="true">&lt;!-- maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 --></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maxFileSize</span><span class="token punctuation">></span></span>2MB<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maxFileSize</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>timeBasedFileNamingAndTriggeringPolicy</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rollingPolicy</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--&lt;triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">--></span>
-        <span class="token comment" spellcheck="true">&lt;!--&lt;maxFileSize>1KB&lt;/maxFileSize>--></span>
-        <span class="token comment" spellcheck="true">&lt;!--&lt;/triggeringPolicy>--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoder</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">></span></span>${FILE_LOG_PATTERN}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pattern</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>charset</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>charset</span><span class="token punctuation">></span></span> <span class="token comment" spellcheck="true">&lt;!-- 此处设置字符集 --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoder</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FILE_ERROR<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.RollingFileAppender<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.classic.filter.ThresholdFilter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>level</span><span class="token punctuation">></span></span>Error<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>level</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则如果同时有&lt;File>和&lt;FileNamePattern>，那么当天日志是&lt;File>，明天会自动把今天的日志改名为今天的日期。即，&lt;File> 的日志都是当天的。--></span>
-        <span class="token comment" spellcheck="true">&lt;!--&lt;File>logs/error.spring-boot-demo-logback.log&lt;/File>--></span>
-        <span class="token comment" spellcheck="true">&lt;!--滚动策略，按照时间滚动 TimeBasedRollingPolicy--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rollingPolicy</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.TimeBasedRollingPolicy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FileNamePattern</span><span class="token punctuation">></span></span>logs/spring-boot-demo-logback/error.created_on_%d{yyyy-MM-dd}.part_%i.log<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FileNamePattern</span><span class="token punctuation">></span></span>
-            <span class="token comment" spellcheck="true">&lt;!--只保留最近90天的日志--></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maxHistory</span><span class="token punctuation">></span></span>90<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maxHistory</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timeBasedFileNamingAndTriggeringPolicy</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                <span class="token comment" spellcheck="true">&lt;!-- maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 --></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maxFileSize</span><span class="token punctuation">></span></span>2MB<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maxFileSize</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>timeBasedFileNamingAndTriggeringPolicy</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rollingPolicy</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoder</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">></span></span>${FILE_ERROR_PATTERN}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pattern</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>charset</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>charset</span><span class="token punctuation">></span></span> <span class="token comment" spellcheck="true">&lt;!-- 此处设置字符集 --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoder</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>root</span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CONSOLE<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FILE_INFO<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FILE_ERROR<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>root</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h3><p>在程序中使用非常简单，只要在类上添加<code>@Slf4j</code>注解，便可直接使用<code>log</code>打印日志了。</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token annotation punctuation">@Slf4j</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringBootDemoLogbackApplication</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ConfigurableApplicationContext context <span class="token operator">=</span> SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>SpringBootDemoLogbackApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> length <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBeanDefinitionNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        log<span class="token punctuation">.</span><span class="token function">trace</span><span class="token punctuation">(</span><span class="token string">"Spring boot启动初始化了 {} 个 Bean"</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"Spring boot启动初始化了 {} 个 Bean"</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"Spring boot启动初始化了 {} 个 Bean"</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        log<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">"Spring boot启动初始化了 {} 个 Bean"</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Spring boot启动初始化了 {} 个 Bean"</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> i<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"【SpringBootDemoLogbackApplication】启动异常："</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> selection <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">getSelection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// if the selection is short let's not annoy our users.</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">''</span> <span class="token operator">+</span> selection<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&lt;</span> Number<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">'&lt;%- theme.copyright.minCharNumber %>'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+        <span class="token comment" spellcheck="true">// create a div outside of the visible area and fill it with the selected text.</span>
+        <span class="token keyword">var</span> bodyElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'body'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> newdiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        newdiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token string">'absolute'</span><span class="token punctuation">;</span>
+        newdiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token string">'-99999px'</span><span class="token punctuation">;</span>
+        bodyElement<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newdiv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        newdiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cloneContents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
+        <span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'PRE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'CODE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">var</span> url <span class="token operator">=</span> document<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">;</span>
+        newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">'&lt;br />'</span>
+            <span class="token operator">+</span> <span class="token string">'&lt;%- __("from")  %>: &lt;%- config.title %>&lt;br />'</span>
+            <span class="token operator">+</span> <span class="token string">'&lt;%- __("author")  %>: &lt;%- config.author %>&lt;br />'</span>
+            <span class="token operator">+</span> <span class="token string">'&lt;%- __("link")  %>: &lt;a href="'</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">'">'</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">'&lt;/a>&lt;br />'</span>
+            <span class="token operator">+</span> <span class="token string">'&lt;%- theme.copyright.description %>'</span><span class="token punctuation">;</span>
+
+        selection<span class="token punctuation">.</span><span class="token function">selectAllChildren</span><span class="token punctuation">(</span>newdiv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>bodyElement<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>newdiv<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以发现换行的代码在这：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
+<span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'PRE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来就在浏览器调试了。  </p>
+<ol>
+<li>本地启动项目后，打开要复制的代码所在文章；</li>
+<li>按<code>F12</code>，打开开发者工具；</li>
+<li>在开发者工具的顶部菜单栏，在点击<code>source</code>；</li>
+<li>根据你的文章<code>url</code>，在左侧<code>Page</code>找到你的文章页面并双击打开；</li>
+<li>在中间源码窗口可以看到文章的源码，在按<code>ctrl+f</code>，搜索<code>selection</code>，找到复制文章添加版权的源码;</li>
+<li>上面我们已经找到是添加<code>PRE</code>实现换行的，所以在行号点击一下打个断点；</li>
+<li>然后刷一下，复制一块代码，页面会在你的断点处停顿；</li>
+<li>接下来，按<code>F10</code>一步步往下执行；</li>
+<li>一番调试，发现根本没进入<code>if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE')</code>这个条件代码块，所以导致不换行；</li>
+<li>找到原因就好办了，先看看<code>selection.getRangeAt(0).commonAncestorContainer.nodeName</code>的值是什么来着；</li>
+<li>你可以在调试的时候，运行到它的下一行，在完整选中<code>selection.getRangeAt(0).commonAncestorContainer.nodeName</code>，然后看看值是多少；</li>
+<li>经过多次验证，发现它的值不稳定，有时候是<code>CODE</code>，有时候是<code>DIV</code>；</li>
+<li>既然如此，那就不管了，直接将条件干掉就得了；</li>
+</ol>
+<h3 id="3-解决方案"><a href="#3-解决方案" class="headerlink" title="3. 解决方案"></a>3. 解决方案</h3><p>修改<code>themes\matery\layout\_partial\post-detail.ejs</code></p>
+<p>修改前：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
+<span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'PRE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改后：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
+<span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
+<span class="token comment" spellcheck="true">// if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {</span>
+<span class="token comment" spellcheck="true">//     newdiv.innerHTML = "&lt;pre>" + newdiv.innerHTML + "&lt;/pre>";</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">//注释掉上面的if，将if中的内容释放出来</span>
+newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1015,8 +987,8 @@
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/072160063.html">
-                        https://yezhechenyang.gitee.io/2020/072160063.html</a></span>
+                <span class="reprint-info"><a href="/2020/072954883.html">
+                        https://yezhechenyang.gitee.io/2020/072954883.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1501,50 +1473,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/072258554.html">
+                <a href="/2020/072954883.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Spring Boot】Aop方式记录Web请求">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【Hexo】复制代码不换行">
                         
-                        <span class="card-title">【Spring Boot】Aop方式记录Web请求</span>
+                        <span class="card-title">【Hexo】复制代码不换行</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Aop拦截请求并记录日志
+                            解决在博客文章中复制代码不换行问题
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
-                                    Spring Boot
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                    Hexo
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring-Boot/" target="_blank">
-                        <span class="chip bg-color">Spring Boot</span>
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Aop/" target="_blank">
-                        <span class="chip bg-color">Aop</span>
+                    <a href="/tags/Markdown/" target="_blank">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
@@ -1558,31 +1532,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07211248.html">
+                <a href="/2020/072816107.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="【Spring Boot】Admin可视化监控">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="【Hexo】Git上传大文件失败">
                         
-                        <span class="card-title">【Spring Boot】Admin可视化监控</span>
+                        <span class="card-title">【Hexo】Git上传大文件失败</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Actuator监控器的升级版，Admin可视化监控
+                            解决Hexo中Git大文件上传失败不能push问题
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-21
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
-                                    Spring Boot
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                    Hexo
                                 </a>
                             
                             
@@ -1592,16 +1566,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring-Boot/" target="_blank">
-                        <span class="chip bg-color">Spring Boot</span>
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Actuator/" target="_blank">
-                        <span class="chip bg-color">Actuator</span>
-                    </a>
-                    
-                    <a href="/tags/Admin/" target="_blank">
-                        <span class="chip bg-color">Admin</span>
+                    <a href="/tags/Gitee/" target="_blank">
+                        <span class="chip bg-color">Gitee</span>
                     </a>
                     
                 </div>

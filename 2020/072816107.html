@@ -1400,30 +1400,29 @@ Error: Spawn failed
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/072816107.html">
+                <a href="/2020/072954883.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="【Hexo】Git上传大文件失败">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【Hexo】复制代码不换行">
                         
-                        <span class="card-title">【Hexo】Git上传大文件失败</span>
+                        <span class="card-title">【Hexo】复制代码不换行</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            解决Hexo中Git大文件上传失败不能push问题
+                            解决在博客文章中复制代码不换行问题
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1436,7 +1435,6 @@ Error: Spawn failed
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1444,8 +1442,8 @@ Error: Spawn failed
                         <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Gitee/" target="_blank">
-                        <span class="chip bg-color">Gitee</span>
+                    <a href="/tags/Markdown/" target="_blank">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
@@ -1536,9 +1534,14 @@ Error: Spawn failed
 
         // we need a <pre> tag workaround.
         // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
+        // if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+        //     newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        // }
+
+        newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        // if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+        //     newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        // }
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
@@ -1681,7 +1684,7 @@ Error: Spawn failed
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">21k</span> 字
+                <span class="white-color">22k</span> 字
             
 
             
@@ -1867,5 +1870,5 @@ $(function () {
         <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
