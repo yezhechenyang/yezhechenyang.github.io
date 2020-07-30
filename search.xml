@@ -130,9 +130,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> ORM </tag>
-            
             <tag> MyBatis </tag>
+            
+            <tag> ORM </tag>
             
         </tags>
       
@@ -159,9 +159,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> SpringData JPA </tag>
-            
             <tag> ORM </tag>
+            
+            <tag> SpringData JPA </tag>
             
         </tags>
       

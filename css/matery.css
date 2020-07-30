@@ -605,8 +605,8 @@ header .go-back i {
 }
 
 .dream .text {
-    opacity: .6;
-    font-size: 1.1rem;
+    opacity: .8;
+    font-size: 1.2rem;
 }
 
 .music-player,
@@ -1926,6 +1926,7 @@ footer .copy-right {
     /* place for '...' */
     margin-right: -1em;
     padding-right: 1em;
+    font-size: 1.1rem;
 }
 
 /* create the ... style */
