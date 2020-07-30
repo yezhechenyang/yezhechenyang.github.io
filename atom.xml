@@ -153,9 +153,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="MyBatis" scheme="https://yezhechenyang.gitee.io/tags/MyBatis/"/>
-    
       <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
+    
+      <category term="MyBatis" scheme="https://yezhechenyang.gitee.io/tags/MyBatis/"/>
     
   </entry>
   
@@ -183,9 +183,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
-    
       <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
+    
+      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
     
   </entry>
   
@@ -506,9 +506,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Admin" scheme="https://yezhechenyang.gitee.io/tags/Admin/"/>
-    
       <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
+    
+      <category term="Admin" scheme="https://yezhechenyang.gitee.io/tags/Admin/"/>
     
   </entry>
   

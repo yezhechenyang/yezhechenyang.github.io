@@ -130,9 +130,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> MyBatis </tag>
-            
             <tag> ORM </tag>
+            
+            <tag> MyBatis </tag>
             
         </tags>
       
@@ -159,9 +159,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> ORM </tag>
-            
             <tag> SpringData JPA </tag>
+            
+            <tag> ORM </tag>
             
         </tags>
       
@@ -470,9 +470,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Admin </tag>
-            
             <tag> Actuator </tag>
+            
+            <tag> Admin </tag>
             
         </tags>
       
@@ -782,9 +782,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> Gitee </tag>
-            
             <tag> PicGo </tag>
+            
+            <tag> Gitee </tag>
             
         </tags>
       
@@ -865,9 +865,9 @@
             
             <tag> Spring Framework </tag>
             
-            <tag> Spring </tag>
-            
             <tag> Spring Boot </tag>
+            
+            <tag> Spring </tag>
             
             <tag> Spring Cloud </tag>
             
