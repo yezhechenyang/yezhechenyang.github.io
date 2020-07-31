@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-29T03:28:48.868Z</updated>
+  <updated>2020-07-31T03:06:45.301Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】Mybatis之mybatis-plus</title>
+    <link href="https://yezhechenyang.gitee.io/2020/073140422.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/073140422.html</id>
+    <published>2020-07-31T03:05:53.000Z</published>
+    <updated>2020-07-31T03:06:45.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Mybatis" scheme="https://yezhechenyang.gitee.io/tags/Mybatis/"/>
+    
+      <category term="mybatis-plus" scheme="https://yezhechenyang.gitee.io/tags/mybatis-plus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Spring Boot】MyBatis之通用Mapper与PageHelper</title>
+    <link href="https://yezhechenyang.gitee.io/2020/073124772.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/073124772.html</id>
+    <published>2020-07-31T03:03:56.000Z</published>
+    <updated>2020-07-31T03:06:45.292Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Mybatis" scheme="https://yezhechenyang.gitee.io/tags/Mybatis/"/>
+    
+      <category term="通用Mapper" scheme="https://yezhechenyang.gitee.io/tags/%E9%80%9A%E7%94%A8Mapper/"/>
+    
+      <category term="PageHelper" scheme="https://yezhechenyang.gitee.io/tags/PageHelper/"/>
+    
+  </entry>
   
   <entry>
     <title>【JavaScript】DOM选择大全</title>
@@ -153,9 +215,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
-    
       <category term="MyBatis" scheme="https://yezhechenyang.gitee.io/tags/MyBatis/"/>
+    
+      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
     
   </entry>
   
@@ -183,9 +245,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
-    
       <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
+    
+      <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
     
   </entry>
   
@@ -271,9 +333,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
-    
       <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
+    
+      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
   </entry>
   
@@ -301,9 +363,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
-    
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
     
   </entry>
   
@@ -506,9 +568,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
-    
       <category term="Admin" scheme="https://yezhechenyang.gitee.io/tags/Admin/"/>
+    
+      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
     
   </entry>
   
@@ -537,59 +599,6 @@
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
       <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】读取property</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07205004.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/07205004.html</id>
-    <published>2020-07-20T01:06:51.000Z</published>
-    <updated>2020-07-23T02:50:14.103Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;假如要从&lt;code&gt;application.yml&lt;/code&gt;中读取自定义属性，在&lt;code&gt;Spring Boot&lt;/code&gt;中该如何实现呢？&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-xml&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【bat脚本】字符串替换</title>
-    <link href="https://yezhechenyang.gitee.io/2020/071837764.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/071837764.html</id>
-    <published>2020-07-18T12:56:58.000Z</published>
-    <updated>2020-07-23T02:50:14.137Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-语法&quot;&gt;&lt;a href=&quot;#1-语法&quot; class=&quot;headerlink&quot; title=&quot;1. 语法&quot;&gt;&lt;/a&gt;1. 语法&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
