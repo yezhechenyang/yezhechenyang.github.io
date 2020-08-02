@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-07-31T03:06:45.301Z</updated>
+  <updated>2020-08-02T01:12:11.748Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】ORM系列之BeetlSql</title>
+    <link href="https://yezhechenyang.gitee.io/2020/080253863.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/080253863.html</id>
+    <published>2020-08-02T01:11:17.000Z</published>
+    <updated>2020-08-02T01:12:11.748Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;&lt;code&gt;BettlSql&lt;/code&gt;的官网：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
+    
+      <category term="BeetlSql" scheme="https://yezhechenyang.gitee.io/tags/BeetlSql/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】Mybatis之mybatis-plus</title>
@@ -569,34 +599,6 @@
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
       <category term="Admin" scheme="https://yezhechenyang.gitee.io/tags/Admin/"/>
-    
-      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】Actuator监控器</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072064295.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072064295.html</id>
-    <published>2020-07-20T02:56:42.000Z</published>
-    <updated>2020-07-23T02:50:14.166Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot; class=&quot;headerlink&quot; title=&quot;1. 概述&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
       <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
     
