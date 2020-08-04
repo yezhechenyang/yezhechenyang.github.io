@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-02T01:12:11.748Z</updated>
+  <updated>2020-08-04T00:55:33.977Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】七牛云文件上传</title>
+    <link href="https://yezhechenyang.gitee.io/2020/080417245.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/080417245.html</id>
+    <published>2020-08-04T00:54:36.000Z</published>
+    <updated>2020-08-04T00:55:33.977Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;本文主要介绍如何在&lt;code&gt;Spring
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="文件上传" scheme="https://yezhechenyang.gitee.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+      <category term="七牛云" scheme="https://yezhechenyang.gitee.io/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】ORM系列之BeetlSql</title>
@@ -571,36 +601,6 @@
       <category term="Logback" scheme="https://yezhechenyang.gitee.io/tags/Logback/"/>
     
       <category term="Log4j" scheme="https://yezhechenyang.gitee.io/tags/Log4j/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】Admin可视化监控</title>
-    <link href="https://yezhechenyang.gitee.io/2020/07211248.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/07211248.html</id>
-    <published>2020-07-21T04:48:22.000Z</published>
-    <updated>2020-07-23T02:50:14.072Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="Admin" scheme="https://yezhechenyang.gitee.io/tags/Admin/"/>
-    
-      <category term="Actuator" scheme="https://yezhechenyang.gitee.io/tags/Actuator/"/>
     
   </entry>
   
