@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-04T00:55:33.977Z</updated>
+  <updated>2020-08-04T07:44:31.038Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Java8】Lamda表达式</title>
+    <link href="https://yezhechenyang.gitee.io/2020/080461041.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/080461041.html</id>
+    <published>2020-08-04T07:43:50.000Z</published>
+    <updated>2020-08-04T07:44:31.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-匿名内部类&quot;&gt;&lt;a href=&quot;#1-匿名内部类&quot; class=&quot;headerlink&quot; title=&quot;1. 匿名内部类&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://yezhechenyang.gitee.io/categories/Java/"/>
+    
+    
+      <category term="Java8" scheme="https://yezhechenyang.gitee.io/tags/Java8/"/>
+    
+      <category term="Lamda" scheme="https://yezhechenyang.gitee.io/tags/Lamda/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】七牛云文件上传</title>
@@ -571,36 +599,6 @@
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
       <category term="Aop" scheme="https://yezhechenyang.gitee.io/tags/Aop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】Logback日志</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072160063.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072160063.html</id>
-    <published>2020-07-21T04:51:54.000Z</published>
-    <updated>2020-07-23T02:50:14.087Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="Logback" scheme="https://yezhechenyang.gitee.io/tags/Logback/"/>
-    
-      <category term="Log4j" scheme="https://yezhechenyang.gitee.io/tags/Log4j/"/>
     
   </entry>
   
