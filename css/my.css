@@ -91,3 +91,5 @@ html{
     font-family: "Consolas","龙顺体",sans-serif}
 
 nav ul a{font-size: 1.2rem}
+
+#prenext-posts{ position: relative; }

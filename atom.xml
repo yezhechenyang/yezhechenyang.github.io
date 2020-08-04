@@ -303,9 +303,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="MyBatis" scheme="https://yezhechenyang.gitee.io/tags/MyBatis/"/>
-    
       <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
+    
+      <category term="MyBatis" scheme="https://yezhechenyang.gitee.io/tags/MyBatis/"/>
     
   </entry>
   
@@ -421,9 +421,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
-    
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
     
   </entry>
   
@@ -451,9 +451,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
-    
       <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
+    
+      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
   </entry>
   
