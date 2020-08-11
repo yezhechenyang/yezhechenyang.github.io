@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-04T07:44:31.038Z</updated>
+  <updated>2020-08-11T00:24:46.512Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】Redis缓存</title>
+    <link href="https://yezhechenyang.gitee.io/2020/081156230.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/081156230.html</id>
+    <published>2020-08-11T00:19:37.000Z</published>
+    <updated>2020-08-11T00:24:46.512Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;本文主要介绍在&lt;code&gt;Spring
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Redis" scheme="https://yezhechenyang.gitee.io/tags/Redis/"/>
+    
+      <category term="缓存" scheme="https://yezhechenyang.gitee.io/tags/%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
   
   <entry>
     <title>【Java8】Lamda表达式</title>
@@ -571,34 +601,6 @@
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
       <category term="Exception" scheme="https://yezhechenyang.gitee.io/tags/Exception/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】Aop方式记录Web请求</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072258554.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072258554.html</id>
-    <published>2020-07-22T06:28:07.000Z</published>
-    <updated>2020-07-23T02:46:46.923Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;使用&lt;code&gt;Logback&lt;/code&gt;框架记录日志，不多介绍，推荐阅读：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="Aop" scheme="https://yezhechenyang.gitee.io/tags/Aop/"/>
     
   </entry>
   

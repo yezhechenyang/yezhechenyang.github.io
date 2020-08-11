@@ -6,12 +6,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Hexo】Git上传大文件失败, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】Redis缓存, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 问题描述当使用hexo clean &amp;amp;&amp;amp; hexo d部署时，出现下面的错误：
-remote: Powered by GITEE.COM [GNK-5.0]
-remote: error: File: 251f4b6a8">
+    <meta name="description" content="1. 前言本文主要介绍在Spring Boot项目中整合Redis缓存，了解其基础用法。
+2. 引入&amp;lt;dependency&gt;
+    &amp;lt;groupId&gt;org.springframework.boot&amp;lt;/groupId&gt;
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@ remote: error: File: 251f4b6a8">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Hexo】Git上传大文件失败 | 叶遮沉阳</title>
+    <title>【Spring Boot】Redis缓存 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -538,13 +539,13 @@ remote: error: File: 251f4b6a8">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Hexo】Git上传大文件失败
+                        【Spring Boot】Redis缓存
                     </div>
                 </div>
             </div>
@@ -656,12 +657,16 @@ remote: error: File: 251f4b6a8">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/" target="_blank">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Spring-Boot/" target="_blank">
+                                <span class="chip bg-color">Spring Boot</span>
                             </a>
                         
-                            <a href="/tags/Gitee/" target="_blank">
-                                <span class="chip bg-color">Gitee</span>
+                            <a href="/tags/Redis/" target="_blank">
+                                <span class="chip bg-color">Redis</span>
+                            </a>
+                        
+                            <a href="/tags/缓存/" target="_blank">
+                                <span class="chip bg-color">缓存</span>
                             </a>
                         
                     </div>
@@ -672,8 +677,8 @@ remote: error: File: 251f4b6a8">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                Spring Boot
                             </a>
                         
                     </div>
@@ -684,7 +689,7 @@ remote: error: File: 251f4b6a8">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-28
+                    2020-08-11
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -698,14 +703,14 @@ remote: error: File: 251f4b6a8">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        381
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -722,29 +727,183 @@ remote: error: File: 251f4b6a8">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>当使用<code>hexo clean &amp;&amp; hexo d</code>部署时，出现下面的错误：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">remote: Powered by GITEE.COM [GNK-5.0]
-remote: error: File: 251f4b6a8eb247f2fe5be01ba30b58c7bd5e64be 194.62 MB, exceeds 100.00 MB.
-remote: Use command below to see the filename:
-remote: git rev-list --objects --all | grep 251f4b6a8eb247f2fe5be01ba30b58c7bd5e64be
-remote: Please remove the file from history and try again. (https://gitee.com/help/articles/4232)
-To git@gitee.com:yezhechenyang/myblog.git
- ! [remote rejected] HEAD -> master (pre-receive hook declined)
-error: failed to push some refs to 'git@gitee.com:yezhechenyang/myblog.git'
-FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
-Error: Spawn failed
-    at ChildProcess.<anonymous> (D:\CodeTest\HexoTest\myblog\hexo-blog-fly\node_modules\hexo-util\lib\spawn.js:52:19)
-    at ChildProcess.emit (events.js:310:20)
-    at ChildProcess.cp.emit (D:\CodeTest\HexoTest\myblog\hexo-blog-fly\node_modules\cross-spawn\lib\enoent.js:40:29)
-    at Process.ChildProcess._handle.onexit (internal/child_process.js:275:12)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>有一个视频文件超过了100M，导致<code>push</code>到<code>Gitee</code>上报错。</p>
-<h3 id="2-解决过程"><a href="#2-解决过程" class="headerlink" title="2. 解决过程"></a>2. 解决过程</h3><p>尝试删除视频文件重新部署。</p>
-<p>删除文件后，再次运行<code>hexo clean &amp;&amp; hexo d</code>，还是会报上面的错误。</p>
-<p>这该如何解决呢？</p>
-<p>第二次部署的时候，很明显发现还会上传视频。说明<code>hexo</code>并没有在<code>Git</code>的本地管理中把视频清除掉。</p>
-<p>那么需要我们自己去清理<code>Git</code>本地版本管理的视频缓存了。</p>
-<p><strong>直接删除<code>.deploy_git</code>目录。</strong></p>
-<p>再次运行<code>hexo clean &amp;&amp; hexo d</code>，一切正常，搞定收工！</p>
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文主要介绍在<code>Spring Boot</code>项目中整合<code>Redis</code>缓存，了解其基础用法。</p>
+<h3 id="2-引入"><a href="#2-引入" class="headerlink" title="2. 引入"></a>2. 引入</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- 对象池，使用 redis 时必须引入 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.commons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>commons-pool2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- 引入 jackson 对象json转换 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-json<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>为什么要引入<code>commons-pool2</code>呢？因为不管是<code>Jedis</code>还是<code>lettuce</code>都有用到它。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>pool2<span class="token punctuation">.</span>impl<span class="token punctuation">.</span>GenericObjectPoolConfig<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">LettuceConnectionConfiguration</span> <span class="token keyword">extends</span> <span class="token class-name">RedisConnectionConfiguration</span>
+
+<span class="token keyword">private</span> GenericObjectPoolConfig<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> <span class="token function">getPoolConfig</span><span class="token punctuation">(</span>Pool properties<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><h4 id="3-1-application-yml"><a href="#3-1-application-yml" class="headerlink" title="3.1 application.yml"></a>3.1 <code>application.yml</code></h4><p>使用<code>lettuce</code>作为连接<code>Redis Server</code>的客户端。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+    <span class="token comment" spellcheck="true"># 连接超时时间（记得添加单位，Duration）</span>
+    <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 10000ms
+    <span class="token comment" spellcheck="true"># Redis默认情况下有16个分片，这里配置具体使用的分片</span>
+    <span class="token comment" spellcheck="true"># database: 0</span>
+    <span class="token key atrule">lettuce</span><span class="token punctuation">:</span>
+      <span class="token key atrule">pool</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 连接池最大连接数（使用负值表示没有限制） 默认 8</span>
+        <span class="token key atrule">max-active</span><span class="token punctuation">:</span> <span class="token number">8</span>
+        <span class="token comment" spellcheck="true"># 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1</span>
+        <span class="token key atrule">max-wait</span><span class="token punctuation">:</span> <span class="token punctuation">-</span>1ms
+        <span class="token comment" spellcheck="true"># 连接池中的最大空闲连接 默认 8</span>
+        <span class="token key atrule">max-idle</span><span class="token punctuation">:</span> <span class="token number">8</span>
+        <span class="token comment" spellcheck="true"># 连接池中的最小空闲连接 默认 0</span>
+        <span class="token key atrule">min-idle</span><span class="token punctuation">:</span> <span class="token number">0</span>
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 一般来说是不用配置的，Spring Cache 会根据依赖的包自行装配</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> redis<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-RedisConfig"><a href="#3-2-RedisConfig" class="headerlink" title="3.2 RedisConfig"></a>3.2 <code>RedisConfig</code></h4><p><code>@AutoConfigureAfter(RedisAutoConfiguration.class)</code> 表示先加载<code>RedisAutoConfiguration</code>类，后加载<code>RedisConfig</code>类。</p>
+<p><code>@AutoConfigureAfter</code>就是在加载指定类之后，再加载当前类。</p>
+<p><code>RedisTemplate</code>是<code>Spring</code>提供用来方便操作<code>Redis</code>缓存的工具类。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@AutoConfigureAfter</span><span class="token punctuation">(</span>RedisAutoConfiguration<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@EnableCaching</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Serializable<span class="token operator">></span> <span class="token function">redisCacheTemplate</span><span class="token punctuation">(</span>LettuceConnectionFactory redisConnectionFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Serializable<span class="token operator">></span> template <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RedisTemplate</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setKeySerializer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StringRedisSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setValueSerializer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">GenericJackson2JsonRedisSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setConnectionFactory</span><span class="token punctuation">(</span>redisConnectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> template<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 配置使用注解的时候缓存配置，默认是序列化反序列化的形式，加上此配置则为 json 形式
+     */</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> CacheManager <span class="token function">cacheManager</span><span class="token punctuation">(</span>RedisConnectionFactory factory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 配置序列化</span>
+        RedisCacheConfiguration config <span class="token operator">=</span> RedisCacheConfiguration<span class="token punctuation">.</span><span class="token function">defaultCacheConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        RedisCacheConfiguration redisCacheConfiguration <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token function">serializeKeysWith</span><span class="token punctuation">(</span>
+            RedisSerializationContext<span class="token punctuation">.</span>SerializationPair<span class="token punctuation">.</span><span class="token function">fromSerializer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StringRedisSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">serializeValuesWith</span><span class="token punctuation">(</span>
+            RedisSerializationContext<span class="token punctuation">.</span>SerializationPair<span class="token punctuation">.</span><span class="token function">fromSerializer</span><span class="token punctuation">(</span>
+                <span class="token keyword">new</span> <span class="token class-name">GenericJackson2JsonRedisSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> RedisCacheManager<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span>factory<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cacheDefaults</span><span class="token punctuation">(</span>redisCacheConfiguration<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h3><p>通过注解的方式在<code>Service</code>的实现类中实现<code>Redis</code>缓存的应用。</p>
+<p>在这主要用到三个常用的注解：<code>@CachePut</code>、<code>@Cacheable</code>、<code>@CacheEvict</code>。</p>
+<p><code>@CachePut</code> 不会检查缓存中是否存在相同的<code>key</code>，执行方法的同时也会更新缓存。</p>
+<p><code>@Cacheable</code> 会检查缓存中是否存在相同的<code>key</code>，若存在，直接返回缓存结果而不会执行方法；若不存在，则在执行方法后，将返回结果进行缓存。</p>
+<p><code>@CacheEvict</code> 执行方法的同时也将对应的缓存进行清理。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>google<span class="token punctuation">.</span>common<span class="token punctuation">.</span>collect<span class="token punctuation">.</span>Maps<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>CacheEvict<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>CachePut<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Cacheable<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Service</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 模拟数据库
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Map<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> User<span class="token operator">></span> DATABASES <span class="token operator">=</span> Maps<span class="token punctuation">.</span><span class="token function">newConcurrentMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 初始化数据
+     */</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>1L<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>1L<span class="token punctuation">,</span> <span class="token string">"user1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>2L<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>2L<span class="token punctuation">,</span> <span class="token string">"user2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>3L<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>3L<span class="token punctuation">,</span> <span class="token string">"user3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 保存或修改用户
+     *
+     * @param user 用户对象
+     * @return 操作结果
+     */</span>
+    <span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.id"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> User <span class="token function">saveOrUpdate</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"保存用户【user】= {}"</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> user<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取用户
+     *
+     * @param id key值
+     * @return 返回结果
+     */</span>
+    <span class="token annotation punctuation">@Cacheable</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> User <span class="token function">get</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 我们假设从数据库读取</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"查询用户【id】= {}"</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> DATABASES<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 删除
+     *
+     * @param id key值
+     */</span>
+    <span class="token annotation punctuation">@CacheEvict</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"删除用户【id】= {}"</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getTwice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 模拟查询id为1的用户</span>
+    User user1 <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"【user1】= {}"</span><span class="token punctuation">,</span> user1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 再次查询</span>
+    User user2 <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"【user2】= {}"</span><span class="token punctuation">,</span> user2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 查看日志，只打印一次 userService.get() 方法中的日志，证明缓存生效</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getAfterSave</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    userService<span class="token punctuation">.</span><span class="token function">saveOrUpdate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>4L<span class="token punctuation">,</span> <span class="token string">"测试中文"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    User user <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>4L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"【user】= {}"</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 查看日志，只打印保存用户的日志，查询是未触发查询日志，因此缓存生效</span>
+<span class="token punctuation">}</span>
+
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deleteUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 查询一次，使redis中存在缓存数据</span>
+    userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 删除，查看redis是否存在缓存数据</span>
+    userService<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 再次查询，如果触发查询日志，说明已从缓存中删除。</span>
+    userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -914,8 +1073,8 @@ Error: Spawn failed
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/072816107.html">
-                        https://yezhechenyang.gitee.io/2020/072816107.html</a></span>
+                <span class="reprint-info"><a href="/2020/081156230.html">
+                        https://yezhechenyang.gitee.io/2020/081156230.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1400,81 +1559,29 @@ Error: Spawn failed
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/072954883.html">
+                <a href="/2020/081156230.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【Hexo】复制代码不换行">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【Spring Boot】Redis缓存">
                         
-                        <span class="card-title">【Hexo】复制代码不换行</span>
+                        <span class="card-title">【Spring Boot】Redis缓存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            解决在博客文章中复制代码不换行问题
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/" target="_blank">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/072722410.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Spring Boot】ORM系列之MyBatis">
-                        
-                        <span class="card-title">【Spring Boot】ORM系列之MyBatis</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            当Spring Boot看上MyBatis后...
+                            SpringBoot 中引入 Redis 缓存
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-11
                             </span>
                         <span class="publish-author">
                             
@@ -1488,6 +1595,7 @@ Error: Spawn failed
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1495,12 +1603,65 @@ Error: Spawn failed
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/ORM/" target="_blank">
-                        <span class="chip bg-color">ORM</span>
+                    <a href="/tags/Redis/" target="_blank">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
-                    <a href="/tags/MyBatis/" target="_blank">
-                        <span class="chip bg-color">MyBatis</span>
+                    <a href="/tags/缓存/" target="_blank">
+                        <span class="chip bg-color">缓存</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/080461041.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="【Java8】Lamda表达式">
+                        
+                        <span class="card-title">【Java8】Lamda表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java8新特性之Lamda表达式
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java8/" target="_blank">
+                        <span class="chip bg-color">Java8</span>
+                    </a>
+                    
+                    <a href="/tags/Lamda/" target="_blank">
+                        <span class="chip bg-color">Lamda</span>
                     </a>
                     
                 </div>
