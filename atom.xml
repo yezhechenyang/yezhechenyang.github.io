@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-11T00:24:46.512Z</updated>
+  <updated>2020-08-13T02:40:16.147Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Java8】Stream API</title>
+    <link href="https://yezhechenyang.gitee.io/2020/081334770.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/081334770.html</id>
+    <published>2020-08-13T02:36:06.000Z</published>
+    <updated>2020-08-13T02:40:16.147Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://yezhechenyang.gitee.io/categories/Java/"/>
+    
+    
+      <category term="Java8" scheme="https://yezhechenyang.gitee.io/tags/Java8/"/>
+    
+      <category term="Stream" scheme="https://yezhechenyang.gitee.io/tags/Stream/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】Redis缓存</title>
@@ -573,34 +601,6 @@
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
       <category term="Freemarker" scheme="https://yezhechenyang.gitee.io/tags/Freemarker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】异常统一处理</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072247580.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072247580.html</id>
-    <published>2020-07-22T06:32:25.000Z</published>
-    <updated>2020-07-23T02:50:14.095Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="Exception" scheme="https://yezhechenyang.gitee.io/tags/Exception/"/>
     
   </entry>
   
