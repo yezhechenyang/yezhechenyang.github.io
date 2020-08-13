@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-13T02:40:16.147Z</updated>
+  <updated>2020-08-13T13:18:05.001Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【JavaScript】Dom元素的一次往返运动</title>
+    <link href="https://yezhechenyang.gitee.io/2020/081344716.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/081344716.html</id>
+    <published>2020-08-13T13:15:20.000Z</published>
+    <updated>2020-08-13T13:18:05.001Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://yezhechenyang.gitee.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://yezhechenyang.gitee.io/tags/JavaScript/"/>
+    
+      <category term="Interval" scheme="https://yezhechenyang.gitee.io/tags/Interval/"/>
+    
+      <category term="Observer" scheme="https://yezhechenyang.gitee.io/tags/Observer/"/>
+    
+  </entry>
   
   <entry>
     <title>【Java8】Stream API</title>
@@ -570,37 +600,6 @@
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
       <category term="Thymeleaf" scheme="https://yezhechenyang.gitee.io/tags/Thymeleaf/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】Freemarker模板引擎</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072351137.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072351137.html</id>
-    <published>2020-07-23T02:07:00.000Z</published>
-    <updated>2020-07-23T02:46:46.932Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;所谓的模板引擎，便是将模板和数据模型渲染成输出文件。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;FTL + Java POJO =
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="Freemarker" scheme="https://yezhechenyang.gitee.io/tags/Freemarker/"/>
     
   </entry>
   
