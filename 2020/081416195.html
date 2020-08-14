@@ -6,13 +6,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Spring】概述, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】Ehcache缓存, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. Spring介绍
-Spring是世界上最流行的Java开源框架；
-Spring是技术生态体系的集大成者，包含Spring Framework、Spring Boot和Spring Cloud等诸多项目；
-SpringMVC是Sprin">
+    <meta name="description" content="1. 前言本文介绍在Spring Boot 2.1.0.RELEASE中引入Ehcache缓存。
+2. 引入&amp;lt;dependency&gt;
+    &amp;lt;groupId&gt;org.springframework.boot&amp;lt;/group">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@ SpringMVC是Sprin">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Spring】概述 | 叶遮沉阳</title>
+    <title>【Spring Boot】Ehcache缓存 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -539,13 +538,13 @@ SpringMVC是Sprin">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Spring】概述
+                        【Spring Boot】Ehcache缓存
                     </div>
                 </div>
             </div>
@@ -657,20 +656,16 @@ SpringMVC是Sprin">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring-Framework/" target="_blank">
-                                <span class="chip bg-color">Spring Framework</span>
-                            </a>
-                        
                             <a href="/tags/Spring-Boot/" target="_blank">
                                 <span class="chip bg-color">Spring Boot</span>
                             </a>
                         
-                            <a href="/tags/Spring/" target="_blank">
-                                <span class="chip bg-color">Spring</span>
+                            <a href="/tags/缓存/" target="_blank">
+                                <span class="chip bg-color">缓存</span>
                             </a>
                         
-                            <a href="/tags/Spring-Cloud/" target="_blank">
-                                <span class="chip bg-color">Spring Cloud</span>
+                            <a href="/tags/Ehcache/" target="_blank">
+                                <span class="chip bg-color">Ehcache</span>
                             </a>
                         
                     </div>
@@ -681,8 +676,8 @@ SpringMVC是Sprin">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring/" class="post-category" target="_blank">
-                                Spring
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                Spring Boot
                             </a>
                         
                     </div>
@@ -693,7 +688,7 @@ SpringMVC是Sprin">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-10
+                    2020-08-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -707,14 +702,14 @@ SpringMVC是Sprin">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        595
+                        650
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -731,41 +726,152 @@ SpringMVC是Sprin">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Spring介绍"><a href="#1-Spring介绍" class="headerlink" title="1. Spring介绍"></a>1. Spring介绍</h3><ul>
-<li>Spring是世界上最流行的Java开源框架；</li>
-<li>Spring是技术生态体系的集大成者，包含Spring Framework、Spring Boot和Spring Cloud等诸多项目；</li>
-<li>SpringMVC是Spring Framework项目中web模块提供的MVC框架；</li>
-</ul>
-<h3 id="2-Spring-Framework介绍"><a href="#2-Spring-Framework介绍" class="headerlink" title="2. Spring Framework介绍"></a>2. Spring Framework介绍</h3><ul>
-<li>Spring Framework是整个Spring生态体系的基石；</li>
-<li>为依赖注入、事务管理、WEB应用、数据访问等提供支持；</li>
-</ul>
-<h4 id="2-1-Spring-Framework的体系结构"><a href="#2-1-Spring-Framework的体系结构" class="headerlink" title="2.1 Spring Framework的体系结构"></a>2.1 Spring Framework的体系结构</h4><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://yezhechenyang.gitee.io/imagebed/blog/spring-overview.png" alt="Spring Framework体系"></p>
-<p>上图是在Spring官网提供的<a href="https://docs.spring.io/spring/docs/4.3.27.RELEASE/spring-framework-reference/htmlsingle/" target="_blank" rel="noopener">Spring Framework 4.3.27 在线参考文档</a>找到的Spring体系结构图。（相对于Spring3，多了Messaging模块。）</p>
-<h4 id="2-2-模块划分"><a href="#2-2-模块划分" class="headerlink" title="2.2 模块划分"></a>2.2 模块划分</h4><p>六大模块：核心容器、面向切面与植入、消息传递、数据访问与集成、Web和远程调用、测试。</p>
-<h5 id="2-2-1-核心容器"><a href="#2-2-1-核心容器" class="headerlink" title="2.2.1 核心容器"></a>2.2.1 核心容器</h5><pre><code>spring-core：依赖注入IoC与DI的最基本实现
-spring-beans：Bean工厂与bean的装配
-spring-context：spring的context上下文即IoC容器
-spring-context-support 
-spring-expression：spring表达式语言</code></pre><h5 id="2-2-2-面向切面与植入"><a href="#2-2-2-面向切面与植入" class="headerlink" title="2.2.2 面向切面与植入"></a>2.2.2 面向切面与植入</h5><pre><code>spring-aop：面向切面编程
-spring-aspects：集成AspectJ
-spring-instrument：提供一些类级的工具支持和ClassLoader级的实现，用于服务器
-spring-instrument-tomcat：针对tomcat的instrument实现</code></pre><h5 id="2-2-3-消息传递"><a href="#2-2-3-消息传递" class="headerlink" title="2.2.3 消息传递"></a>2.2.3 消息传递</h5><pre><code>spring-messaging</code></pre><h5 id="2-2-4-数据访问与集成"><a href="#2-2-4-数据访问与集成" class="headerlink" title="2.2.4 数据访问与集成"></a>2.2.4 数据访问与集成</h5><pre><code>spring-jdbc：提供JDBC支持
-spring-tx：事务管理
-spring-orm：对象关系映射支持
-spring-oxm：XML处理支持
-spring-jms：Java信息服务支持</code></pre><h5 id="2-2-5-Web和远程调用"><a href="#2-2-5-Web和远程调用" class="headerlink" title="2.2.5 Web和远程调用"></a>2.2.5 Web和远程调用</h5><pre><code>spring-web：提供最基础Web支持
-spring-webmvc：提供MVC的实现
-spring-websocket：支持WebSocket
-spring-webmvc-portlet：在Portlet环境中使用的MVC实现</code></pre><h5 id="2-2-6-测试"><a href="#2-2-6-测试" class="headerlink" title="2.2.6 测试"></a>2.2.6 测试</h5><pre><code>spring-test：用于单元测试与集成测试</code></pre><h3 id="3-Spring-Boot介绍"><a href="#3-Spring-Boot介绍" class="headerlink" title="3. Spring Boot介绍"></a>3. Spring Boot介绍</h3><ul>
-<li>是Spring Framework的一套快速配置脚手架，可以基于Spring Boot 快速开发单个微服务；</li>
-<li>为快速启动且最小化配置的spring应用而设计；</li>
-</ul>
-<h3 id="4-Spring-Cloud介绍"><a href="#4-Spring-Cloud介绍" class="headerlink" title="4. Spring Cloud介绍"></a>4. Spring Cloud介绍</h3><ul>
-<li>是一整套基于Spring Boot的微服务解决方案；</li>
-<li>为开发者提供了很多工具，用于快速构建分布式系统的一些通用模式，例如：配置管理、注册中心、服务发现、限流、网关、熔断、链路追踪等；</li>
-<li>关注于多个微服务的整合与管理；</li>
-</ul>
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文介绍在<code>Spring Boot 2.1.0.RELEASE</code>中引入<code>Ehcache</code>缓存。</p>
+<h3 id="2-引入"><a href="#2-引入" class="headerlink" title="2. 引入"></a>2. 引入</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-cache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>net.sf.ehcache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>ehcache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><h4 id="3-1-application-yml"><a href="#3-1-application-yml" class="headerlink" title="3.1 application.yml"></a>3.1 <code>application.yml</code></h4><p>添加<code>ehcache</code>配置。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> ehcache
+    <span class="token key atrule">ehcache</span><span class="token punctuation">:</span>
+      <span class="token key atrule">config</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>ehcache.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-ehcache-xml"><a href="#3-2-ehcache-xml" class="headerlink" title="3.2 ehcache.xml"></a>3.2 <code>ehcache.xml</code></h4><pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- ehcache配置 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ehcache</span>
+        <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">xsi:</span>noNamespaceSchemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://ehcache.org/ehcache.xsd<span class="token punctuation">"</span></span>
+        <span class="token attr-name">updateCheck</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--缓存路径，用户目录下的base_ehcache目录--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>diskStore</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user.home/base_ehcache<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>defaultCache</span>
+            <span class="token attr-name">maxElementsInMemory</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span>
+            <span class="token attr-name">eternal</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+            <span class="token attr-name">timeToIdleSeconds</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>120<span class="token punctuation">"</span></span>
+            <span class="token attr-name">timeToLiveSeconds</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>120<span class="token punctuation">"</span></span>
+            <span class="token attr-name">overflowToDisk</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+            <span class="token attr-name">maxElementsOnDisk</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10000000<span class="token punctuation">"</span></span>
+            <span class="token attr-name">diskPersistent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+            <span class="token attr-name">diskExpiryThreadIntervalSeconds</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>120<span class="token punctuation">"</span></span>
+            <span class="token attr-name">memoryStoreEvictionPolicy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>LRU<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--
+    缓存文件名：user，同样的可以配置多个缓存
+    maxElementsInMemory：内存中最多存储
+    eternal：外部存储
+    overflowToDisk：超出缓存到磁盘
+    diskPersistent：磁盘持久化
+    timeToLiveSeconds：缓存时间
+    diskExpiryThreadIntervalSeconds：磁盘过期时间
+    --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cache</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span>
+           <span class="token attr-name">maxElementsInMemory</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span>
+           <span class="token attr-name">eternal</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+           <span class="token attr-name">overflowToDisk</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+           <span class="token attr-name">diskPersistent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+           <span class="token attr-name">timeToLiveSeconds</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+           <span class="token attr-name">diskExpiryThreadIntervalSeconds</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>120<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ehcache</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-3-EnableCaching"><a href="#3-3-EnableCaching" class="headerlink" title="3.3 @EnableCaching"></a>3.3 <code>@EnableCaching</code></h4><p>在<code>Application</code>启动类添加<code>@EnableCaching</code>注解。</p>
+<h3 id="4-使用"><a href="#4-使用" class="headerlink" title="4. 使用"></a>4. 使用</h3><p>不管是<code>Redis</code>缓存，还是<code>Ehcache</code>缓存，<code>Spring</code>统一提供<code>@CachePut</code>、<code>@Cacheable</code>、<code>@CacheEvict</code>注解进行存取操作。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 模拟数据库
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Map<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> User<span class="token operator">></span> DATABASES <span class="token operator">=</span> Maps<span class="token punctuation">.</span><span class="token function">newConcurrentMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 初始化数据
+     */</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>1L<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>1L<span class="token punctuation">,</span> <span class="token string">"user1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>2L<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>2L<span class="token punctuation">,</span> <span class="token string">"user2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>3L<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>3L<span class="token punctuation">,</span> <span class="token string">"user3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 保存或修改用户
+     *
+     * @param user 用户对象
+     * @return 操作结果
+     */</span>
+    <span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.id"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> User <span class="token function">saveOrUpdate</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"保存用户【user】= {}"</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> user<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取用户
+     *
+     * @param id key值
+     * @return 返回结果
+     */</span>
+    <span class="token annotation punctuation">@Cacheable</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> User <span class="token function">get</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 我们假设从数据库读取</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"查询用户【id】= {}"</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> DATABASES<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 删除
+     *
+     * @param id key值
+     */</span>
+    <span class="token annotation punctuation">@CacheEvict</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        DATABASES<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"删除用户【id】= {}"</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getTwice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 模拟查询id为1的用户</span>
+    User user1 <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"【user1】= {}"</span><span class="token punctuation">,</span> user1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 再次查询</span>
+    User user2 <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"【user2】= {}"</span><span class="token punctuation">,</span> user2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 查看日志，只打印一次日志，证明缓存生效</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 先存，再查询，查看日志验证缓存
+ */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getAfterSave</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    userService<span class="token punctuation">.</span><span class="token function">saveOrUpdate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span>4L<span class="token punctuation">,</span> <span class="token string">"user4"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    User user <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>4L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"【user】= {}"</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 查看日志，只打印保存用户的日志，查询是未触发查询日志，因此缓存生效</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 测试删除，查看redis是否存在缓存数据
+ */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deleteUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 查询一次，使ehcache中存在缓存数据</span>
+    userService<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 删除，查看ehcache是否存在缓存数据</span>
+    userService<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -935,8 +1041,8 @@ spring-webmvc-portlet：在Portlet环境中使用的MVC实现</code></pre><h5 id
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/071037478.html">
-                        https://yezhechenyang.gitee.io/2020/071037478.html</a></span>
+                <span class="reprint-info"><a href="/2020/081416195.html">
+                        https://yezhechenyang.gitee.io/2020/081416195.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1421,46 +1527,56 @@ spring-webmvc-portlet：在Portlet环境中使用的MVC实现</code></pre><h5 id
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/071148461.html">
+                <a href="/2020/081416195.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【Hexo】头像防盗链破解">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【Spring Boot】Ehcache缓存">
                         
-                        <span class="card-title">【Hexo】头像防盗链破解</span>
+                        <span class="card-title">【Spring Boot】Ehcache缓存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            破解防盗链，加载CSDN头像链接！
+                            Spring Boot中引入Ehcache缓存
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                    Spring Boot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring Boot</span>
+                    </a>
+                    
+                    <a href="/tags/缓存/" target="_blank">
+                        <span class="chip bg-color">缓存</span>
+                    </a>
+                    
+                    <a href="/tags/Ehcache/" target="_blank">
+                        <span class="chip bg-color">Ehcache</span>
                     </a>
                     
                 </div>
@@ -1474,30 +1590,31 @@ spring-webmvc-portlet：在Portlet环境中使用的MVC实现</code></pre><h5 id
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/070734290.html">
+                <a href="/2020/081344716.html">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="【Chrome扩展开发】去贴吧广告">
                         
-                        <span class="card-title">【Chrome扩展开发】去贴吧广告</span>
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="【JavaScript】Dom元素的一次往返运动">
+                        
+                        <span class="card-title">【JavaScript】Dom元素的一次往返运动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习Chrome扩展开发，就拿贴吧去广告实践一下！
+                            定时器实现元素往返运动
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Chrome扩展开发/" class="post-category" target="_blank">
-                                    Chrome扩展开发
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1507,12 +1624,16 @@ spring-webmvc-portlet：在Portlet环境中使用的MVC实现</code></pre><h5 id
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Chrome扩展/" target="_blank">
-                        <span class="chip bg-color">Chrome扩展</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/贴吧去广告/" target="_blank">
-                        <span class="chip bg-color">贴吧去广告</span>
+                    <a href="/tags/Interval/" target="_blank">
+                        <span class="chip bg-color">Interval</span>
+                    </a>
+                    
+                    <a href="/tags/Observer/" target="_blank">
+                        <span class="chip bg-color">Observer</span>
                     </a>
                     
                 </div>
