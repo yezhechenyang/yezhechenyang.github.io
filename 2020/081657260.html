@@ -6,13 +6,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Spring Boot】Freemarker模板引擎, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】邮件发送, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 前言所谓的模板引擎，便是将模板和数据模型渲染成输出文件。
-FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添加starter-freemarker依赖。
-&amp;lt;dependency&gt;
- ">
+    <meta name="description" content="1. 前言本文介绍如何在Spring Boot项目中引入邮件发送模块。
+2. 引入2.1 版本&amp;lt;spring.boot.version&gt;2.1.0.RELEASE&amp;lt;/spring.boot.version&gt;
+&amp;lt;jasypt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Spring Boot】Freemarker模板引擎 | 叶遮沉阳</title>
+    <title>【Spring Boot】邮件发送 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -539,13 +538,13 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Spring Boot】Freemarker模板引擎
+                        【Spring Boot】邮件发送
                     </div>
                 </div>
             </div>
@@ -661,12 +660,12 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
                                 <span class="chip bg-color">Spring Boot</span>
                             </a>
                         
-                            <a href="/tags/模板引擎/" target="_blank">
-                                <span class="chip bg-color">模板引擎</span>
+                            <a href="/tags/mail/" target="_blank">
+                                <span class="chip bg-color">mail</span>
                             </a>
                         
-                            <a href="/tags/Freemarker/" target="_blank">
-                                <span class="chip bg-color">Freemarker</span>
+                            <a href="/tags/jasypt/" target="_blank">
+                                <span class="chip bg-color">jasypt</span>
                             </a>
                         
                     </div>
@@ -689,7 +688,7 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-23
+                    2020-08-16
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -703,14 +702,14 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        741
+                        1.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        7 分
                     </div>
                     
                 
@@ -727,101 +726,322 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>所谓的模板引擎，便是将模板和数据模型渲染成输出文件。</p>
-<pre><code>FTL + Java POJO = HTML</code></pre><h3 id="2-实现"><a href="#2-实现" class="headerlink" title="2. 实现"></a>2. 实现</h3><h4 id="2-1-添加依赖"><a href="#2-1-添加依赖" class="headerlink" title="2.1 添加依赖"></a>2.1 添加依赖</h4><p>在你搭建的<code>Web</code>项目中，添加<code>starter-freemarker</code>依赖。</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-freemarker<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-2-添加yml配置"><a href="#2-2-添加yml配置" class="headerlink" title="2.2 添加yml配置"></a>2.2 添加<code>yml</code>配置</h4><p>在你的<code>application.yml</code>中再添加<code>freemarker</code>的配置。</p>
-<pre><code>spring:
-  freemarker:
-    suffix: .ftl
-    cache: false
-    charset: UTF-8</code></pre><h4 id="2-3-定义模板"><a href="#2-3-定义模板" class="headerlink" title="2.3 定义模板"></a>2.3 定义模板</h4><h5 id="2-3-1-head-ftl"><a href="#2-3-1-head-ftl" class="headerlink" title="2.3.1 head.ftl"></a>2.3.1 <code>head.ftl</code></h5><p>先创建一个头部公共模板,用来给其他模板页面引用。</p>
-<p>文件路径：<code>src\main\resources\templates\common\head.ftl</code></p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span>
-          <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, user-scalable<span class="token punctuation">=</span>no, initial-scale<span class="token punctuation">=</span>1.0, maximum-scale<span class="token punctuation">=</span>1.0, minimum-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>spring-boot-template-freemarker<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="2-3-2-login-ftl"><a href="#2-3-2-login-ftl" class="headerlink" title="2.3.2 login.ftl"></a>2.3.2 <code>login.ftl</code></h5><p>定义一个登陆页面模板，引入<code>head.ftl</code>。<br>引入方式：<code>&lt;#include "../common/head.ftl"&gt;</code></p>
-<p>文件路径：<code>src\main\resources\templates\page\login.ftl</code></p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!doctype html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-&lt;#include "../common/head.ftl">
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">20</span>px <span class="token number">20%</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/demo/user/login<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        用户名<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>用户名<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-        密码<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>密码<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>登录<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="2-3-2-index-ftl"><a href="#2-3-2-index-ftl" class="headerlink" title="2.3.2 index.ftl"></a>2.3.2 <code>index.ftl</code></h5><p>登陆成功后，给个首页让它跳转。然后在首页显示登陆的用户名称。<br>获取用户名称的方式：<code>${user.name}</code>。这个值是在后台<code>Contrller</code>设置的，后面会介绍。</p>
-<p>定义一个首页页面模板，引入<code>head.ftl</code>。</p>
-<p>文件路径：<code>src\main\resources\templates\page\login.ftl</code></p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!doctype html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-&lt;#include "../common/head.ftl">
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">20</span>px <span class="token number">20%</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    欢迎登录，${user.name}！
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-4-Controller"><a href="#2-4-Controller" class="headerlink" title="2.4 Controller"></a>2.4 <code>Controller</code></h4><p>用户的请求，由<code>Controller</code>接收，然后准备模型数据，将数据渲染到模板，最终输出静态页面给用户。</p>
-<p>数据渲染的过程，<code>Spring</code>已经封装好了。我们只要把数据模型准备好，然后返回指定的模板就行了。</p>
-<p>下面看看如何在<code>Controller</code>中准备数据和指定模板吧。</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/user"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文介绍如何在<code>Spring Boot</code>项目中引入邮件发送模块。</p>
+<h3 id="2-引入"><a href="#2-引入" class="headerlink" title="2. 引入"></a>2. 引入</h3><h4 id="2-1-版本"><a href="#2-1-版本" class="headerlink" title="2.1 版本"></a>2.1 版本</h4><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring.boot.version</span><span class="token punctuation">></span></span>2.1.0.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring.boot.version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>jasypt.version</span><span class="token punctuation">></span></span>2.1.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>jasypt.version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hutool.version</span><span class="token punctuation">></span></span>5.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hutool.version</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>密码加密用到了<code>jasypt</code>。</p>
+<h4 id="2-2-依赖"><a href="#2-2-依赖" class="headerlink" title="2.2 依赖"></a>2.2 依赖</h4><pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- Spring Boot 邮件依赖 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-mail<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 
-    <span class="token comment" spellcheck="true">//将登录页面返回给用户</span>
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> ModelAndView <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//直接在ModelAndView中指定登录模板的路径</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ModelAndView</span><span class="token punctuation">(</span><span class="token string">"page/login"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">&lt;!--jasypt配置文件加解密--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.github.ulisesbocchio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jasypt-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${jasypt.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 
-    <span class="token comment" spellcheck="true">//用户点击登录，POST方式提交表单，跳转首页</span>
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> ModelAndView <span class="token function">login</span><span class="token punctuation">(</span>User user<span class="token punctuation">,</span> HttpServletRequest request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ModelAndView mv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ModelAndView</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//准备模型数据</span>
-        mv<span class="token punctuation">.</span><span class="token function">addObject</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//redirect:表示重定向到某个页面，/ 代表首页，在IndexController定义了这个路径</span>
-        mv<span class="token punctuation">.</span><span class="token function">setViewName</span><span class="token punctuation">(</span><span class="token string">"redirect:/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">&lt;!-- Spring Boot 模板依赖 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-thymeleaf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 
-        request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> mv<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IndexController</span> <span class="token punctuation">{</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>cn.hutool<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>hutool-all<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mail</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> smtp.sina.com
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">465</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> yezhechenyang@sina.com
+    <span class="token comment" spellcheck="true"># 使用 jasypt 加密密码(授权码)，替换 ENC(加密密码)，注意不是登录密码</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> ENC(XSOFdVEmRIkXTf7Pze9i5rS+byUWecuLbgLAr+mTzf0=) 
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> smtp
+    <span class="token key atrule">test-connection</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">default-encoding</span><span class="token punctuation">:</span> UTF<span class="token punctuation">-</span><span class="token number">8</span>
+    <span class="token key atrule">properties</span><span class="token punctuation">:</span>
+      <span class="token key atrule">mail.smtp.auth</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">mail.smtp.starttls.enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">mail.smtp.starttls.required</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">mail.smtp.ssl.enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">mail.display.sendmail</span><span class="token punctuation">:</span> spring<span class="token punctuation">-</span>boot<span class="token punctuation">-</span>demo
+<span class="token comment" spellcheck="true"># 为 jasypt 配置解密秘钥</span>
+<span class="token key atrule">jasypt</span><span class="token punctuation">:</span>
+  <span class="token key atrule">encryptor</span><span class="token punctuation">:</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> spring<span class="token punctuation">-</span>boot<span class="token punctuation">-</span>demo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-提供邮件服务接口"><a href="#4-提供邮件服务接口" class="headerlink" title="4. 提供邮件服务接口"></a>4. 提供邮件服务接口</h3><h4 id="4-1-MailService"><a href="#4-1-MailService" class="headerlink" title="4.1 MailService"></a>4.1 <code>MailService</code></h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">MailService</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 发送文本邮件
+     *
+     * @param to      收件人地址
+     * @param subject 邮件主题
+     * @param content 邮件内容
+     * @param cc      抄送地址
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">sendSimpleMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"/"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> ModelAndView <span class="token function">index</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ModelAndView mv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ModelAndView</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 发送HTML邮件
+     *
+     * @param to      收件人地址
+     * @param subject 邮件主题
+     * @param content 邮件内容
+     * @param cc      抄送地址
+     * @throws MessagingException 邮件发送异常
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">sendHtmlMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException<span class="token punctuation">;</span>
 
-        User user <span class="token operator">=</span> <span class="token punctuation">(</span>User<span class="token punctuation">)</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>ObjectUtil<span class="token punctuation">.</span><span class="token function">isNull</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            mv<span class="token punctuation">.</span><span class="token function">setViewName</span><span class="token punctuation">(</span><span class="token string">"redirect:/user/login"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            mv<span class="token punctuation">.</span><span class="token function">setViewName</span><span class="token punctuation">(</span><span class="token string">"page/index"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            mv<span class="token punctuation">.</span><span class="token function">addObject</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 发送带附件的邮件
+     *
+     * @param to       收件人地址
+     * @param subject  邮件主题
+     * @param content  邮件内容
+     * @param filePath 附件地址
+     * @param cc       抄送地址
+     * @throws MessagingException 邮件发送异常
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">sendAttachmentsMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String filePath<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 发送正文中有静态资源的邮件
+     *
+     * @param to      收件人地址
+     * @param subject 邮件主题
+     * @param content 邮件内容
+     * @param rscPath 静态资源地址
+     * @param rscId   静态资源id
+     * @param cc      抄送地址
+     * @throws MessagingException 邮件发送异常
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">sendResourceMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String rscPath<span class="token punctuation">,</span> String rscId<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-2-MailServiceImpl"><a href="#4-2-MailServiceImpl" class="headerlink" title="4.2 MailServiceImpl"></a>4.2 <code>MailServiceImpl</code></h4><pre class="line-numbers language-java"><code class="language-java">Service
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MailServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">MailService</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> JavaMailSender mailSender<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${spring.mail.username}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String from<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 发送文本邮件
+     *
+     * @param to      收件人地址
+     * @param subject 邮件主题
+     * @param content 邮件内容
+     * @param cc      抄送地址
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendSimpleMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SimpleMailMessage message <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleMailMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        message<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        message<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        message<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        message<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ArrayUtil<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            message<span class="token punctuation">.</span><span class="token function">setCc</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-
-        <span class="token keyword">return</span> mv<span class="token punctuation">;</span>
+        mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-扩展"><a href="#3-扩展" class="headerlink" title="3.扩展"></a>3.扩展</h3><blockquote>
-<p>更多FTL语法糖请详见：<a href="http://freemarker.foofun.cn/" target="_blank" rel="noopener">Freemarker中文参考手册</a></p>
-</blockquote>
+
+    <span class="token comment" spellcheck="true">/**
+     * 发送HTML邮件
+     *
+     * @param to      收件人地址
+     * @param subject 邮件主题
+     * @param content 邮件内容
+     * @param cc      抄送地址
+     * @throws MessagingException 邮件发送异常
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendHtmlMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
+        MimeMessage message <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        MimeMessageHelper helper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ArrayUtil<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            helper<span class="token punctuation">.</span><span class="token function">setCc</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 发送带附件的邮件
+     *
+     * @param to       收件人地址
+     * @param subject  邮件主题
+     * @param content  邮件内容
+     * @param filePath 附件地址
+     * @param cc       抄送地址
+     * @throws MessagingException 邮件发送异常
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendAttachmentsMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String filePath<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
+        MimeMessage message <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        MimeMessageHelper helper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ArrayUtil<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            helper<span class="token punctuation">.</span><span class="token function">setCc</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        FileSystemResource file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemResource</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String fileName <span class="token operator">=</span> filePath<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>filePath<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span>File<span class="token punctuation">.</span>separator<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">addAttachment</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 发送正文中有静态资源的邮件
+     *
+     * @param to      收件人地址
+     * @param subject 邮件主题
+     * @param content 邮件内容
+     * @param rscPath 静态资源地址
+     * @param rscId   静态资源id
+     * @param cc      抄送地址
+     * @throws MessagingException 邮件发送异常
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendResourceMail</span><span class="token punctuation">(</span>String to<span class="token punctuation">,</span> String subject<span class="token punctuation">,</span> String content<span class="token punctuation">,</span> String rscPath<span class="token punctuation">,</span> String rscId<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> cc<span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
+        MimeMessage message <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        MimeMessageHelper helper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ArrayUtil<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            helper<span class="token punctuation">.</span><span class="token function">setCc</span><span class="token punctuation">(</span>cc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        FileSystemResource res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemResource</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>rscPath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        helper<span class="token punctuation">.</span><span class="token function">addInline</span><span class="token punctuation">(</span>rscId<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h3><h4 id="5-1-测试基类"><a href="#5-1-测试基类" class="headerlink" title="5.1 测试基类"></a>5.1 测试基类</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RunWith</span><span class="token punctuation">(</span>SpringRunner<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringBootDemoEmailApplicationTests</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">contextLoads</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-2-测试授权码加密"><a href="#5-2-测试授权码加密" class="headerlink" title="5.2 测试授权码加密"></a>5.2 测试授权码加密</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@EnableAutoConfiguration</span><span class="token punctuation">(</span>exclude<span class="token operator">=</span> MailSenderValidatorAutoConfiguration<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PasswordTest</span> <span class="token keyword">extends</span> <span class="token class-name">SpringBootDemoEmailApplicationTests</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> StringEncryptor encryptor<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 生成加密密码
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testGeneratePassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 你的邮箱密码(不是账号登录密码，而是授权码，是给第三方客户端登录的密码)</span>
+        String password <span class="token operator">=</span> <span class="token string">"Just4Test!"</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 加密后的密码(注意：配置上去的时候需要加 ENC(加密密码))</span>
+        String encryptPassword <span class="token operator">=</span> encryptor<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String decryptPassword <span class="token operator">=</span> encryptor<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>encryptPassword<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"password = "</span> <span class="token operator">+</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"encryptPassword = "</span> <span class="token operator">+</span> encryptPassword<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"decryptPassword = "</span> <span class="token operator">+</span> decryptPassword<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-3-测试发送邮件"><a href="#5-3-测试发送邮件" class="headerlink" title="5.3 测试发送邮件"></a>5.3 测试发送邮件</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MailServiceTest</span> <span class="token keyword">extends</span> <span class="token class-name">SpringBootDemoEmailApplicationTests</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> MailService mailService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> TemplateEngine templateEngine<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> ApplicationContext context<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 测试简单邮件
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendSimpleMail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mailService<span class="token punctuation">.</span><span class="token function">sendSimpleMail</span><span class="token punctuation">(</span><span class="token string">"237497819@qq.com"</span><span class="token punctuation">,</span> <span class="token string">"这是一封简单邮件"</span><span class="token punctuation">,</span> <span class="token string">"这是一封普通的SpringBoot测试邮件"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 测试HTML邮件
+     *
+     * @throws MessagingException 邮件异常
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendHtmlMail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
+        Context context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Context</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">"project"</span><span class="token punctuation">,</span> <span class="token string">"Spring Boot Demo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">"author"</span><span class="token punctuation">,</span> <span class="token string">"Yangkai.Shen"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">"author"</span><span class="token punctuation">,</span> <span class="token string">"YeZheChenYang"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String emailTemplate <span class="token operator">=</span> templateEngine<span class="token punctuation">.</span><span class="token function">process</span><span class="token punctuation">(</span><span class="token string">"welcome"</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//classpath:/template/welcome.html</span>
+        mailService<span class="token punctuation">.</span><span class="token function">sendHtmlMail</span><span class="token punctuation">(</span><span class="token string">"237497819@qq.com"</span><span class="token punctuation">,</span> <span class="token string">"这是一封模板HTML邮件"</span><span class="token punctuation">,</span> emailTemplate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 测试HTML邮件，自定义模板目录
+     *
+     * @throws MessagingException 邮件异常
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendHtmlMail2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
+
+        SpringResourceTemplateResolver templateResolver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SpringResourceTemplateResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setApplicationContext</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setCacheable</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setPrefix</span><span class="token punctuation">(</span><span class="token string">"classpath:/email/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        templateResolver<span class="token punctuation">.</span><span class="token function">setSuffix</span><span class="token punctuation">(</span><span class="token string">".html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        templateEngine<span class="token punctuation">.</span><span class="token function">setTemplateResolver</span><span class="token punctuation">(</span>templateResolver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Context context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Context</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">"project"</span><span class="token punctuation">,</span> <span class="token string">"Spring Boot Demo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">"author"</span><span class="token punctuation">,</span> <span class="token string">"Yangkai.Shen"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">,</span> <span class="token string">"https://github.com/xkcoding/spring-boot-demo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String emailTemplate <span class="token operator">=</span> templateEngine<span class="token punctuation">.</span><span class="token function">process</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//classpath:/email/test.html</span>
+        mailService<span class="token punctuation">.</span><span class="token function">sendHtmlMail</span><span class="token punctuation">(</span><span class="token string">"237497819@qq.com"</span><span class="token punctuation">,</span> <span class="token string">"这是一封模板HTML邮件"</span><span class="token punctuation">,</span> emailTemplate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 测试附件邮件
+     *
+     * @throws MessagingException 邮件异常
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendAttachmentsMail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
+        URL resource <span class="token operator">=</span> ResourceUtil<span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"static/xkcoding.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mailService<span class="token punctuation">.</span><span class="token function">sendAttachmentsMail</span><span class="token punctuation">(</span><span class="token string">"237497819@qq.com"</span><span class="token punctuation">,</span> <span class="token string">"这是一封带附件的邮件"</span><span class="token punctuation">,</span> <span class="token string">"邮件中有附件，请注意查收！"</span><span class="token punctuation">,</span> resource<span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 测试静态资源邮件
+     *
+     * @throws MessagingException 邮件异常
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendResourceMail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
+        String rscId <span class="token operator">=</span> <span class="token string">"xkcoding"</span><span class="token punctuation">;</span>
+        String content <span class="token operator">=</span> <span class="token string">"&lt;html>&lt;body>这是带静态资源的邮件&lt;br/>&lt;img src=\'cid:"</span> <span class="token operator">+</span> rscId <span class="token operator">+</span> <span class="token string">"\' >&lt;/body>&lt;/html>"</span><span class="token punctuation">;</span>
+        URL resource <span class="token operator">=</span> ResourceUtil<span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"static/xkcoding.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mailService<span class="token punctuation">.</span><span class="token function">sendResourceMail</span><span class="token punctuation">(</span><span class="token string">"237497819@qq.com"</span><span class="token punctuation">,</span> <span class="token string">"这是一封带静态资源的邮件"</span><span class="token punctuation">,</span> content<span class="token punctuation">,</span> resource<span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rscId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -991,8 +1211,8 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/072351137.html">
-                        https://yezhechenyang.gitee.io/2020/072351137.html</a></span>
+                <span class="reprint-info"><a href="/2020/081657260.html">
+                        https://yezhechenyang.gitee.io/2020/081657260.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1477,29 +1697,30 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/072327775.html">
+                <a href="/2020/081657260.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="【Spring Boot】Thymeleaf模板引擎">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【Spring Boot】邮件发送">
                         
-                        <span class="card-title">【Spring Boot】Thymeleaf模板引擎</span>
+                        <span class="card-title">【Spring Boot】邮件发送</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            新起之秀的Thymeleaf模板引擎
+                            SpringBoot引入邮件发送
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1512,6 +1733,7 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1519,12 +1741,12 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/模板引擎/" target="_blank">
-                        <span class="chip bg-color">模板引擎</span>
+                    <a href="/tags/mail/" target="_blank">
+                        <span class="chip bg-color">mail</span>
                     </a>
                     
-                    <a href="/tags/Thymeleaf/" target="_blank">
-                        <span class="chip bg-color">Thymeleaf</span>
+                    <a href="/tags/jasypt/" target="_blank">
+                        <span class="chip bg-color">jasypt</span>
                     </a>
                     
                 </div>
@@ -1538,24 +1760,24 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/072247580.html">
+                <a href="/2020/081416195.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="【Spring Boot】异常统一处理">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【Spring Boot】Ehcache缓存">
                         
-                        <span class="card-title">【Spring Boot】异常统一处理</span>
+                        <span class="card-title">【Spring Boot】Ehcache缓存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Web项目中Api请求异常统一处理
+                            Spring Boot中引入Ehcache缓存
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-14
                             </span>
                         <span class="publish-author">
                             
@@ -1576,8 +1798,12 @@ FTL + Java POJO = HTML2. 实现2.1 添加依赖在你搭建的Web项目中，添
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/Exception/" target="_blank">
-                        <span class="chip bg-color">Exception</span>
+                    <a href="/tags/缓存/" target="_blank">
+                        <span class="chip bg-color">缓存</span>
+                    </a>
+                    
+                    <a href="/tags/Ehcache/" target="_blank">
+                        <span class="chip bg-color">Ehcache</span>
                     </a>
                     
                 </div>

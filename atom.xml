@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-14T00:09:24.412Z</updated>
+  <updated>2020-08-15T23:59:48.160Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】邮件发送</title>
+    <link href="https://yezhechenyang.gitee.io/2020/081657260.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/081657260.html</id>
+    <published>2020-08-15T23:59:19.000Z</published>
+    <updated>2020-08-15T23:59:48.160Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;本文介绍如何在&lt;code&gt;Spring Boot&lt;/code&gt;项目中引入邮件发送模块。&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="mail" scheme="https://yezhechenyang.gitee.io/tags/mail/"/>
+    
+      <category term="jasypt" scheme="https://yezhechenyang.gitee.io/tags/jasypt/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】Ehcache缓存</title>
@@ -572,34 +603,6 @@
       <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
     
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【bat脚本】个人图床自动化</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072464165.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072464165.html</id>
-    <published>2020-07-24T06:00:08.000Z</published>
-    <updated>2020-07-24T06:36:27.465Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
-    
-      <category term="个人图床" scheme="https://yezhechenyang.gitee.io/tags/%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
