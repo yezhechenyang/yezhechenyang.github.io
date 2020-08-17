@@ -6,11 +6,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Hexo】复制代码不换行, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】定时任务之Spring Task, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 问题描述在博客文章中复制代码块时，发现不换行。
-&amp;lt;dependency&gt; &amp;lt;groupId&gt;org.mybatis.spring.boot&amp;lt;/groupId&gt; &amp;lt;artifactId&gt;mybatis-sprin">
+    <meta name="description" content="1. 前言本文主要介绍Spring Task的使用、
+2. 配置无需额外的引入，Spring Task集成于spring-context之中。
+下面配置定时任务线程池的大小以及线程名称前缀。
+@Configuration
+@EnableSc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Hexo】复制代码不换行 | 叶遮沉阳</title>
+    <title>【Spring Boot】定时任务之Spring Task | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -543,7 +546,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Hexo】复制代码不换行
+                        【Spring Boot】定时任务之Spring Task
                     </div>
                 </div>
             </div>
@@ -655,12 +658,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/" target="_blank">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Spring-Boot/" target="_blank">
+                                <span class="chip bg-color">Spring Boot</span>
                             </a>
                         
-                            <a href="/tags/Markdown/" target="_blank">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Spring-Task/" target="_blank">
+                                <span class="chip bg-color">Spring Task</span>
+                            </a>
+                        
+                            <a href="/tags/cron/" target="_blank">
+                                <span class="chip bg-color">cron</span>
+                            </a>
+                        
+                            <a href="/tags/定时任务/" target="_blank">
+                                <span class="chip bg-color">定时任务</span>
                             </a>
                         
                     </div>
@@ -671,8 +682,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                Spring Boot
                             </a>
                         
                     </div>
@@ -683,7 +694,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-29
+                    2020-08-17
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -697,14 +708,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        983
+                        679
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -721,104 +732,103 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h3><p>在博客文章中复制代码块时，发现不换行。</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis.spring.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${mybatis.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-来源: 叶遮沉阳
-作者: 叶遮沉阳
-链接: http://localhost:4000/2020/072722410.html
-本文章著作权归作者所有，任何形式的转载都请注明出处。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>看看源码是怎么实现的，然后在浏览器<code>F12</code>调试一下。</p>
-<h3 id="2-解决过程"><a href="#2-解决过程" class="headerlink" title="2. 解决过程"></a>2. 解决过程</h3><p>在<code>themes\matery\_config.yml</code>中，可以看到配置如下：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"># 是否激活复制文章时追加博客和作者的版权信息.
-copyright:
-  enable: true
-  minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
-  description: 本文章著作权归作者所有，任何形式的转载都请注明出处。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>复制文章字数超过<code>120</code>就会追加版权信息。</p>
-<p>在<code>IDEA</code>中根据内容查找文件还是挺方便的，<br>按<code>ctrl+shift+f</code>，<br>在输入框输入<code>copyright.enable</code>，就找到位置了。</p>
-<p>原来在<code>themes\matery\layout\_partial\post-detail.ejs</code>中。</p>
-<p>看看源代码是怎么实现的：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>copyright<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#articleContent'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'copy'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// IE8 or earlier browser is 'undefined'</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> window<span class="token punctuation">.</span>getSelection <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文主要介绍<code>Spring Task</code>的使用、</p>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h3><p>无需额外的引入，<code>Spring Task</code>集成于<code>spring-context</code>之中。</p>
+<p>下面配置定时任务线程池的大小以及线程名称前缀。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableScheduling</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TaskConfig</span> <span class="token keyword">implements</span> <span class="token class-name">SchedulingConfigurer</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">configureTasks</span><span class="token punctuation">(</span>ScheduledTaskRegistrar taskRegistrar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        taskRegistrar<span class="token punctuation">.</span><span class="token function">setScheduler</span><span class="token punctuation">(</span><span class="token function">taskExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-        <span class="token keyword">var</span> selection <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">getSelection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// if the selection is short let's not annoy our users.</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">''</span> <span class="token operator">+</span> selection<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&lt;</span> Number<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">'&lt;%- theme.copyright.minCharNumber %>'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/**
+     * 这里等同于配置文件配置
+     * {@code spring.task.scheduling.pool.size=20} - Maximum allowed number of threads.
+     * {@code spring.task.scheduling.thread-name-prefix=Job-Thread- } - Prefix to use for the names of newly created threads.
+     * {@link org.springframework.boot.autoconfigure.task.TaskSchedulingProperties}
+     */</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> Executor <span class="token function">taskExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ScheduledThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">BasicThreadFactory<span class="token punctuation">.</span>Builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">namingPattern</span><span class="token punctuation">(</span><span class="token string">"Job-Thread-%d"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TaskJob</span> <span class="token punctuation">{</span>
 
-        <span class="token comment" spellcheck="true">// create a div outside of the visible area and fill it with the selected text.</span>
-        <span class="token keyword">var</span> bodyElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'body'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">var</span> newdiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        newdiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token string">'absolute'</span><span class="token punctuation">;</span>
-        newdiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token string">'-99999px'</span><span class="token punctuation">;</span>
-        bodyElement<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newdiv<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        newdiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cloneContents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 按照标准时间来算，每隔 10s 执行一次
+     */</span>
+    <span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>cron <span class="token operator">=</span> <span class="token string">"0/10 * * * * ?"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">job1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"【job1】开始执行：{}"</span><span class="token punctuation">,</span> DateUtil<span class="token punctuation">.</span><span class="token function">formatDateTime</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-        <span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
-        <span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'PRE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/**
+     * 从启动时间开始，间隔 2s 执行
+     * 固定间隔时间
+     */</span>
+    <span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>fixedRate <span class="token operator">=</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">job2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"【job2】开始执行：{}"</span><span class="token punctuation">,</span> DateUtil<span class="token punctuation">.</span><span class="token function">formatDateTime</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'CODE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/**
+     * 从启动时间开始，延迟 5s 后间隔 4s 执行
+     * 固定等待时间
+     */</span>
+    <span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>fixedDelay <span class="token operator">=</span> <span class="token number">4000</span><span class="token punctuation">,</span> initialDelay <span class="token operator">=</span> <span class="token number">5000</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">job3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"【job3】开始执行：{}"</span><span class="token punctuation">,</span> DateUtil<span class="token punctuation">.</span><span class="token function">formatDateTime</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>cron</code>表达式中的<code>6</code>个参数：</p>
+<ul>
+<li>秒(0-59)</li>
+<li>分(0-59)</li>
+<li>时(0-23)</li>
+<li>日(1-31)</li>
+<li>月(1-12|JAN-DEC)</li>
+<li>周(1-7|SUN-SAT)</li>
+</ul>
+<p><code>0/10 * * * * ?</code>中的<code>/</code>：  </p>
+<pre><code>每隔多少秒执行一次，在这里是每隔10秒执行一次。
+/ 前面是代表从第几秒开始，在这是从第0秒开始。
+/ 后面则是间隔，在这里每两次执行的间隔是10秒。
 
-        <span class="token keyword">var</span> url <span class="token operator">=</span> document<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">;</span>
-        newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">'&lt;br />'</span>
-            <span class="token operator">+</span> <span class="token string">'&lt;%- __("from")  %>: &lt;%- config.title %>&lt;br />'</span>
-            <span class="token operator">+</span> <span class="token string">'&lt;%- __("author")  %>: &lt;%- config.author %>&lt;br />'</span>
-            <span class="token operator">+</span> <span class="token string">'&lt;%- __("link")  %>: &lt;a href="'</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">'">'</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">'&lt;/a>&lt;br />'</span>
-            <span class="token operator">+</span> <span class="token string">'&lt;%- theme.copyright.description %>'</span><span class="token punctuation">;</span>
+间隔的数值最好能被60秒整除，因为在到达下一秒时，会立即执行，这会导致还没达到时间间隔就执行了。
 
-        selection<span class="token punctuation">.</span><span class="token function">selectAllChildren</span><span class="token punctuation">(</span>newdiv<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>bodyElement<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>newdiv<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>可以发现换行的代码在这：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
-<span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'PRE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>接下来就在浏览器调试了。  </p>
-<ol>
-<li>本地启动项目后，打开要复制的代码所在文章；</li>
-<li>按<code>F12</code>，打开开发者工具；</li>
-<li>在开发者工具的顶部菜单栏，在点击<code>source</code>；</li>
-<li>根据你的文章<code>url</code>，在左侧<code>Page</code>找到你的文章页面并双击打开；</li>
-<li>在中间源码窗口可以看到文章的源码，在按<code>ctrl+f</code>，搜索<code>selection</code>，找到复制文章添加版权的源码;</li>
-<li>上面我们已经找到是添加<code>PRE</code>实现换行的，所以在行号点击一下打个断点；</li>
-<li>然后刷一下，复制一块代码，页面会在你的断点处停顿；</li>
-<li>接下来，按<code>F10</code>一步步往下执行；</li>
-<li>一番调试，发现根本没进入<code>if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE')</code>这个条件代码块，所以导致不换行；</li>
-<li>找到原因就好办了，先看看<code>selection.getRangeAt(0).commonAncestorContainer.nodeName</code>的值是什么来着；</li>
-<li>你可以在调试的时候，运行到它的下一行，在完整选中<code>selection.getRangeAt(0).commonAncestorContainer.nodeName</code>，然后看看值是多少；</li>
-<li>经过多次验证，发现它的值不稳定，有时候是<code>CODE</code>，有时候是<code>DIV</code>；</li>
-<li>既然如此，那就不管了，直接将条件干掉就得了；</li>
-</ol>
-<h3 id="3-解决方案"><a href="#3-解决方案" class="headerlink" title="3. 解决方案"></a>3. 解决方案</h3><p>修改<code>themes\matery\layout\_partial\post-detail.ejs</code></p>
-<p>修改前：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
-<span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span><span class="token function">getRangeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>commonAncestorContainer<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'PRE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>修改后：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// we need a &lt;pre> tag workaround.</span>
-<span class="token comment" spellcheck="true">// otherwise the text inside "pre" loses all the line breaks!</span>
-<span class="token comment" spellcheck="true">// if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {</span>
-<span class="token comment" spellcheck="true">//     newdiv.innerHTML = "&lt;pre>" + newdiv.innerHTML + "&lt;/pre>";</span>
-<span class="token comment" spellcheck="true">// }</span>
+比如：0/11 * * * * ?
+执行顺序如下：
+2020-08-17 08:00:11
+2020-08-17 08:00:22
+2020-08-17 08:00:33
+2020-08-17 08:00:44
+2020-08-17 08:00:55
+2020-08-17 08:01:00
+2020-08-17 08:01:11
 
-<span class="token comment" spellcheck="true">//注释掉上面的if，将if中的内容释放出来</span>
-newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> newdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script>
+在 08:00:55 - 08:01:00 之间只相差5秒就执行了。
+而且启动项目之后不会马上执行，
+比如你在 08:00:30 启动完成，要等到 08:00:33 才会执行。
+
+如果是间隔执行可以使用fixedDelay达到相同的目的。
+fixedDelay不会根据具体时间计算时间间隔，
+而是根据启动时间，间隔执行。
+比如：fixedRate = 11000 ，08:00:00启动完成，
+那么顺序如下：
+2020-08-17 08:00:11
+2020-08-17 08:00:22
+2020-08-17 08:00:33
+2020-08-17 08:00:44
+2020-08-17 08:00:55
+2020-08-17 08:01:06
+2020-08-17 08:01:17
+
+如果不想启动后马上执行，还可以加上initialDelay，等待一段时间再执行。</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -987,8 +997,8 @@ newdiv<span class="token punctuation">.</span>innerHTML <span class="token opera
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/072954883.html">
-                        https://yezhechenyang.gitee.io/2020/072954883.html</a></span>
+                <span class="reprint-info"><a href="/2020/081713136.html">
+                        https://yezhechenyang.gitee.io/2020/081713136.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1473,50 +1483,60 @@ newdiv<span class="token punctuation">.</span>innerHTML <span class="token opera
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/072936828.html">
+                <a href="/2020/081713136.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【Hexo】复制html表格至md">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【Spring Boot】定时任务之Spring Task">
                         
-                        <span class="card-title">【Hexo】复制html表格至md</span>
+                        <span class="card-title">【Spring Boot】定时任务之Spring Task</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            将HTML中的表格内容复制到Markdown文章
+                            主要介绍Spring Task的使用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                    Spring Boot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/Markdown/" target="_blank">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Spring-Task/" target="_blank">
+                        <span class="chip bg-color">Spring Task</span>
+                    </a>
+                    
+                    <a href="/tags/cron/" target="_blank">
+                        <span class="chip bg-color">cron</span>
+                    </a>
+                    
+                    <a href="/tags/定时任务/" target="_blank">
+                        <span class="chip bg-color">定时任务</span>
                     </a>
                     
                 </div>
@@ -1530,31 +1550,31 @@ newdiv<span class="token punctuation">.</span>innerHTML <span class="token opera
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/072816107.html">
+                <a href="/2020/081657260.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="【Hexo】Git上传大文件失败">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【Spring Boot】邮件发送">
                         
-                        <span class="card-title">【Hexo】Git上传大文件失败</span>
+                        <span class="card-title">【Spring Boot】邮件发送</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            解决Hexo中Git大文件上传失败不能push问题
+                            SpringBoot引入邮件发送
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
+                            <a href="/categories/Spring-Boot/" class="post-category" target="_blank">
+                                    Spring Boot
                                 </a>
                             
                             
@@ -1564,12 +1584,16 @@ newdiv<span class="token punctuation">.</span>innerHTML <span class="token opera
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/Gitee/" target="_blank">
-                        <span class="chip bg-color">Gitee</span>
+                    <a href="/tags/mail/" target="_blank">
+                        <span class="chip bg-color">mail</span>
+                    </a>
+                    
+                    <a href="/tags/jasypt/" target="_blank">
+                        <span class="chip bg-color">jasypt</span>
                     </a>
                     
                 </div>

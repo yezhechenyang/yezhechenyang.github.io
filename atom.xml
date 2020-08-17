@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-15T23:59:48.160Z</updated>
+  <updated>2020-08-17T01:33:27.817Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】定时任务之Spring Task</title>
+    <link href="https://yezhechenyang.gitee.io/2020/081713136.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/081713136.html</id>
+    <published>2020-08-17T01:32:40.000Z</published>
+    <updated>2020-08-17T01:33:27.817Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;本文主要介绍&lt;code&gt;Spring Task&lt;/code&gt;的使用、&lt;/p&gt;
+&lt;h3 id=&quot;2-配置&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Spring Task" scheme="https://yezhechenyang.gitee.io/tags/Spring-Task/"/>
+    
+      <category term="cron" scheme="https://yezhechenyang.gitee.io/tags/cron/"/>
+    
+      <category term="定时任务" scheme="https://yezhechenyang.gitee.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】邮件发送</title>
@@ -573,36 +606,6 @@
       <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
       <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】Beetl模板引擎</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072413245.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072413245.html</id>
-    <published>2020-07-24T06:03:36.000Z</published>
-    <updated>2020-07-24T06:06:12.478Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-Beetle介绍&quot;&gt;&lt;a href=&quot;#1-Beetle介绍&quot; class=&quot;headerlink&quot; title=&quot;1. Beetle介绍&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="Beetl" scheme="https://yezhechenyang.gitee.io/tags/Beetl/"/>
-    
-      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
   </entry>
   
