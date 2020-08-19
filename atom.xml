@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-17T01:33:27.817Z</updated>
+  <updated>2020-08-19T03:01:33.951Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】定时任务之Quartz</title>
+    <link href="https://yezhechenyang.gitee.io/2020/081922601.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/081922601.html</id>
+    <published>2020-08-19T03:00:31.000Z</published>
+    <updated>2020-08-19T03:01:33.951Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;在&lt;code&gt;Spring Boot
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="定时任务" scheme="https://yezhechenyang.gitee.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    
+      <category term="Quartz" scheme="https://yezhechenyang.gitee.io/tags/Quartz/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】定时任务之Spring Task</title>
@@ -576,36 +606,6 @@
       <category term="JdbcTemplate" scheme="https://yezhechenyang.gitee.io/tags/JdbcTemplate/"/>
     
       <category term="orm" scheme="https://yezhechenyang.gitee.io/tags/orm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】Enjoy魔板引擎</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072434875.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072434875.html</id>
-    <published>2020-07-24T06:05:35.000Z</published>
-    <updated>2020-07-25T13:29:59.382Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="模板引擎" scheme="https://yezhechenyang.gitee.io/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="Enjoy" scheme="https://yezhechenyang.gitee.io/tags/Enjoy/"/>
     
   </entry>
   
