@@ -6,13 +6,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Spring Boot】ORM系列之BeetlSql, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Spring Boot】定时任务之XXL-JOB, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 前言BettlSql的官网：http://ibeetl.com/guide/#beetlsql
-2. 引入&amp;lt;dependency&gt;
-    &amp;lt;groupId&gt;com.ibeetl&amp;lt;/groupId&gt;
-    &amp;lt;">
+    <meta name="description" content="1. 前言XXL-JOB可实现分布式定时任务。
+由调度中心和执行器组成。
+2. 调度中心2.1 下载xxl-job-admingit clone https://github.com/xuxueli/xxl-job.git2.2 初始化表结">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Spring Boot】ORM系列之BeetlSql | 叶遮沉阳</title>
+    <title>【Spring Boot】定时任务之XXL-JOB | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -539,13 +538,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Spring Boot】ORM系列之BeetlSql
+                        【Spring Boot】定时任务之XXL-JOB
                     </div>
                 </div>
             </div>
@@ -661,12 +660,12 @@
                                 <span class="chip bg-color">Spring Boot</span>
                             </a>
                         
-                            <a href="/tags/ORM/" target="_blank">
-                                <span class="chip bg-color">ORM</span>
+                            <a href="/tags/定时任务/" target="_blank">
+                                <span class="chip bg-color">定时任务</span>
                             </a>
                         
-                            <a href="/tags/BeetlSql/" target="_blank">
-                                <span class="chip bg-color">BeetlSql</span>
+                            <a href="/tags/xxl-job/" target="_blank">
+                                <span class="chip bg-color">xxl-job</span>
                             </a>
                         
                     </div>
@@ -689,7 +688,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-02
+                    2020-08-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -703,14 +702,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        654
+                        1.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        5 分
                     </div>
                     
                 
@@ -727,86 +726,163 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p><code>BettlSql</code>的官网：<a href="http://ibeetl.com/guide/#beetlsql" target="_blank" rel="noopener">http://ibeetl.com/guide/#beetlsql</a></p>
-<h3 id="2-引入"><a href="#2-引入" class="headerlink" title="2. 引入"></a>2. 引入</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.ibeetl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>beetl-framework-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${ibeetl.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p><code>XXL-JOB</code>可实现分布式定时任务。</p>
+<p>由调度中心和执行器组成。</p>
+<h3 id="2-调度中心"><a href="#2-调度中心" class="headerlink" title="2. 调度中心"></a>2. 调度中心</h3><h4 id="2-1-下载xxl-job-admin"><a href="#2-1-下载xxl-job-admin" class="headerlink" title="2.1 下载xxl-job-admin"></a>2.1 下载<code>xxl-job-admin</code></h4><pre><code>git clone https://github.com/xuxueli/xxl-job.git</code></pre><h4 id="2-2-初始化表结构"><a href="#2-2-初始化表结构" class="headerlink" title="2.2 初始化表结构"></a>2.2 初始化表结构</h4><pre><code>数据库脚本地址：/xxl-job/doc/db/tables_xxl_job.sql</code></pre><h4 id="2-3-修改application-properties"><a href="#2-3-修改application-properties" class="headerlink" title="2.3 修改application.properties"></a>2.3 修改<code>application.properties</code></h4><pre class="line-numbers language-yaml"><code class="language-yaml">server.port=18080
+
+spring.datasource.url=jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>3306/xxl_job<span class="token punctuation">?</span>Unicode=true<span class="token important">&amp;characterEncoding</span>=UTF<span class="token punctuation">-</span>8<span class="token important">&amp;useSSL</span>=false
+spring.datasource.username=root
+spring.datasource.password=root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-4-修改logback-xml"><a href="#2-4-修改logback-xml" class="headerlink" title="2.4 修改logback.xml"></a>2.4 修改<code>logback.xml</code></h4><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>log.path<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>logs/xxl-job/xxl-job-admin.log<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2-5-启动调度中心"><a href="#2-5-启动调度中心" class="headerlink" title="2.5 启动调度中心"></a>2.5 启动调度中心</h4><pre><code>Run XxlJobAdminApplication</code></pre><p>打开浏览器：<code>http://localhost:18080/xxl-job-admin/toLogin</code><br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200823144308.png" alt=""></p>
+<p>默认账户密码：admin/123456</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200823144512.png" alt=""></p>
+<h3 id="3-执行器"><a href="#3-执行器" class="headerlink" title="3. 执行器"></a>3. 执行器</h3><p>在自己的<code>Spring Boot</code>中引入<code>xxl-job</code>，目前最新版本是<code>2.2.1-SNAPSHOT</code>。</p>
+<h4 id="3-1-引入"><a href="#3-1-引入" class="headerlink" title="3.1 引入"></a>3.1 引入</h4><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.xuxueli<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>xxl-job-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${xxl-job.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><h4 id="3-1-application-yml"><a href="#3-1-application-yml" class="headerlink" title="3.1 application.yml"></a>3.1 <code>application.yml</code></h4><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">beetl</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token key atrule">beetlsql</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">sqlPath</span><span class="token punctuation">:</span> /sql
-  <span class="token key atrule">daoSuffix</span><span class="token punctuation">:</span> Dao
-  <span class="token key atrule">basePackage</span><span class="token punctuation">:</span> com.xkcoding.orm.beetlsql.dao
-  <span class="token key atrule">dbStyle</span><span class="token punctuation">:</span> org.beetl.sql.core.db.MySqlStyle
-  <span class="token key atrule">nameConversion</span><span class="token punctuation">:</span> org.beetl.sql.core.UnderlinedNameConversion
-<span class="token key atrule">beet-beetlsql</span><span class="token punctuation">:</span>
-  <span class="token key atrule">dev</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>Beetl</code>拥有两个产品：<code>Beetl</code>模板引擎和<code>BeetlSql</code>持久层框架。<br><code>beetl.enabled=false</code> 关闭<code>Beetl</code>模板引擎。<br><code>beetlsql.enabled=true</code> 开启<code>BeetlSql</code>持久层框架。  </p>
-<p><code>beetlsql.sqlPath</code>，默认为<code>/sql</code>, 作为存放<code>sql</code>文件的根目录，位于<code>/resources/sql</code>目录下。</p>
-<p><code>beetlsql.daoSuffix</code> 默认<code>Dao</code>，作为<code>DAO</code>接口的后缀。</p>
-<p><code>beetlsql.basePackage</code> 默认为<code>com</code>，此选项配置<code>beetlsql.daoSuffix</code>来自动扫描<code>com</code>包及其子包下的所有以<code>Dao</code>结尾的<code>Mapper</code>类。</p>
-<p><code>beetlsql.dbStyle</code> ：数据库风格，默认是<code>org.beetl.sql.core.db.MySqlStyle</code>.对应不同的数据库，其他还有<code>OracleStyle，PostgresStyle,SqlServerStyle,DB2SqlStyle,SQLiteStyle,H2Style</code></p>
-<p><code>beetlsql.nameConversion</code>: 默认是<code>org.beetl.sql.core.UnderlinedNameConversion</code>,能将下划线分割的数据库命名风格转化为java驼峰命名风格，还有常用的<code>DefaultNameConversion</code>，数据库命名完全和<code>Java</code>命名一直，以及<code>JPA2NameConversion</code>，兼容<code>JPA</code>命名</p>
-<p><code>beetl-beetlsql.dev</code>：默认是<code>true</code>，即向控制台输出执行时候的<code>sql</code>，参数，执行时间，以及执行的位置，每次修改<code>sql</code>文件的时候，自动检测<code>sql</code>文件修改.</p>
-<h4 id="3-2-BeetlConfig"><a href="#3-2-BeetlConfig" class="headerlink" title="3.2 BeetlConfig"></a>3.2 <code>BeetlConfig</code></h4><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BeetlConfig</span> <span class="token punctuation">{</span>
+<h4 id="3-2-配置"><a href="#3-2-配置" class="headerlink" title="3.2 配置"></a>3.2 配置</h4><h5 id="3-2-1-application-yml"><a href="#3-2-1-application-yml" class="headerlink" title="3.2.1 application.yml"></a>3.2.1 <code>application.yml</code></h5><p>添加<code>xxl-job</code>配置。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">xxl</span><span class="token punctuation">:</span>
+  <span class="token key atrule">job</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 执行器通讯TOKEN [选填]：非空时启用；</span>
+    <span class="token key atrule">access-token</span><span class="token punctuation">:</span>
+    <span class="token key atrule">admin</span><span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># 调度中心部署跟地址 [选填]：如调度中心集群部署存在多个地址则用逗号分隔。执行器将会使用该地址进行"执行器心跳注册"和"任务结果回调"；为空则关闭自动注册；</span>
+      <span class="token key atrule">address</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>18080/xxl<span class="token punctuation">-</span>job<span class="token punctuation">-</span>admin
+    <span class="token key atrule">executor</span><span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># 执行器AppName [选填]：执行器心跳注册分组依据；为空则关闭自动注册</span>
+      <span class="token key atrule">app-name</span><span class="token punctuation">:</span> spring<span class="token punctuation">-</span>boot<span class="token punctuation">-</span>demo<span class="token punctuation">-</span>task<span class="token punctuation">-</span>xxl<span class="token punctuation">-</span>job<span class="token punctuation">-</span>executor
+      <span class="token comment" spellcheck="true"># 执行器IP [选填]：默认为空表示自动获取IP，多网卡时可手动设置指定IP，该IP不会绑定Host仅作为通讯实用；地址信息用于 "执行器注册" 和 "调度中心请求并触发任务"；</span>
+      <span class="token key atrule">ip</span><span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># 执行器端口号 [选填]：小于等于0则自动获取；默认端口为9999，单机部署多个执行器时，注意要配置不同执行器端口；</span>
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9999</span>
+      <span class="token comment" spellcheck="true"># 执行器运行日志文件存储磁盘路径 [选填] ：需要对该路径拥有读写权限；为空则使用默认路径；</span>
+      <span class="token key atrule">log-path</span><span class="token punctuation">:</span> logs/spring<span class="token punctuation">-</span>boot<span class="token punctuation">-</span>demo<span class="token punctuation">-</span>task<span class="token punctuation">-</span>xxl<span class="token punctuation">-</span>job/task<span class="token punctuation">-</span>log
+      <span class="token comment" spellcheck="true"># 执行器日志保存天数 [选填] ：值大于3时生效，启用执行器Log文件定期清理功能，否则不生效；</span>
+      <span class="token key atrule">log-retention-days</span><span class="token punctuation">:</span> <span class="token number">-1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-2-2-XxlJobProps"><a href="#3-2-2-XxlJobProps" class="headerlink" title="3.2.2 XxlJobProps"></a>3.2.2 <code>XxlJobProps</code></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"xxl.job"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">XxlJobProps</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 调度中心配置
+     */</span>
+    <span class="token keyword">private</span> XxlJobAdminProps admin<span class="token punctuation">;</span>
 
     <span class="token comment" spellcheck="true">/**
-     * Beetl需要显示的配置数据源，方可启动项目，大坑，切记！
+     * 执行器配置
      */</span>
-    <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"datasource"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> DataSource <span class="token function">getDataSource</span><span class="token punctuation">(</span>Environment env<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        HikariDataSource dataSource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HikariDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dataSource<span class="token punctuation">.</span><span class="token function">setDriverClassName</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.driver-class-name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dataSource<span class="token punctuation">.</span><span class="token function">setJdbcUrl</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.url"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dataSource<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.username"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dataSource<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.password"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> dataSource<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> XxlJobExecutorProps executor<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 与调度中心交互的accessToken
+     */</span>
+    <span class="token keyword">private</span> String accessToken<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Data</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">XxlJobAdminProps</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/**
+         * 调度中心地址
+         */</span>
+        <span class="token keyword">private</span> String address<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-基础设施"><a href="#4-基础设施" class="headerlink" title="4. 基础设施"></a>4. 基础设施</h3><h4 id="4-1-Entity"><a href="#4-1-Entity" class="headerlink" title="4.1 Entity"></a>4.1 <code>Entity</code></h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>beetl<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>core<span class="token punctuation">.</span>annotatoin<span class="token punctuation">.</span>Table<span class="token punctuation">;</span>
 
-<span class="token annotation punctuation">@Data</span>
-<span class="token annotation punctuation">@NoArgsConstructor</span>
-<span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token annotation punctuation">@Builder</span>
-<span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"orm_user"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token operator">-</span>1840831686851699943L<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Data</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">XxlJobExecutorProps</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/**
+         * 执行器名称
+         */</span>
+        <span class="token keyword">private</span> String appName<span class="token punctuation">;</span>
 
-    <span class="token keyword">private</span> Long id<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//主键</span>
-    <span class="token keyword">private</span> String name<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//用户名</span>
-    <span class="token keyword">private</span> String password<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//加密后的密码</span>
-    <span class="token keyword">private</span> String salt<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//加密使用的盐</span>
-    <span class="token keyword">private</span> String email<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//邮箱</span>
-    <span class="token keyword">private</span> String phoneNumber<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//手机号码</span>
-    <span class="token keyword">private</span> Integer status<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//状态，-1：逻辑删除，0：禁用，1：启用</span>
-    <span class="token keyword">private</span> Date createTime<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建时间</span>
-    <span class="token keyword">private</span> Date lastLoginTime<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//上次登录时间</span>
-    <span class="token keyword">private</span> Date lastUpdateTime<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//上次更新时间</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="4-2-DAO"><a href="#4-2-DAO" class="headerlink" title="4.2 DAO"></a>4.2 <code>DAO</code></h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>beetl<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>core<span class="token punctuation">.</span>mapper<span class="token punctuation">.</span>BaseMapper<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/**
+         * 执行器 IP
+         */</span>
+        <span class="token keyword">private</span> String ip<span class="token punctuation">;</span>
 
+        <span class="token comment" spellcheck="true">/**
+         * 执行器端口
+         */</span>
+        <span class="token keyword">private</span> <span class="token keyword">int</span> port<span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">/**
+         * 执行器日志
+         */</span>
+        <span class="token keyword">private</span> String logPath<span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">/**
+         * 执行器日志保留天数，-1
+         */</span>
+        <span class="token keyword">private</span> <span class="token keyword">int</span> logRetentionDays<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-2-3-XxlJobConfig"><a href="#3-2-3-XxlJobConfig" class="headerlink" title="3.2.3 XxlJobConfig"></a>3.2.3 <code>XxlJobConfig</code></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>xkcoding<span class="token punctuation">.</span>task<span class="token punctuation">.</span>xxl<span class="token punctuation">.</span>job<span class="token punctuation">.</span>config<span class="token punctuation">.</span>props<span class="token punctuation">.</span>XxlJobProps<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>xxl<span class="token punctuation">.</span>job<span class="token punctuation">.</span>core<span class="token punctuation">.</span>executor<span class="token punctuation">.</span>impl<span class="token punctuation">.</span>XxlJobSpringExecutor<span class="token punctuation">;</span>
+<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>RequiredArgsConstructor<span class="token punctuation">;</span>
+<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>Slf4j<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>context<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>EnableConfigurationProperties<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableConfigurationProperties</span><span class="token punctuation">(</span>XxlJobProps<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@RequiredArgsConstructor</span><span class="token punctuation">(</span>onConstructor_ <span class="token operator">=</span> <span class="token annotation punctuation">@Autowired</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">XxlJobConfig</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> XxlJobProps xxlJobProps<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//@Bean(initMethod = "start", destroyMethod = "destroy")</span>
+    <span class="token annotation punctuation">@Bean</span>   <span class="token comment" spellcheck="true">//移除init and destroy ，解决报错：Address already in use: bind</span>
+    <span class="token keyword">public</span> XxlJobSpringExecutor <span class="token function">xxlJobExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">">>>>>>>>>>> xxl-job config init."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        XxlJobSpringExecutor xxlJobSpringExecutor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XxlJobSpringExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xxlJobSpringExecutor<span class="token punctuation">.</span><span class="token function">setAdminAddresses</span><span class="token punctuation">(</span>xxlJobProps<span class="token punctuation">.</span><span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xxlJobSpringExecutor<span class="token punctuation">.</span><span class="token function">setAccessToken</span><span class="token punctuation">(</span>xxlJobProps<span class="token punctuation">.</span><span class="token function">getAccessToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xxlJobSpringExecutor<span class="token punctuation">.</span><span class="token function">setAppname</span><span class="token punctuation">(</span>xxlJobProps<span class="token punctuation">.</span><span class="token function">getExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAppName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xxlJobSpringExecutor<span class="token punctuation">.</span><span class="token function">setIp</span><span class="token punctuation">(</span>xxlJobProps<span class="token punctuation">.</span><span class="token function">getExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getIp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xxlJobSpringExecutor<span class="token punctuation">.</span><span class="token function">setPort</span><span class="token punctuation">(</span>xxlJobProps<span class="token punctuation">.</span><span class="token function">getExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xxlJobSpringExecutor<span class="token punctuation">.</span><span class="token function">setLogPath</span><span class="token punctuation">(</span>xxlJobProps<span class="token punctuation">.</span><span class="token function">getExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getLogPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xxlJobSpringExecutor<span class="token punctuation">.</span><span class="token function">setLogRetentionDays</span><span class="token punctuation">(</span>xxlJobProps<span class="token punctuation">.</span><span class="token function">getExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getLogRetentionDays</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> xxlJobSpringExecutor<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-3-添加一个定时任务"><a href="#3-3-添加一个定时任务" class="headerlink" title="3.3 添加一个定时任务"></a>3.3 添加一个定时任务</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> cn<span class="token punctuation">.</span>hutool<span class="token punctuation">.</span>core<span class="token punctuation">.</span>date<span class="token punctuation">.</span>DateUtil<span class="token punctuation">;</span>
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>hutool<span class="token punctuation">.</span>core<span class="token punctuation">.</span>util<span class="token punctuation">.</span>RandomUtil<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>xxl<span class="token punctuation">.</span>job<span class="token punctuation">.</span>core<span class="token punctuation">.</span>biz<span class="token punctuation">.</span>model<span class="token punctuation">.</span>ReturnT<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>xxl<span class="token punctuation">.</span>job<span class="token punctuation">.</span>core<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>IJobHandler<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>xxl<span class="token punctuation">.</span>job<span class="token punctuation">.</span>core<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>XxlJob<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>xxl<span class="token punctuation">.</span>job<span class="token punctuation">.</span>core<span class="token punctuation">.</span>log<span class="token punctuation">.</span>XxlJobLogger<span class="token punctuation">;</span>
+<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>Slf4j<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Slf4j</span>
 <span class="token annotation punctuation">@Component</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserDao</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoTask</span> <span class="token keyword">extends</span> <span class="token class-name">IJobHandler</span> <span class="token punctuation">{</span>
 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-调用"><a href="#5-调用" class="headerlink" title="5. 调用"></a>5. 调用</h3><h4 id="5-1-基础CURD"><a href="#5-1-基础CURD" class="headerlink" title="5.1 基础CURD"></a>5.1 基础<code>CURD</code></h4><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//新增，第二个参数代表是否获取自增主键</span>
-userDao<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//批量新增</span>
-userDao<span class="token punctuation">.</span><span class="token function">insertBatch</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//删除</span>
-userDao<span class="token punctuation">.</span><span class="token function">deleteById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//更新</span>
-userDao<span class="token punctuation">.</span><span class="token function">updateTemplateById</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//查询</span>
-userDao<span class="token punctuation">.</span><span class="token function">single</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//查询全部</span>
-userDao<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="5-2-分页"><a href="#5-2-分页" class="headerlink" title="5.2 分页"></a>5.2 分页</h4><pre class="line-numbers language-java"><code class="language-java">userDao<span class="token punctuation">.</span><span class="token function">createLambdaQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span>currentPage<span class="token punctuation">,</span> pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    <span class="token comment" spellcheck="true">/**
+     * execute handler, invoked when executor receives a scheduling request
+     *
+     * @param param 定时任务参数
+     * @return 执行状态
+     * @throws Exception 任务异常
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token annotation punctuation">@XxlJob</span><span class="token punctuation">(</span><span class="token string">"demoTask"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> ReturnT<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">execute</span><span class="token punctuation">(</span>String param<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 可以动态获取传递过来的参数，根据参数不同，当前调度的任务不同</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"【param】= {}"</span><span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        XxlJobLogger<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"demo task run at : {}"</span><span class="token punctuation">,</span> DateUtil<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> RandomUtil<span class="token punctuation">.</span><span class="token function">randomInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> SUCCESS <span class="token operator">:</span> FAIL<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-4-启动执行器"><a href="#3-4-启动执行器" class="headerlink" title="3.4 启动执行器"></a>3.4 启动执行器</h4><pre><code>Run SpringBootDemoTaskXxlJobApplication</code></pre><h3 id="4-调度中心配置执行器"><a href="#4-调度中心配置执行器" class="headerlink" title="4. 调度中心配置执行器"></a>4. 调度中心配置执行器</h3><h4 id="4-1-添加执行器"><a href="#4-1-添加执行器" class="headerlink" title="4.1 添加执行器"></a>4.1 添加执行器</h4><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200823151241.png" alt=""></p>
+<h4 id="4-2-添加任务"><a href="#4-2-添加任务" class="headerlink" title="4.2 添加任务"></a>4.2 添加任务</h4><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200823151707.png" alt=""></p>
+<h4 id="4-3-启动任务"><a href="#4-3-启动任务" class="headerlink" title="4.3 启动任务"></a>4.3 启动任务</h4><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200823151841.png" alt=""></p>
+<h4 id="4-4-查看日志"><a href="#4-4-查看日志" class="headerlink" title="4.4 查看日志"></a>4.4 查看日志</h4><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200823152046.png" alt=""></p>
+<p>执行器控制台输出：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/20200823152135.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -976,8 +1052,8 @@ userDao<span class="token punctuation">.</span><span class="token function">all<
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/080253863.html">
-                        https://yezhechenyang.gitee.io/2020/080253863.html</a></span>
+                <span class="reprint-info"><a href="/2020/082313390.html">
+                        https://yezhechenyang.gitee.io/2020/082313390.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1462,29 +1538,30 @@ userDao<span class="token punctuation">.</span><span class="token function">all<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/080417245.html">
+                <a href="/2020/082313390.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【Spring Boot】七牛云文件上传">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="【Spring Boot】定时任务之XXL-JOB">
                         
-                        <span class="card-title">【Spring Boot】七牛云文件上传</span>
+                        <span class="card-title">【Spring Boot】定时任务之XXL-JOB</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            七牛云文件上传初探
+                            安利一款分布式定时任务xxl-job
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1497,6 +1574,7 @@ userDao<span class="token punctuation">.</span><span class="token function">all<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1504,12 +1582,12 @@ userDao<span class="token punctuation">.</span><span class="token function">all<
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/文件上传/" target="_blank">
-                        <span class="chip bg-color">文件上传</span>
+                    <a href="/tags/定时任务/" target="_blank">
+                        <span class="chip bg-color">定时任务</span>
                     </a>
                     
-                    <a href="/tags/七牛云/" target="_blank">
-                        <span class="chip bg-color">七牛云</span>
+                    <a href="/tags/xxl-job/" target="_blank">
+                        <span class="chip bg-color">xxl-job</span>
                     </a>
                     
                 </div>
@@ -1523,24 +1601,24 @@ userDao<span class="token punctuation">.</span><span class="token function">all<
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/073140422.html">
+                <a href="/2020/081922601.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="【Spring Boot】Mybatis之mybatis-plus">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="【Spring Boot】定时任务之Quartz">
                         
-                        <span class="card-title">【Spring Boot】Mybatis之mybatis-plus</span>
+                        <span class="card-title">【Spring Boot】定时任务之Quartz</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mybatis-plus为简化Mybatis而生
+                            Quartz实现动态定时任务
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-19
                             </span>
                         <span class="publish-author">
                             
@@ -1561,12 +1639,12 @@ userDao<span class="token punctuation">.</span><span class="token function">all<
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/Mybatis/" target="_blank">
-                        <span class="chip bg-color">Mybatis</span>
+                    <a href="/tags/定时任务/" target="_blank">
+                        <span class="chip bg-color">定时任务</span>
                     </a>
                     
-                    <a href="/tags/mybatis-plus/" target="_blank">
-                        <span class="chip bg-color">mybatis-plus</span>
+                    <a href="/tags/Quartz/" target="_blank">
+                        <span class="chip bg-color">Quartz</span>
                     </a>
                     
                 </div>
