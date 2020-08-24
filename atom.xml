@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-23T07:26:20.253Z</updated>
+  <updated>2020-08-24T00:51:02.073Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Spring Boot】Swagger自动化API接口文档</title>
+    <link href="https://yezhechenyang.gitee.io/2020/082421301.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/082421301.html</id>
+    <published>2020-08-24T00:50:18.000Z</published>
+    <updated>2020-08-24T00:51:02.073Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;本文介绍&lt;code&gt;Spring
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Swagger" scheme="https://yezhechenyang.gitee.io/tags/Swagger/"/>
+    
+  </entry>
   
   <entry>
     <title>【Spring Boot】定时任务之XXL-JOB</title>
@@ -580,34 +608,6 @@
       <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
     
       <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【JavaScript】解决let变量重复定义报错问题</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072544009.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072544009.html</id>
-    <published>2020-07-25T11:02:00.000Z</published>
-    <updated>2020-07-25T11:03:01.390Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-问题描述&quot;&gt;&lt;a href=&quot;#1-问题描述&quot; class=&quot;headerlink&quot; title=&quot;1. 问题描述&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://yezhechenyang.gitee.io/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="https://yezhechenyang.gitee.io/tags/JavaScript/"/>
-    
-      <category term="let" scheme="https://yezhechenyang.gitee.io/tags/let/"/>
     
   </entry>
   
