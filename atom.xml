@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-24T00:51:02.073Z</updated>
+  <updated>2020-08-25T02:26:26.390Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【bat脚本】自定义批量重命名</title>
+    <link href="https://yezhechenyang.gitee.io/2020/082565510.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/082565510.html</id>
+    <published>2020-08-25T02:25:58.000Z</published>
+    <updated>2020-08-25T02:26:26.390Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;:: 关闭执行命令内容打印
+@echo off&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/categories/bat%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="bat脚本" scheme="https://yezhechenyang.gitee.io/tags/bat%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="批量重命名" scheme="https://yezhechenyang.gitee.io/tags/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Spring Boot】Swagger界面美化</title>
+    <link href="https://yezhechenyang.gitee.io/2020/082559367.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/082559367.html</id>
+    <published>2020-08-25T00:59:23.000Z</published>
+    <updated>2020-08-25T01:02:39.352Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;原生&lt;code&gt;swagger&lt;/code&gt;的界面不够美观，可使用第三方&lt;code&gt;swagger
+        
+      
+    
+    </summary>
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
+    
+      <category term="Swagger" scheme="https://yezhechenyang.gitee.io/tags/Swagger/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【Spring Boot】Swagger自动化API接口文档</title>
     <link href="https://yezhechenyang.gitee.io/2020/082421301.html"/>
     <id>https://yezhechenyang.gitee.io/2020/082421301.html</id>
     <published>2020-08-24T00:50:18.000Z</published>
-    <updated>2020-08-24T00:51:02.073Z</updated>
+    <updated>2020-08-25T01:05:51.491Z</updated>
     
     <summary type="html">
     
@@ -548,66 +605,6 @@
       <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
     
       <category term="Gitee" scheme="https://yezhechenyang.gitee.io/tags/Gitee/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】ORM系列之MyBatis</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072722410.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072722410.html</id>
-    <published>2020-07-27T03:23:05.000Z</published>
-    <updated>2020-07-27T03:23:43.649Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
-    
-      <category term="MyBatis" scheme="https://yezhechenyang.gitee.io/tags/MyBatis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Spring Boot】ORM系列之SpringDataJPA</title>
-    <link href="https://yezhechenyang.gitee.io/2020/0727302.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/0727302.html</id>
-    <published>2020-07-27T01:20:31.000Z</published>
-    <updated>2020-07-27T01:26:54.301Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/categories/Spring-Boot/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
-    
-      <category term="ORM" scheme="https://yezhechenyang.gitee.io/tags/ORM/"/>
-    
-      <category term="SpringData JPA" scheme="https://yezhechenyang.gitee.io/tags/SpringData-JPA/"/>
     
   </entry>
   
