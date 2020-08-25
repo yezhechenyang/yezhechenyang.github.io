@@ -221,9 +221,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> 缓存 </tag>
-            
             <tag> Ehcache </tag>
+            
+            <tag> 缓存 </tag>
             
         </tags>
       
@@ -306,9 +306,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Redis </tag>
-            
             <tag> 缓存 </tag>
+            
+            <tag> Redis </tag>
             
         </tags>
       
@@ -1267,11 +1267,11 @@
       
         <tags>
             
+            <tag> Spring Framework </tag>
+            
             <tag> IoC </tag>
             
             <tag> DI </tag>
-            
-            <tag> Spring Framework </tag>
             
         </tags>
       
@@ -1321,9 +1321,9 @@
       
         <tags>
             
-            <tag> Spring Framework </tag>
-            
             <tag> Spring Boot </tag>
+            
+            <tag> Spring Framework </tag>
             
             <tag> Spring </tag>
             

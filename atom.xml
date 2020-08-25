@@ -251,9 +251,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="缓存" scheme="https://yezhechenyang.gitee.io/tags/%E7%BC%93%E5%AD%98/"/>
-    
       <category term="Ehcache" scheme="https://yezhechenyang.gitee.io/tags/Ehcache/"/>
+    
+      <category term="缓存" scheme="https://yezhechenyang.gitee.io/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
@@ -339,9 +339,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="Redis" scheme="https://yezhechenyang.gitee.io/tags/Redis/"/>
-    
       <category term="缓存" scheme="https://yezhechenyang.gitee.io/tags/%E7%BC%93%E5%AD%98/"/>
+    
+      <category term="Redis" scheme="https://yezhechenyang.gitee.io/tags/Redis/"/>
     
   </entry>
   
