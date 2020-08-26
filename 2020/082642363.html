@@ -6,12 +6,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【bat脚本】中文乱码, 叶遮沉阳,yezhechenyang">
+    <meta name="keywords" content="【Markdown】代码折叠, 叶遮沉阳,yezhechenyang">
     <meta name="baidu-site-verification" content="HQnZczZgKi">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="1. 原因描述使用EditPlus描写脚本后，最后保存的文件编码格式为UTF-8。然后双击运行bat脚本，中文直接显示乱码。
-2. 解决办法改变文件编码，将UTF-8转成ANSI。
-2.1 EditPlusDocument -- File ">
+    <meta name="description" content="1. 前言Markdown本身不支持折叠代码，可通过HTML中的details标签实现。
+2. 效果图
+3. 源代码代码：
+&amp;lt;details&gt;
+    &amp;lt;summary&gt;点击查看代码&amp;lt;/summary&gt;&amp;lt;!-- 下面">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【bat脚本】中文乱码 | 叶遮沉阳</title>
+    <title>【Markdown】代码折叠 | 叶遮沉阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
 <!--    <link rel="stylesheet" type="text/css" href="">-->
@@ -538,13 +540,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【bat脚本】中文乱码
+                        【Markdown】代码折叠
                     </div>
                 </div>
             </div>
@@ -656,8 +658,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/bat脚本/" target="_blank">
-                                <span class="chip bg-color">bat脚本</span>
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/Markdown/" target="_blank">
+                                <span class="chip bg-color">Markdown</span>
                             </a>
                         
                     </div>
@@ -668,8 +674,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/bat脚本/" class="post-category" target="_blank">
-                                bat脚本
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                Hexo
                             </a>
                         
                     </div>
@@ -680,7 +686,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-16
+                    2020-08-26
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -718,9 +724,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-原因描述"><a href="#1-原因描述" class="headerlink" title="1. 原因描述"></a>1. 原因描述</h3><p>使用EditPlus描写脚本后，最后保存的文件编码格式为UTF-8。<br>然后双击运行bat脚本，中文直接显示乱码。</p>
-<h3 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2. 解决办法"></a>2. 解决办法</h3><p>改变文件编码，将UTF-8转成ANSI。</p>
-<h4 id="2-1-EditPlus"><a href="#2-1-EditPlus" class="headerlink" title="2.1 EditPlus"></a>2.1 EditPlus</h4><pre><code>Document -- File Encoding -- Convert Encoding... -- 选择编码 -- 确定</code></pre><h4 id="2-2-Notepad（记事本）"><a href="#2-2-Notepad（记事本）" class="headerlink" title="2.2 Notepad（记事本）"></a>2.2 Notepad（记事本）</h4><pre><code>文件 -- 另存为 -- 选择编码 -- 确定</code></pre><script>
+                <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p><code>Markdown</code>本身不支持折叠代码，可通过<code>HTML</code>中的<code>details</code>标签实现。</p>
+<h3 id="2-效果图"><a href="#2-效果图" class="headerlink" title="2. 效果图"></a>2. 效果图</h3><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/yezhechenyang/imagebed/raw/master/blog/markdown%E6%8A%98%E5%8F%A0%E4%BB%A3%E7%A0%81.gif" alt=""></p>
+<h3 id="3-源代码"><a href="#3-源代码" class="headerlink" title="3. 源代码"></a>3. 源代码</h3><p>代码：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span>点击查看代码<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span><span class="token comment" spellcheck="true">&lt;!-- 下面空一行 --></span>
+
+    ```bash
+    echo 演示折叠代码
+    ```
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果：</p>
+<details>
+<summary>点击查看代码</summary>
+
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> 演示折叠代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</details>
+
+<p><strong>注意：<code>&lt;summary&gt;</code>标签下一定要空一行！！！</strong></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -889,8 +911,8 @@
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta"><i class="fa fa-link">文章链接: </i></span>
-                <span class="reprint-info"><a href="/2020/071662282.html">
-                        https://yezhechenyang.gitee.io/2020/071662282.html</a></span>
+                <span class="reprint-info"><a href="/2020/082642363.html">
+                        https://yezhechenyang.gitee.io/2020/082642363.html</a></span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta"><i class="fa fa-copyright">版权声明: </i></span>
@@ -1375,29 +1397,84 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/071657563.html">
+                <a href="/2020/082642363.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="【bat脚本】单行注释与多行注释">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="【Markdown】代码折叠">
                         
-                        <span class="card-title">【bat脚本】单行注释与多行注释</span>
+                        <span class="card-title">【Markdown】代码折叠</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            bat脚本使用单行注释与多行注释
+                            在Markdown中实现代码折叠
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-16
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                    Hexo
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/" target="_blank">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/082565510.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【bat脚本】自定义批量重命名">
+                        
+                        <span class="card-title">【bat脚本】自定义批量重命名</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            自己实现一个批量重命名脚本
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1417,53 +1494,8 @@
                         <span class="chip bg-color">bat脚本</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07161210.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="【bat脚本】窗口标题命名">
-                        
-                        <span class="card-title">【bat脚本】窗口标题命名</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            bat脚本使用title命名窗口标题
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/bat脚本/" class="post-category" target="_blank">
-                                    bat脚本
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/bat脚本/" target="_blank">
-                        <span class="chip bg-color">bat脚本</span>
+                    <a href="/tags/批量重命名/" target="_blank">
+                        <span class="chip bg-color">批量重命名</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhechenyang.gitee.io/"/>
-  <updated>2020-08-25T02:26:26.390Z</updated>
+  <updated>2020-08-26T06:01:13.778Z</updated>
   <id>https://yezhechenyang.gitee.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Markdown】代码折叠</title>
+    <link href="https://yezhechenyang.gitee.io/2020/082642363.html"/>
+    <id>https://yezhechenyang.gitee.io/2020/082642363.html</id>
+    <published>2020-08-26T05:59:13.000Z</published>
+    <updated>2020-08-26T06:01:13.778Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
+    
+      <category term="Markdown" scheme="https://yezhechenyang.gitee.io/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>【bat脚本】自定义批量重命名</title>
@@ -577,34 +605,6 @@
       <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
     
       <category term="Markdown" scheme="https://yezhechenyang.gitee.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Hexo】Git上传大文件失败</title>
-    <link href="https://yezhechenyang.gitee.io/2020/072816107.html"/>
-    <id>https://yezhechenyang.gitee.io/2020/072816107.html</id>
-    <published>2020-07-28T14:10:16.000Z</published>
-    <updated>2020-07-28T14:12:18.251Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-问题描述&quot;&gt;&lt;a href=&quot;#1-问题描述&quot; class=&quot;headerlink&quot; title=&quot;1. 问题描述&quot;&gt;&lt;/a&gt;1. 问题描述&lt;/h3&gt;&lt;p&gt;当使用&lt;code&gt;hexo clean &amp;amp;&amp;amp; hexo
-        
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://yezhechenyang.gitee.io/tags/Hexo/"/>
-    
-      <category term="Gitee" scheme="https://yezhechenyang.gitee.io/tags/Gitee/"/>
     
   </entry>
   
