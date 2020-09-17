@@ -130,9 +130,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> 定时任务 </tag>
-            
             <tag> xxl-job </tag>
+            
+            <tag> 定时任务 </tag>
             
         </tags>
       
@@ -188,11 +188,11 @@
             
             <tag> Spring Boot </tag>
             
+            <tag> 定时任务 </tag>
+            
             <tag> Spring Task </tag>
             
             <tag> cron </tag>
-            
-            <tag> 定时任务 </tag>
             
         </tags>
       
@@ -955,9 +955,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Actuator </tag>
-            
             <tag> Admin </tag>
+            
+            <tag> Actuator </tag>
             
         </tags>
       
@@ -1348,9 +1348,9 @@
       
         <tags>
             
-            <tag> Spring Boot </tag>
-            
             <tag> Spring Framework </tag>
+            
+            <tag> Spring Boot </tag>
             
             <tag> Spring </tag>
             
