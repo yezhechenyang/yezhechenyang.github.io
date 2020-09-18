@@ -93,3 +93,5 @@ html{
 nav ul a{font-size: 1.2rem}
 
 #prenext-posts{ position: relative; }
+
+#vcomments pre code{ white-space: pre !important; }

@@ -669,9 +669,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> ORM </tag>
-            
             <tag> SpringData JPA </tag>
+            
+            <tag> ORM </tag>
             
         </tags>
       
@@ -783,9 +783,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Beetl </tag>
-            
             <tag> 模板引擎 </tag>
+            
+            <tag> Beetl </tag>
             
         </tags>
       
@@ -868,9 +868,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> 模板引擎 </tag>
-            
             <tag> Freemarker </tag>
+            
+            <tag> 模板引擎 </tag>
             
         </tags>
       
@@ -1292,9 +1292,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> PicGo </tag>
-            
             <tag> Gitee </tag>
+            
+            <tag> PicGo </tag>
             
         </tags>
       
