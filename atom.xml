@@ -181,9 +181,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="xxl-job" scheme="https://yezhechenyang.gitee.io/tags/xxl-job/"/>
-    
       <category term="定时任务" scheme="https://yezhechenyang.gitee.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    
+      <category term="xxl-job" scheme="https://yezhechenyang.gitee.io/tags/xxl-job/"/>
     
   </entry>
   
@@ -211,9 +211,9 @@
     
       <category term="Spring Boot" scheme="https://yezhechenyang.gitee.io/tags/Spring-Boot/"/>
     
-      <category term="定时任务" scheme="https://yezhechenyang.gitee.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
-    
       <category term="Quartz" scheme="https://yezhechenyang.gitee.io/tags/Quartz/"/>
+    
+      <category term="定时任务" scheme="https://yezhechenyang.gitee.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
     
   </entry>
   

@@ -155,9 +155,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> xxl-job </tag>
-            
             <tag> 定时任务 </tag>
+            
+            <tag> xxl-job </tag>
             
         </tags>
       
@@ -184,9 +184,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> 定时任务 </tag>
-            
             <tag> Quartz </tag>
+            
+            <tag> 定时任务 </tag>
             
         </tags>
       
@@ -754,9 +754,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> 模板引擎 </tag>
-            
             <tag> Enjoy </tag>
+            
+            <tag> 模板引擎 </tag>
             
         </tags>
       
@@ -868,9 +868,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Freemarker </tag>
-            
             <tag> 模板引擎 </tag>
+            
+            <tag> Freemarker </tag>
             
         </tags>
       
@@ -980,9 +980,9 @@
             
             <tag> Spring Boot </tag>
             
-            <tag> Admin </tag>
-            
             <tag> Actuator </tag>
+            
+            <tag> Admin </tag>
             
         </tags>
       
@@ -1292,9 +1292,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> PicGo </tag>
-            
             <tag> Gitee </tag>
+            
+            <tag> PicGo </tag>
             
         </tags>
       
@@ -1319,11 +1319,11 @@
       
         <tags>
             
+            <tag> Spring Framework </tag>
+            
             <tag> IoC </tag>
             
             <tag> DI </tag>
-            
-            <tag> Spring Framework </tag>
             
         </tags>
       

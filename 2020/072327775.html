@@ -1463,8 +1463,7 @@ springboot官方推荐方案。
 
 
     // 双击代码块进入全屏
-    //function callback(){
-    //    console.log('callback...')
+    function callback(){
         let oPre = document.getElementsByTagName("pre");
         Array.from(oPre).forEach(i => {
             let oDiv = i.querySelector("div");
@@ -1473,22 +1472,25 @@ springboot官方推荐方案。
                 oDiv.innerText = "进入全屏";
                 i.appendChild(oDiv);
             }
-            oDiv.addEventListener('click', function(){
-                if (document.fullscreenElement) {
-                     document.exitFullscreen();
-                     this.innerText = "进入全屏";
-                }else{
-                    if (i.requestFullscreen) {
-                        this.innerText = "退出全屏";
-                        return i.requestFullscreen();
+            if(!oDiv.classList.contains('addedClick')){
+                oDiv.classList.add('addedClick');
+                oDiv.addEventListener('click', function(){
+                    if (document.fullscreenElement) {
+                         document.exitFullscreen();
+                         this.innerText = "进入全屏";
+                    }else{
+                        if (i.requestFullscreen) {
+                            this.innerText = "退出全屏";
+                            return i.requestFullscreen();
+                        }
                     }
-                }
-            });
+                });
+            }
         });
-    //}
-    //let observer = new MutationObserver(callback);
-    //let vcomm = document.getElementById('vcomments');
-    //observer.observe(vcomm, { childList: true, subtree: true });
+    }
+    let observer = new MutationObserver(callback);
+    let vcomm = document.getElementById('vcomments');
+    observer.observe(vcomm, { childList: true, subtree: true });
 </script>
     
 
@@ -1592,12 +1594,12 @@ springboot官方推荐方案。
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/Freemarker/" target="_blank">
-                        <span class="chip bg-color">Freemarker</span>
-                    </a>
-                    
                     <a href="/tags/模板引擎/" target="_blank">
                         <span class="chip bg-color">模板引擎</span>
+                    </a>
+                    
+                    <a href="/tags/Freemarker/" target="_blank">
+                        <span class="chip bg-color">Freemarker</span>
                     </a>
                     
                 </div>
