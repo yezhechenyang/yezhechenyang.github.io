@@ -2043,13 +2043,23 @@ DataSourceInitializationMode<span class="token punctuation">.</span>NEVER<span a
             if(!oDiv.classList.contains('addedClick')){
                 oDiv.classList.add('addedClick');
                 oDiv.addEventListener('click', function(){
-                    if (document.fullscreenElement) {
-                         document.exitFullscreen();
-                         this.innerText = "进入全屏";
+                    var isFull = document.fullscreenElement || document.mozFullScreenElement
+                        || document.webkitFullscreenElement;
+                    if (isFull) {
+                        var exitMethod = document.exitFullscreen ||     //W3C
+                                document.mozCancelFullScreen ||         //FireFox
+                                document.webkitExitFullscreen ||
+                                document.msExitFullscreen;       //Chrome等
+                        if (exitMethod) {
+                            exitMethod.call(document);
+                            this.innerText = "进入全屏";
+                        }
                     }else{
-                        if (i.requestFullscreen) {
+                        var requestMethod = i.requestFullScreen || i.webkitRequestFullScreen
+                            || i.mozRequestFullScreen || i.msRequestFullScreen;
+                        if (requestMethod) {
                             this.innerText = "退出全屏";
-                            return i.requestFullscreen();
+                            requestMethod.call(i)
                         }
                     }
                 });
@@ -2162,12 +2172,12 @@ DataSourceInitializationMode<span class="token punctuation">.</span>NEVER<span a
                         <span class="chip bg-color">Spring Boot</span>
                     </a>
                     
-                    <a href="/tags/Enjoy/" target="_blank">
-                        <span class="chip bg-color">Enjoy</span>
-                    </a>
-                    
                     <a href="/tags/模板引擎/" target="_blank">
                         <span class="chip bg-color">模板引擎</span>
+                    </a>
+                    
+                    <a href="/tags/Enjoy/" target="_blank">
+                        <span class="chip bg-color">Enjoy</span>
                     </a>
                     
                 </div>

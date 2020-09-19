@@ -1402,13 +1402,23 @@
             if(!oDiv.classList.contains('addedClick')){
                 oDiv.classList.add('addedClick');
                 oDiv.addEventListener('click', function(){
-                    if (document.fullscreenElement) {
-                         document.exitFullscreen();
-                         this.innerText = "进入全屏";
+                    var isFull = document.fullscreenElement || document.mozFullScreenElement
+                        || document.webkitFullscreenElement;
+                    if (isFull) {
+                        var exitMethod = document.exitFullscreen ||     //W3C
+                                document.mozCancelFullScreen ||         //FireFox
+                                document.webkitExitFullscreen ||
+                                document.msExitFullscreen;       //Chrome等
+                        if (exitMethod) {
+                            exitMethod.call(document);
+                            this.innerText = "进入全屏";
+                        }
                     }else{
-                        if (i.requestFullscreen) {
+                        var requestMethod = i.requestFullScreen || i.webkitRequestFullScreen
+                            || i.mozRequestFullScreen || i.msRequestFullScreen;
+                        if (requestMethod) {
                             this.innerText = "退出全屏";
-                            return i.requestFullscreen();
+                            requestMethod.call(i)
                         }
                     }
                 });
@@ -1468,12 +1478,12 @@
                         <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Gitee/" target="_blank">
-                        <span class="chip bg-color">Gitee</span>
-                    </a>
-                    
                     <a href="/tags/PicGo/" target="_blank">
                         <span class="chip bg-color">PicGo</span>
+                    </a>
+                    
+                    <a href="/tags/Gitee/" target="_blank">
+                        <span class="chip bg-color">Gitee</span>
                     </a>
                     
                 </div>
