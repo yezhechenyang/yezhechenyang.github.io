@@ -861,35 +861,6 @@ Blog 简介： JAVA WEB | 不积跬步，无以至千里。</code></pre><script>
         transition: all 0.2s ease-in-out 0s;
     }
 
-    /*#vcomments .vheader .vnick {*/
-    /*    width: 30%;*/
-    /*    height: 40px;*/
-    /*    border: 2px solid #dedede;*/
-    /*    padding-left: 10px;*/
-    /*    padding-right: 10px;*/
-    /*    border-radius: 5px*/
-    /*}*/
-
-    /*#vcomments .vheader .vmail {*/
-    /*    width: 30%;*/
-    /*    height: 40px;*/
-    /*    border: 2px solid #dedede;*/
-    /*    margin-left: 25px;*/
-    /*    padding-left: 10px;*/
-    /*    padding-right: 10px;*/
-    /*    border-radius: 5px*/
-    /*}*/
-
-    /*#vcomments .vheader .vlink {*/
-    /*    width: 30%;*/
-    /*    height: 40px;*/
-    /*    border: 2px solid #dedede;*/
-    /*    margin-left: 25px;*/
-    /*    padding-left: 10px;*/
-    /*    padding-right: 10px;*/
-    /*    border-radius: 5px*/
-    /*}*/
-
     img.vimg {
         transition: all 1s   /* 旋转时间为 1s */
     }
@@ -917,6 +888,22 @@ Blog 简介： JAVA WEB | 不积跬步，无以至千里。</code></pre><script>
     #vcomments .vcards .vcard .vh .vcard {
         border: none;
         box-shadow: none;
+    }
+
+    pre{ position: relative; }
+    pre>div{
+        font-size: 12px;
+        position: absolute;
+        width: 60px;
+        height: 24px;
+        top: 0;
+        left: 0px;
+        margin-top: 0px;
+        cursor: pointer;
+        text-align: center;
+        color: white;
+        padding-top: 6px;
+        background: rgba(255, 96, 96, 0.6);
     }
 </style>
 
@@ -1035,6 +1022,35 @@ Blog 简介： JAVA WEB | 不积跬步，无以至千里。</code></pre><script>
 //     });
 //   }, 800)
 
+
+
+    // 双击代码块进入全屏
+    //function callback(){
+    //    console.log('callback...')
+        let oPre = document.getElementsByTagName("pre");
+        Array.from(oPre).forEach(i => {
+            let oDiv = i.querySelector("div");
+            if(!oDiv){
+                oDiv = document.createElement("div");
+                oDiv.innerText = "进入全屏";
+                i.appendChild(oDiv);
+            }
+            oDiv.addEventListener('click', function(){
+                if (document.fullscreenElement) {
+                     document.exitFullscreen();
+                     this.innerText = "进入全屏";
+                }else{
+                    if (i.requestFullscreen) {
+                        this.innerText = "退出全屏";
+                        return i.requestFullscreen();
+                    }
+                }
+            });
+        });
+    //}
+    //let observer = new MutationObserver(callback);
+    //let vcomm = document.getElementById('vcomments');
+    //observer.observe(vcomm, { childList: true, subtree: true });
 </script>
                         
 
